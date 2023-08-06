@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Pages } from "./components/Pages";
+import Footer from "./components/common/Footer";
+import MenuBar from "./components/common/MenuBar";
+
+import Access from "./components/access/Access";
+import Event from "./components/event/Event";
+import Home from "./components/home/Home";
+import Map from "./components/map/Map";
+import Project from "./components/project/Project";
+
+import './index.css';
+
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="webBackGround">
+      <BrowserRouter>
+        <Switch>
+          <Route exact path={Pages.access.path}><Access /></Route>
+          <Route exact path={Pages.event.path}><Event /></Route>
+          <Route exact path={Pages.home.path}><Home /></Route>
+          <Route exact path={Pages.map.path}><Map /></Route>
+          <Route exact path={Pages.project.path}><Project /></Route>
+        </Switch>
+      </BrowserRouter>
+
+      <Footer />
+      <MenuBar />
     </div>
   );
 }

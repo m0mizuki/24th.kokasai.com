@@ -1,0 +1,30 @@
+.backGroundImage {
+    position: fixed;
+    top: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    filter: blur(2px);
+
+    z-index: -100;
+}
+
+@media screen and (min-width: 600px) {
+    .backGroundImage {
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .backGroundImage {
+        width: 100%;
+    }
+}
+
+.contents {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 90%;
+    height: max-content;
+    margin-left: auto;
+    margin-right: auto;
+}

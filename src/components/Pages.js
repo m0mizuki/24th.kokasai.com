@@ -1,0 +1,27 @@
+export const Pages={
+    access:{
+        displayName:"アクセス",
+        path:"/access",
+        icon:"../../static/img/menuIcon.png",
+    },
+    event:{
+        displayName:"体育館企画",
+        path:"/event",
+        icon:"../../static/img/menuIcon.png",
+    },
+    home:{
+        displayName:"ホーム",
+        path:"/home",
+        icon:"../../static/img/menuIcon.png",
+    },
+    map:{
+        displayName:"マップ",
+        path:"/map",
+        icon:"../../static/img/menuIcon.png",
+    },
+    project:{
+        displayName:"企画",
+        path:"/project",
+        icon:"../../static/img/menuIcon.png",
+    },
+};

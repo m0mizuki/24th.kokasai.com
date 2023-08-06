@@ -1,0 +1,86 @@
+.footer {
+    position: relative;
+    background-color: lightcyan;
+    height: 24rem;
+    width: 100%;
+}
+
+#menuBar {
+    position: fixed;
+    bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: mediumpurple;
+    height: 10%;
+}
+
+@media screen and (min-width: 600px) {
+    #menuBar {
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #menuBar {
+        width: 100%;
+    }
+}
+
+.menuButtons{
+    position: absolute;
+    bottom: 2rem;
+    height: 100%;
+    text-align: center;
+}
+
+.menuTexts{
+    background-color: beige;
+    position: relative;
+    bottom: 2rem;
+    z-index: 1001;
+}
+
+.menuImages{
+    position: relative;
+    bottom: 0rem;
+    height: 120%;
+    border-radius: 100%;
+    z-index: 1000;
+}
+
+#accessButton{
+    left: 0%;
+}
+#eventButton{
+    left: 20%;
+}
+#homeButton{
+    left: 40%;
+}
+#mapButton{
+    left: 60%;
+}
+#projectButton{
+    left: 80%;
+}
+
+.changeSceneMotion{
+    background-color: aquamarine;
+    opacity: 90%;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    left: 0%;
+    z-index: 10000;
+
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-name: changeSceneAnimation;
+}
+
+@keyframes changeSceneAnimation {
+    100%{
+        top: 0%;
+    }
+}
