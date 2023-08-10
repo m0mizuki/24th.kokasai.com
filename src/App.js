@@ -1,7 +1,6 @@
 import { Pages } from "./components/Pages";
 import Footer from "./components/common/Footer";
 import MenuBar from "./components/common/MenuBar";
-import PopUp from "./components/common/PopUp";
 
 import Access from "./components/access/Access";
 import Event from "./components/event/Event";
@@ -11,20 +10,20 @@ import Project from "./components/project/Project";
 
 import './index.css';
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
 
   return (
     <div id="webBackGround" className="responsiveWidth">
       <BrowserRouter>
-        <Switch>
-          <Route exact path={Pages.access.path}><Access /></Route>
-          <Route exact path={Pages.event.path}><Event /></Route>
-          <Route exact path={Pages.home.path}><Home /></Route>
-          <Route exact path={Pages.map.path}><Map /></Route>
-          <Route exact path={Pages.project.path}><Project /></Route>
-        </Switch>
+        <Routes>
+          <Route exact path={Pages.access.path} element={<Access />} />
+          <Route exact path={Pages.event.path} element={<Event />} />
+          <Route exact path={Pages.home.path} element={<Home />} />
+          <Route exact path={Pages.map.path} element={<Map />} />
+          <Route exact path={Pages.project.path} element={<Project />} />
+        </Routes>
       </BrowserRouter>
 
       <Footer />
