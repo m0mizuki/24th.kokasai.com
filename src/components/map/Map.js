@@ -1,10 +1,19 @@
 import { Pages } from "../Pages";
 import backGround from "../../img/backGround/fantasy.jpg"
+import openMapImg from "../../img/openMap.png";
 import "../../css/pageStyle.css";
 import "./mapStyle.css";
+import "../common/commonStyle.css";
 import PopUp from "../common/PopUp";
 
 function Map() {
+  function openMap(){
+    const target = document.getElementById("popUp"); //popUpはPopUp.jsの要素,このファイルに無いので分かりづらい
+    if(target.classList.contains("invisible")){
+      target.classList.remove("invisible");
+    }
+  }
+
   return (
     <>
       <PopUp>
@@ -15,10 +24,13 @@ function Map() {
       <img src={backGround} className="backGroundImage" />
       <div className="contents">
         <br />
-
         <p>あいうえお</p><br />
         <p>かきくけこ</p><br />
         <p>さしすせそ</p><br />
+
+        <p><input type="image" id="openMapButton" src={openMapImg} onClick={()=>openMap()} /></p>
+        <br />
+
         <p>たちつてと</p><br />
         <p>なにぬねの</p><br />
         <p>はひふへほ</p><br />

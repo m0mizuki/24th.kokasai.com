@@ -1,27 +1,27 @@
 export const Pages={
     access:{
         displayName:"アクセス",
-        path:"/access",
+        path:"/kokasai_demo2_react/access",
         icon:"../../static/img/menuIcon.png",
     },
     event:{
         displayName:"体育館企画",
-        path:"/event",
+        path:"/kokasai_demo2_react/event",
         icon:"../../static/img/menuIcon.png",
     },
     home:{
         displayName:"ホーム",
-        path:"/home",
+        path:"/kokasai_demo2_react",
         icon:"../../static/img/menuIcon.png",
     },
     map:{
         displayName:"マップ",
-        path:"/map",
+        path:"/kokasai_demo2_react/map",
         icon:"../../static/img/menuIcon.png",
     },
     project:{
         displayName:"企画",
-        path:"/project",
+        path:"/kokasai_demo2_react/project",
         icon:"../../static/img/menuIcon.png",
     },
 };

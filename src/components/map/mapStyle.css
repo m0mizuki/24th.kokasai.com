@@ -5,3 +5,8 @@
     width: 90%;
     height: 60%;
 }
+
+#openMapButton{
+    background-color: cadetblue;
+    width: 10rem;
+}

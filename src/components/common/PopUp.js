@@ -5,13 +5,14 @@ import closeIcon from "../../img/close.png";
 function PopUp({ children }) {
     function closePopUp() {
         const target = document.getElementById("popUp");
+        //target.style.display="none";
         if (!target.classList.contains("invisible")) {
             target.classList.add("invisible");
         }
     }
 
     return (
-        <div id="popUp" className="responsiveWidth">
+        <div id="popUp" className="responsiveWidth invisible">
             <input type="image" src={closeIcon} id="closeIcon" onClick={()=>closePopUp()} />
             {children}
         </div>
