@@ -1,13 +1,15 @@
 import { Pages } from "../Pages";
 import menuIcon from "../../img/menuIcon.png";
 import "./commonStyle.css";
+//import "../../../src/index.css"; //書かなくても親が持ってたら大丈夫？
 
 function MenuBar() {
 
     function changeScene(path) {
         const target = document.getElementById("changeSceneObject");
         if (target.className == null || target.className == "") {
-            target.className = "changeSceneMotion";
+            target.classList.add("changeSceneMotion");
+            target.classList.add("responsiveWidth");
             setTimeout(() => {
                 //alert(path);
                 window.location.assign(path);
@@ -17,7 +19,7 @@ function MenuBar() {
 
     return (
         <>
-            <div id="menuBar">
+            <div id="menuBar" className="responsiveWidth">
                 <div className="menuButtons" id="accessButton">
                     <input type="image" src={menuIcon} className="menuImages" onClick={()=>changeScene(Pages.access.path)} />
                     <p className="menuTexts">アクセス</p>

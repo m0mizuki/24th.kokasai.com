@@ -14,18 +14,6 @@
     height: 10%;
 }
 
-@media screen and (min-width: 600px) {
-    #menuBar {
-        width: 600px;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    #menuBar {
-        width: 100%;
-    }
-}
-
 .menuButtons{
     position: absolute;
     bottom: 2rem;
@@ -67,11 +55,11 @@
 .changeSceneMotion{
     background-color: aquamarine;
     opacity: 90%;
-    position: absolute;
-    width: 100%;
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
     height: 100%;
     top: 100%;
-    left: 0%;
     z-index: 10000;
 
     animation-duration: 1s;
@@ -83,4 +71,26 @@
     100%{
         top: 0%;
     }
+}
+
+#popUp{
+    position: fixed;
+    height: 100%;
+    top: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(128, 128, 128, 0.8);
+    z-index: 100000;
+}
+
+#closeIcon{
+    position: absolute;
+    width: 64px;
+    top: 10%;
+    right: 10%;
+    background-color: darkseagreen;
+}
+
+.invisible{
+    display: none;
 }

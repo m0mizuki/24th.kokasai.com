@@ -1,6 +1,7 @@
 import { Pages } from "./components/Pages";
 import Footer from "./components/common/Footer";
 import MenuBar from "./components/common/MenuBar";
+import PopUp from "./components/common/PopUp";
 
 import Access from "./components/access/Access";
 import Event from "./components/event/Event";
@@ -15,7 +16,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 function App() {
 
   return (
-    <div id="webBackGround">
+    <div id="webBackGround" className="responsiveWidth">
       <BrowserRouter>
         <Switch>
           <Route exact path={Pages.access.path}><Access /></Route>
