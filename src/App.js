@@ -1,6 +1,7 @@
 import { Pages } from "./components/Pages";
 import Footer from "./components/common/Footer";
 import MenuBar from "./components/common/MenuBar";
+import FloatNotice from "./components/common/FloatNotice";
 
 import Access from "./components/access/Access";
 import Event from "./components/event/Event";
@@ -26,6 +27,7 @@ function App() {
         </Routes>
       </BrowserRouter>
 
+      <FloatNotice>第一体育館にて<br />「青春がしたい平川」<br />公演中！</FloatNotice>
       <Footer />
       <MenuBar />
     </div>

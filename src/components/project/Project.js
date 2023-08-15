@@ -5,14 +5,19 @@ import "../../css/pageStyle.css";
 function Project() {
   function getApi(){
     //var voteData=fetch("https://forms.googleapis.com/v1/forms/XYP-cpVeEkWK4KezivJfyHxakDBs24lNpXOoUtJPL1RUMUpCN0lWTUZaWUg1OEgxRlc4NkNJTEtDRi4u/responses").json;
-    
+    //https://forms.googleapis.com/v1/forms/XYP-cpVeEkWK4KezivJfyHxakDBs24lNpXOoUtJPL1RUMUpCN0lWTUZaWUg1OEgxRlc4NkNJTEtDRi4u/responses
     const request = new XMLHttpRequest();
-    request.open("GET", "https://forms.googleapis.com/v1/forms/XYP-cpVeEkWK4KezivJfyHxakDBs24lNpXOoUtJPL1RUMUpCN0lWTUZaWUg1OEgxRlc4NkNJTEtDRi4u/responses",true);
+    request.open("GET", "https://dog.ceo/api/breeds/image/random",true);
     
     request.send();
 
     request.addEventListener("load",function(){
-      alert(this.responseText);
+      console.log(this.responseText);
+
+      const apiData=JSON.parse(this.responseText);
+      let img = document.getElementById("dogImage");
+      img.src=apiData.message;
+
     });
   }
 
@@ -20,6 +25,9 @@ function Project() {
     <>
       <h1>{Pages.project.displayName}</h1>
       <img src={backGround} className="backGroundImage" />
+
+      <img src="" id="dogImage" />
+
       <div className="contents">
         <button onClick={getApi}>formsのapiを取得</button>
         <p>あいうえお</p><br />

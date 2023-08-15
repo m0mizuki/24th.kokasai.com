@@ -91,6 +91,34 @@
     background-color: darkseagreen;
 }
 
+.floatNotice{
+    position: absolute;
+    width: 40%;
+    height: 20vh;
+    background-color: yellowgreen;
+    border-radius: 10px;
+
+    top: 50vh;
+    left: -40%;
+    opacity: 100%;
+
+    animation-name: floatNoticeMotion;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes floatNoticeMotion{
+    100%{
+        left: 0%;
+    }
+}
+
+
+.floatNoticeText{
+
+}
+
+
 .invisible{
     display: none;
 }
