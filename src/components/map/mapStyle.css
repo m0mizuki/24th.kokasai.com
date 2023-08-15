@@ -1,12 +1,12 @@
-#googleMap{
-    position: absolute;
-    top: 20%;
-    left: 5%;
+#mapCanvas{
+    position: relative;
     width: 90%;
-    height: 60%;
+    height: 40vh;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
 }
 
-#openMapButton{
-    background-color: cadetblue;
-    width: 10rem;
+.campusMap_1{
+    position: absolute;
 }
