@@ -8,6 +8,7 @@ import Event from "./components/event/Event";
 import Home from "./components/home/Home";
 import Map from "./components/map/Map";
 import Project from "./components/project/Project";
+import Credit from "./components/credit/Credit";
 
 import './index.css';
 
@@ -24,6 +25,7 @@ function App() {
           <Route exact path={Pages.home.path} element={<Home />} />
           <Route exact path={Pages.map.path} element={<Map />} />
           <Route exact path={Pages.project.path} element={<Project />} />
+          <Route exact path={Pages.credit.path} element={<Credit />} />
         </Routes>
       </BrowserRouter>
 

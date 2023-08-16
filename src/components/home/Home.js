@@ -10,7 +10,10 @@ function Home() {
   return (
     <>
       <img src={poster} className="backGroundImage responsiveWidth" />
-      <div id="posterArea"></div>
+      <div id="posterArea">
+        <p className="posterTitle">工華祭</p>
+        <p className="posterCatchphrase">～キャッチフレーズ～</p>
+      </div>
 
       <div className="contents">
         <h2>詳細情報</h2>

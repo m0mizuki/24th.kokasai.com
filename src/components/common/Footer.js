@@ -12,7 +12,7 @@ function Footer() {
             <p><a href={Pages.map.path}>{Pages.map.displayName}</a></p>
             <p><a href={Pages.project.path}>{Pages.project.displayName}</a></p>
             <br />
-            <p>クレジット</p>
+            <p><a href={Pages.credit.path}>{Pages.credit.displayName}</a></p>
         </div>
     )
 }
