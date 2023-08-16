@@ -28,7 +28,7 @@ function Map() {
         <img className="campusMap_1" src={campusMap_1} />
       </div>
 
-      <img src={backGround} className="backGroundImage" />
+      <img src={backGround} className="backGroundImage responsiveWidth" />
       <div className="contents">
         <br />
         <p>あいうえお</p><br />

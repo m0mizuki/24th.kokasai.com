@@ -7,7 +7,7 @@ import poster from "../../img/backGround/poster.jpg";
 function Home() {
   return (
     <>
-      <img src={poster} className="backGroundImage" />
+      <img src={poster} className="backGroundImage responsiveWidth" />
       <div id="posterArea"></div>
       <div className="contents">
         <h4>開催日時</h4>

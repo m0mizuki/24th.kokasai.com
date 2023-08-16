@@ -6,7 +6,7 @@ function Event() {
   return (
     <>
       <h1>{Pages.event.displayName}</h1>
-      <img src={backGround} className="backGroundImage" />
+      <img src={backGround} className="backGroundImage responsiveWidth" />
       <div className="contents">
         <p>あいうえお</p><br />
         <p>かきくけこ</p><br />

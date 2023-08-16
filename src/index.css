@@ -3,24 +3,26 @@
   top: 0%;
   margin-left: auto;
   margin-right: auto;
-  /*background-color: pink;*/
+  background-color: pink;
   height: 100%;
   overflow: hidden;
 }
 
-@media screen and (min-width: 600px) {
+/*min-width: 600px
+画面比率のほうが良いと判断*/
+@media screen and (min-aspect-ratio:1/1.414) {
   .responsiveWidth {
-    width: 600px;
+    width: calc(100vh/1.414);
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-aspect-ratio:1/1.414) {
   .responsiveWidth {
     width: 100%;
   }
 }
 
-h1{
+h1 {
   background-color: white;
   text-align: center;
 }
