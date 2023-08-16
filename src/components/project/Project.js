@@ -24,7 +24,7 @@ function Project() {
   return (
     <>
       <h1>{Pages.project.displayName}</h1>
-      <img src={backGround} className="backGroundImage" />
+      <img src={backGround} className="backGroundImage responsiveWidthS" />
 
       <img src="" id="dogImage" />
 

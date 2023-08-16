@@ -24,4 +24,8 @@ export const Pages={
         path:"/kokasai_demo2_react/project",
         icon:"../../static/img/menuIcon.png",
     },
+    credit:{
+        displayName:"クレジット",
+        path:"/kokasai_demo2_react/credit",
+    },
 };
