@@ -2,6 +2,9 @@ import { Pages } from "../Pages";
 import backGround from "../../img/backGround/space.jpg"
 import "../../css/pageStyle.css";
 import "./projectStyle.css";
+import projectData from "../../json/projectData.json";
+
+import { useEffect } from "react";
 
 function Project() {
 
@@ -21,12 +24,28 @@ function Project() {
     });
   }*/
 
+  useEffect(() => {
+
+    /*ここからメインの処理*/
+    const parent = document.getElementById("projectSelectBar");
+
+    for (let i in projectData) {
+      if (i == 0) continue;
+
+      const element = document.createElement("button");
+      element.classList.add("projectSelectButton");
+      element.innerText = projectData[i][0];
+      parent.appendChild(element);
+    }
+
+  }, []);
+
   return (
     <>
       <img src={backGround} className="backGroundImage responsiveWidth" />
 
       <div className="moitonArea responsiveWidth">
-        <div className="projectSelectBar">
+        <div id="projectSelectBar" className="projectSelectBar">
           <button className="projectSelectButton">1年生</button>
           <button className="projectSelectButton">2年生</button>
           <button className="projectSelectButton">3年生</button>
@@ -41,6 +60,10 @@ function Project() {
           <button className="projectSelectButton">有志</button>
         </div>
       </div>
+
+      <p>{projectData[1][0]}</p>
+      <p>{projectData[1][1].groupName}</p>
+      <p>{projectData[2][4].groupName}</p>
 
       <div className="contents">
         <p>あいうえお</p><br />
