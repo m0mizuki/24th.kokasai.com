@@ -1,0 +1,39 @@
+.moitonArea {
+    background-color: rgba(128, 255, 0, 0.3);
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+}
+
+.projectSelectBar {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 5%;
+    /*display: flex;
+    justify-content: flex-start;*/
+    width: 90%;
+    height: 4rem; /*ボタンの高さよりスクロールバー分大きくとる*/
+    white-space: nowrap; /*折り返しなし*/
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    /*スクロールバーの非表示(https://web-camp.io/magazine/archives/89195)*/
+    /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
+    -ms-overflow-style: none;
+    /*Firefoxへの対応*/
+    scrollbar-width: none;
+}
+
+/*スクロールバーの非表示*/
+/*Google Chrome,Safariへの対応*/
+.projectSelectBar::-webkit-scrollbar {
+    display: none;
+}
+
+.projectSelectButton {
+    visibility: visible;
+    height: 3rem;
+    width: 6rem;
+}
