@@ -11,8 +11,6 @@
     margin-left: auto;
     margin-right: auto;
     top: 5%;
-    /*display: flex;
-    justify-content: flex-start;*/
     width: 90%;
     height: 4rem; /*ボタンの高さよりスクロールバー分大きくとる*/
     white-space: nowrap; /*折り返しなし*/
@@ -33,7 +31,46 @@
 }
 
 .projectSelectButton {
-    visibility: visible;
     height: 3rem;
     width: 6rem;
+}
+
+.planetArea{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 90%;
+    height: 60%;
+    top: 10%;
+    background-color: rgba(0, 0, 255, 0.5);
+
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    0%{
+        width: 90%;
+        height: 60%;
+        top: 10%;
+    }
+    100%{
+        width: 0%;
+        height: 0%;
+        top: 30%;
+    }
+}
+
+@keyframes fadeIn {
+    0%{
+        width: 0%;
+        height: 0%;
+        top: 30%;
+    }
+    100%{
+        width: 90%;
+        height: 60%;
+        top: 10%;
+    }
 }

@@ -25,8 +25,8 @@ function Project() {
   }*/
 
   useEffect(() => {
+    //2回実行されないよう一時的にindex.jsの<React.StrictMode>を外している
 
-    /*ここからメインの処理*/
     const parent = document.getElementById("projectSelectBar");
 
     for (let i in projectData) {
@@ -35,35 +35,30 @@ function Project() {
       const element = document.createElement("button");
       element.classList.add("projectSelectButton");
       element.innerText = projectData[i][0];
+      element.addEventListener("click",changeGalaxy);
       parent.appendChild(element);
     }
 
   }, []);
+
+  function changeGalaxy(){
+    const target = document.getElementById("planetArea");
+    target.style.animationTimingFunction="ease-in";
+    target.style.animationName="fadeOut";
+    setTimeout(() => {
+      target.style.animationTimingFunction="ease-out";
+      target.style.animationName="fadeIn";
+  }, 800);
+  }
 
   return (
     <>
       <img src={backGround} className="backGroundImage responsiveWidth" />
 
       <div className="moitonArea responsiveWidth">
-        <div id="projectSelectBar" className="projectSelectBar">
-          <button className="projectSelectButton">1年生</button>
-          <button className="projectSelectButton">2年生</button>
-          <button className="projectSelectButton">3年生</button>
-          <button className="projectSelectButton">4年生</button>
-          <button className="projectSelectButton">5年生</button>
-          <button className="projectSelectButton">運動部①</button>
-          <button className="projectSelectButton">運動部②</button>
-          <button className="projectSelectButton">文化部①</button>
-          <button className="projectSelectButton">文化部②</button>
-          <button className="projectSelectButton">愛好会①</button>
-          <button className="projectSelectButton">愛好会②</button>
-          <button className="projectSelectButton">有志</button>
-        </div>
+        <div id="projectSelectBar" className="projectSelectBar"></div>
+        <div id="planetArea" className="planetArea"></div>
       </div>
-
-      <p>{projectData[1][0]}</p>
-      <p>{projectData[1][1].groupName}</p>
-      <p>{projectData[2][4].groupName}</p>
 
       <div className="contents">
         <p>あいうえお</p><br />
