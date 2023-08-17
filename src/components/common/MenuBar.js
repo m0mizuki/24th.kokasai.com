@@ -58,7 +58,7 @@ function MenuBar() {
 
     return (
         <>
-            <div id="menuBar" className="responsiveWidth">
+            <div id="menuBar" className="responsiveWidth menuBar">
                 <div className="menuButtons" id="accessButton">
                     <input type="image" src={menuIcon} className="menuImages" onClick={() => changeScene(Pages.access.path)} />
                     <p className="menuTexts">アクセス</p>

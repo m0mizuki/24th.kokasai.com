@@ -5,8 +5,10 @@
     width: 100%;
 }
 
-#menuBar {
+.menuBar {
     position: fixed;
+    display: flex;
+    justify-content: space-around;
     bottom: 0%;
     margin-left: auto;
     margin-right: auto;
@@ -15,9 +17,8 @@
 }
 
 .menuButtons{
-    position: absolute;
-    bottom: -2rem;
-    /*height: 100%;*/
+    position: relative;
+    top: -50%;
     width: 20%;
     text-align: center;
 }
@@ -37,21 +38,6 @@
     z-index: 1000;
 }
 
-#accessButton{
-    left: 0%;
-}
-#eventButton{
-    left: 20%;
-}
-#homeButton{
-    left: 40%;
-}
-#mapButton{
-    left: 60%;
-}
-#projectButton{
-    left: 80%;
-}
 
 .changeSceneMotion{
     background-color: aquamarine;
