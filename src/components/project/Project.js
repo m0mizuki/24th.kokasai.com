@@ -6,7 +6,7 @@ import "../../css/pageStyle.css";
 import "./projectStyle.css";
 import projectData from "../../json/projectData.json";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { eventWrapper } from "@testing-library/user-event/dist/utils";
 
 function Project() {
@@ -137,7 +137,7 @@ function Project() {
 
   //置かれた指の位置を取得
   function SetPrePos(e){
-    //e.preventDefault();
+    e.preventDefault();
     prePos.x=e.touches[0].clientX;
     prePos.y=e.touches[0].clientY;
 
@@ -146,6 +146,7 @@ function Project() {
 
   //スクロールした際の星の移動
   function RotatePlanets(e) {
+    e.preventDefault();
     const pos={
       x:e.touches[0].clientX,
       y:e.touches[0].clientY
@@ -157,13 +158,26 @@ function Project() {
     SetPlanets(addRad);
   }
 
+
+  //パッシブでない関数を呼び出す
+  const circleRef = useRef(null);
+  useEffect(() => {
+    circleRef.current.addEventListener("touchstart",SetPrePos,{passive:false});
+    circleRef.current.addEventListener("touchmove",RotatePlanets,{passive:false});
+    return(() => {
+      circleRef.current.removeEventListener("touchstart",SetPrePos);
+      circleRef.current.removeEventListener("touchmove",RotatePlanets);
+    });
+  });
+
+
   return (
     <>
       <img src={backGround} className="backGroundImage responsiveWidth" />
 
       <div className="moitonArea responsiveWidth">
         <div id="projectSelectBar" className="projectSelectBar"></div>
-        <div id="planetArea" className="planetArea" onTouchStart={SetPrePos} onTouchMove={RotatePlanets}></div>
+        <div id="planetArea" className="planetArea" ref={circleRef}></div>
       </div>
 
       <div className="contents">
