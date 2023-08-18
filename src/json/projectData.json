@@ -49,21 +49,46 @@
             "groupName":"2-4",
             "projectName":"たこやき",
             "description":"出来立てのたこやきはいかが？"
+        }
+    ],
+    [
+        "3年生",
+        {
+            "groupName":"3-1",
+            "projectName":"たこやき",
+            "description":"出来立てのたこやきはいかが？"
         },
         {
-            "groupName":"2-5",
+            "groupName":"3-2",
+            "projectName":"たこやき",
+            "description":"出来立てのたこやきはいかが？"
+        },
+        {
+            "groupName":"3-3",
             "projectName":"たこやき",
             "description":"出来立てのたこやきはいかが？"
         }
     ],
     [
-        "3年生"
+        "4年生",
+        {
+            "groupName":"5-1",
+            "projectName":"たこやき",
+            "description":"出来立てのたこやきはいかが？"
+        },
+        {
+            "groupName":"5-2",
+            "projectName":"たこやき",
+            "description":"出来立てのたこやきはいかが？"
+        }
     ],
     [
-        "4年生"
-    ],
-    [
-        "5年生"
+        "5年生",
+        {
+            "groupName":"5-1",
+            "projectName":"たこやき",
+            "description":"出来立てのたこやきはいかが？"
+        }
     ],
     [
         "運動部①"

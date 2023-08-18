@@ -15,6 +15,7 @@ import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
+  //<FloatNotice>第一体育館にて<br />「青春がしたい平川」<br />公演中！</FloatNotice>
 
   return (
     <div id="webBackGround" className="responsiveWidth">
@@ -29,7 +30,6 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <FloatNotice>第一体育館にて<br />「青春がしたい平川」<br />公演中！</FloatNotice>
       <Footer />
       <MenuBar />
     </div>

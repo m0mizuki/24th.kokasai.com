@@ -11,8 +11,8 @@
     margin-left: auto;
     margin-right: auto;
     top: 5%;
-    width: 90%;
-    height: 4rem; /*ボタンの高さよりスクロールバー分大きくとる*/
+    width: 80%;
+    height: 5rem; /*ボタンの高さよりスクロールバー分大きくとる*/
     white-space: nowrap; /*折り返しなし*/
     overflow-x: scroll;
     overflow-y: hidden;
@@ -31,8 +31,8 @@
 }
 
 .projectSelectButton {
-    height: 3rem;
-    width: 6rem;
+    height: 4rem;
+    width: 5rem;
 }
 
 .planetArea{
@@ -73,4 +73,46 @@
         height: 60%;
         top: 10%;
     }
+}
+
+.planetBox{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    width: 30%;
+    height: 30%;
+    /*background-color: yellowgreen;*/
+}
+
+.planetImage{
+    position: relative;
+    width: 100%;
+    top: 5%;
+
+    animation-name: planetImageAnimation;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    /*filter: brightness(0.5);*/
+}
+
+@keyframes planetImageAnimation {
+    0%{
+        top: 5%;
+    }
+    100%{
+        top: -5%;
+    }
+}
+
+.planetText{
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: aliceblue;
+    width: 5rem;
+    top: -2rem;
 }

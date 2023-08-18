@@ -1,54 +1,160 @@
 import { Pages } from "../Pages";
 import backGround from "../../img/backGround/space.jpg"
+import planet_1 from "../../img/planet_1.png";
+import planet_2 from "../../img/astronaut.png";
 import "../../css/pageStyle.css";
 import "./projectStyle.css";
 import projectData from "../../json/projectData.json";
 
 import { useEffect } from "react";
+import { eventWrapper } from "@testing-library/user-event/dist/utils";
 
 function Project() {
 
-  /*function getApi(){
-    const request = new XMLHttpRequest();
-    request.open("GET", "https://dog.ceo/api/breeds/image/random",true);
-    
-    request.send();
 
-    request.addEventListener("load",function(){
-      console.log(this.responseText);
-
-      const apiData=JSON.parse(this.responseText);
-      let img = document.getElementById("dogImage");
-      img.src=apiData.message;
-
-    });
-  }*/
-
+  //1度だけ実行
   useEffect(() => {
     //2回実行されないよう一時的にindex.jsの<React.StrictMode>を外している
 
-    const parent = document.getElementById("projectSelectBar");
-
+    let parent = document.getElementById("projectSelectBar");
     for (let i in projectData) {
       if (i == 0) continue;
 
-      const element = document.createElement("button");
+      let element = document.createElement("button"); //divとかでもいい
       element.classList.add("projectSelectButton");
       element.innerText = projectData[i][0];
-      element.addEventListener("click",changeGalaxy);
+      element.addEventListener("click", () => changeGalaxy(i));
       parent.appendChild(element);
+    }
+
+    CreatePlanets(1); //初期設定:1年生の星を表示
+    //ラベルを表示
+    let planetText = document.getElementsByClassName("planetText");
+    for (let i = 0; i < planetText.length; i++) {
+      planetText[i].classList.remove("invisible");
     }
 
   }, []);
 
-  function changeGalaxy(){
-    const target = document.getElementById("planetArea");
-    target.style.animationTimingFunction="ease-in";
-    target.style.animationName="fadeOut";
+  //最終的にはcreateElementではなくひとまとまりの要素を追加できるようにしたい
+
+  function changeGalaxy(galaxyNum) {
+    const planetArea = document.getElementById("planetArea");
+
+    //ラベルを非表示
+    let planetText = document.getElementsByClassName("planetText"); //競合注意
+    for (let i = 0; i < planetText.length; i++) {
+      planetText[i].classList.add("invisible");
+    }
+
+    planetArea.style.animationTimingFunction = "ease-in";
+    planetArea.style.animationName = "fadeOut";
     setTimeout(() => {
-      target.style.animationTimingFunction="ease-out";
-      target.style.animationName="fadeIn";
-  }, 800);
+      CreatePlanets(galaxyNum);
+
+      planetArea.style.animationTimingFunction = "ease-out";
+      planetArea.style.animationName = "fadeIn";
+
+    }, 800);
+
+    setTimeout(() => {
+      //ラベルを表示
+      planetText = document.getElementsByClassName("planetText");
+      for (let i = 0; i < planetText.length; i++) {
+        planetText[i].classList.remove("invisible");
+      }
+    }, 800+600);
+
+  }
+
+  function CreatePlanets(galaxyNum){
+    const planetArea = document.getElementById("planetArea");
+
+    //既存の星を削除
+    const removeTarget = document.getElementsByClassName("planetBox");
+    while (removeTarget.length > 0) {
+      removeTarget[0].remove();
+    }
+
+    //新たな星を作成
+    for (let i = 1; i < projectData[galaxyNum].length; i++) {
+      //planetImage,planetTextはplanetBoxの子要素
+      //planetBoxがplanetAreaの子要素になる
+      let planetBox = document.createElement("div");
+      planetBox.classList.add("planetBox");
+
+      let planetImage = document.createElement("img");
+      planetImage.classList.add("planetImage");
+      planetImage.style.animationDelay=parseInt(4000*i/(projectData[galaxyNum].length-1))+"ms";
+      planetImage.src = planet_1;
+
+      let planetText = document.createElement("p");
+      planetText.classList.add("planetText");
+      planetText.innerText = projectData[galaxyNum][i].groupName;
+      //ラベルを非表示
+      planetText.classList.add("invisible");
+
+      planetBox.appendChild(planetImage);
+      planetBox.appendChild(planetText);
+
+      planetArea.appendChild(planetBox);
+    }
+
+    //位置を設定
+    addRad=0;
+    SetPlanets(addRad);
+  }
+
+
+  //星の位置を設定
+  function SetPlanets(addRad) {
+    let planetBox = document.getElementsByClassName("planetBox");
+
+    if (planetBox.length == 0) {
+      //console.log("ない");
+    }
+    else {
+      for (let i = 0; i < planetBox.length; i++) {
+        const rad = i * 2 * Math.PI / planetBox.length + addRad;
+
+        const boxWidth = 30 + 10 * Math.cos(rad);
+
+        planetBox[i].style.left = 50-boxWidth/2 + 35 * Math.sin(rad) + "%";
+        planetBox[i].style.top = 45-boxWidth/2 + 15 * Math.cos(rad) + "%";
+
+        planetBox[i].style.zIndex = 1000 + parseInt(100 * Math.cos(rad));
+
+        planetBox[i].style.width = boxWidth + "%";
+        planetBox[i].style.height = boxWidth + "%";
+      }
+    }
+
+  }
+
+
+  var prePos = {x:0,y:0};
+  var addRad = 0; //角度(ラジアン)
+
+  //置かれた指の位置を取得
+  function SetPrePos(e){
+    //e.preventDefault();
+    prePos.x=e.touches[0].clientX;
+    prePos.y=e.touches[0].clientY;
+
+    SetPlanets(addRad);
+  }
+
+  //スクロールした際の星の移動
+  function RotatePlanets(e) {
+    const pos={
+      x:e.touches[0].clientX,
+      y:e.touches[0].clientY
+    };
+    
+    addRad+=(pos.x-prePos.x)/50;
+    prePos.x=pos.x;
+    prePos.y=pos.y;
+    SetPlanets(addRad);
   }
 
   return (
@@ -57,7 +163,7 @@ function Project() {
 
       <div className="moitonArea responsiveWidth">
         <div id="projectSelectBar" className="projectSelectBar"></div>
-        <div id="planetArea" className="planetArea"></div>
+        <div id="planetArea" className="planetArea" onTouchStart={SetPrePos} onTouchMove={RotatePlanets}></div>
       </div>
 
       <div className="contents">
