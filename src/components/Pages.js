@@ -28,4 +28,8 @@ export const Pages={
         displayName:"クレジット",
         path:"/kokasai_demo2_react/credit",
     },
+    projectDetail:{
+        displayName:"企画詳細",
+        path:"/kokasai_demo2_react/project/projectDetail",
+    }
 };

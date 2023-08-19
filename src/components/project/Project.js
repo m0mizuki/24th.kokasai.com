@@ -7,10 +7,8 @@ import "./projectStyle.css";
 import projectData from "../../json/projectData.json";
 
 import { useEffect, useRef } from "react";
-import { eventWrapper } from "@testing-library/user-event/dist/utils";
 
 function Project() {
-
 
   //1度だけ実行
   useEffect(() => {
@@ -77,16 +75,20 @@ function Project() {
     }
 
     //新たな星を作成
+    
     for (let i = 1; i < projectData[galaxyNum].length; i++) {
       //planetImage,planetTextはplanetBoxの子要素
       //planetBoxがplanetAreaの子要素になる
       let planetBox = document.createElement("div");
       planetBox.classList.add("planetBox");
 
-      let planetImage = document.createElement("img");
+      let planetImage = document.createElement("input");
+      planetImage.type="image";
+      planetImage.src=planet_1;
       planetImage.classList.add("planetImage");
+      planetImage.onclick=ToProjectDetail;
       planetImage.style.animationDelay=parseInt(4000*i/(projectData[galaxyNum].length-1))+"ms";
-      planetImage.src = planet_1;
+      planetImage.id=galaxyNum + "-" + i;
 
       let planetText = document.createElement("p");
       planetText.classList.add("planetText");
@@ -99,6 +101,7 @@ function Project() {
 
       planetArea.appendChild(planetBox);
     }
+    
 
     //位置を設定
     addRad=0;
@@ -137,7 +140,7 @@ function Project() {
 
   //置かれた指の位置を取得
   function SetPrePos(e){
-    e.preventDefault();
+    //e.preventDefault();
     prePos.x=e.touches[0].clientX;
     prePos.y=e.touches[0].clientY;
 
@@ -152,7 +155,7 @@ function Project() {
       y:e.touches[0].clientY
     };
     
-    addRad+=(pos.x-prePos.x)/50;
+    addRad+=(pos.x-prePos.x)/100;
     prePos.x=pos.x;
     prePos.y=pos.y;
     SetPlanets(addRad);
@@ -170,6 +173,12 @@ function Project() {
     });
   });
 
+
+  //企画詳細ページに移動
+  function ToProjectDetail(){
+    const ab = this.id.split("-");
+    window.location.assign(Pages.projectDetail.path + "?a="+ab[0]+"&b="+ab[1]);
+  }
 
   return (
     <>

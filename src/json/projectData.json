@@ -72,12 +72,12 @@
     [
         "4年生",
         {
-            "groupName":"5-1",
+            "groupName":"4-1",
             "projectName":"たこやき",
             "description":"出来立てのたこやきはいかが？"
         },
         {
-            "groupName":"5-2",
+            "groupName":"4-2",
             "projectName":"たこやき",
             "description":"出来立てのたこやきはいかが？"
         }
@@ -91,18 +91,68 @@
         }
     ],
     [
-        "運動部①"
+        "運動部①",
+        {
+            "groupName":"運動部①-1",
+            "projectName":"たこやき",
+            "description":"出来立てのたこやきはいかが？"
+        },
+        {
+            "groupName":"運動部①-1",
+            "projectName":"たこやき",
+            "description":"出来立てのたこやきはいかが？"
+        }
     ],
     [
-        "運動部②"
+        "運動部②",
+        {
+            "groupName":"運動部②-1",
+            "projectName":"たこやき",
+            "description":"出来立てのたこやきはいかが？"
+        },
+        {
+            "groupName":"運動部②-1",
+            "projectName":"たこやき",
+            "description":"出来立てのたこやきはいかが？"
+        }
     ],
     [
-        "文化部"
+        "文化部",
+        {
+            "groupName":"文化部-1",
+            "projectName":"たこやき",
+            "description":"出来立てのたこやきはいかが？"
+        },
+        {
+            "groupName":"文化部-1",
+            "projectName":"たこやき",
+            "description":"出来立てのたこやきはいかが？"
+        }
     ],
     [
-        "愛好会"
+        "愛好会",
+        {
+            "groupName":"愛好会-1",
+            "projectName":"たこやき",
+            "description":"出来立てのたこやきはいかが？"
+        },
+        {
+            "groupName":"愛好会-1",
+            "projectName":"たこやき",
+            "description":"出来立てのたこやきはいかが？"
+        }
     ],
     [
-        "有志"
+        "有志",
+        {
+            "groupName":"有志-1",
+            "projectName":"たこやき",
+            "description":"出来立てのたこやきはいかが？"
+        },
+        {
+            "groupName":"有志-1",
+            "projectName":"たこやき",
+            "description":"出来立てのたこやきはいかが？"
+        }
     ]
 ]
