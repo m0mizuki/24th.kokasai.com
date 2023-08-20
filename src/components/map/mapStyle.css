@@ -8,23 +8,31 @@
     background-color: rgba(184, 135, 11, 0.5);
 }
 
-.campusMap_1{
+.mapMovingBox{
     position: absolute;
-    /*campusMap_1のサイズ:390*620*/
-    width: 390px;
+    width: 500px;
+    /*高さは子要素に応じて変わる*/
+    background-color: rgba(0, 0, 255, 0.5);
+}
+
+.campusMap_1{
+    position: relative;
+    width: 100%;
 }
 
 .mapObjectBox{
     position: absolute;
     aspect-ratio: 1/1;
-    width: 10%;
-    background-color: rgba(0, 255, 255, 0.5);
+    width: 5rem;
 }
 
 .mapObjectImage{
-    display: none;
+    width: 100%;
+    background-color: rgba(0, 255, 255, 0.3);
 }
 
 .mapObjectText{
-    display: none;
+    position: relative;
+    text-align: center;
+    top: -1rem;
 }
