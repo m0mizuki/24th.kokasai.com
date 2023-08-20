@@ -5,8 +5,26 @@
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
+    background-color: rgba(184, 135, 11, 0.5);
 }
 
 .campusMap_1{
     position: absolute;
+    /*campusMap_1のサイズ:390*620*/
+    width: 390px;
+}
+
+.mapObjectBox{
+    position: absolute;
+    aspect-ratio: 1/1;
+    width: 10%;
+    background-color: rgba(0, 255, 255, 0.5);
+}
+
+.mapObjectImage{
+    display: none;
+}
+
+.mapObjectText{
+    display: none;
 }
