@@ -116,3 +116,7 @@
     width: 5rem;
     top: -2rem;
 }
+
+.niceButton{
+    rotate: 0deg;
+}
