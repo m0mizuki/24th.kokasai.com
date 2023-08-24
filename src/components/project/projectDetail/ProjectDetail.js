@@ -141,10 +141,12 @@ function ProjectDetail() {
                 isChecked = true;
               }
             });
+
+            let niceButton = document.getElementById("niceButton");
             if (isChecked) {
-              let niceButton = document.getElementById("niceButton");
               niceButton.checked = true;
             }
+            niceButton.classList.remove("invisible");
           }
         });
       }
@@ -178,6 +180,7 @@ function ProjectDetail() {
 
 
   //todo:チェックボックスの状態が確定するまで表示されないようにする
+  //匿名だと,タブ切り替えるとID変わって何回でも投票できてしまう
 
   return (
     <>
@@ -190,7 +193,7 @@ function ProjectDetail() {
         <p id="description"></p>
         
         <p>↓投票</p>
-        <p><input id="niceButton" className="niceButton" type="checkbox" onClick={ClickNice} /></p>
+        <p><input id="niceButton" className="niceButton invisible" type="checkbox" onClick={ClickNice} /></p>
       </div>
     </>
   );

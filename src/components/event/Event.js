@@ -2,9 +2,12 @@ import { Pages } from "../Pages";
 import backGround from "../../img/backGround/plant.jpg"
 import "../../css/pageStyle.css";
 
+import Plant from "../common/transitionalMotion/Plant";
+
 function Event() {
   return (
     <>
+      <Plant />
       <h1>{Pages.event.displayName}</h1>
       <img src={backGround} className="backGroundImage responsiveWidth" />
       <div className="contents">
