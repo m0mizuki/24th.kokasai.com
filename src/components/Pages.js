@@ -5,7 +5,7 @@ export const Pages={
         icon:"../../static/img/menuIcon.png",
     },
     event:{
-        displayName:"体育館企画",
+        displayName:"ステージ企画",
         path:"/kokasai_demo2_react/event",
         icon:"../../static/img/menuIcon.png",
     },

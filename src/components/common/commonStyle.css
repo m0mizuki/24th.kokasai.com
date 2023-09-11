@@ -25,11 +25,11 @@
 
 .menuTexts{
     position: relative;
-    bottom: 3rem;
+    bottom: 2rem;
     z-index: 1001;
 
     text-shadow: 0px 1px 0 white, 1px 1px 0 white, 1px 0px 0 white, 1px -1px 0 white, 0px -1px 0 white, -1px -1px 0 white, -1px 0px 0 white, -1px 1px 0 white;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .menuImages{
