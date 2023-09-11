@@ -10,6 +10,7 @@
 
 .contents {
     position: relative;
+    top: 1rem;
     width: 90%;
     height: max-content;
     margin-left: auto;

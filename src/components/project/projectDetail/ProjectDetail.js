@@ -188,12 +188,15 @@ function ProjectDetail() {
 
 
       <div id="contents" className="contents">
-        <h2 id="groupName"></h2>
-        <h2 id="projectName"></h2>
-        <p id="description"></p>
-        
-        <p>↓投票</p>
-        <p><input id="niceButton" className="niceButton invisible" type="checkbox" onClick={ClickNice} /></p>
+        <div className="contents_innerBlock">
+          <h2 id="groupName"></h2>
+          <h2 id="projectName"></h2>
+          <p id="description"></p>
+
+          <p>↓投票</p>
+          <p><input id="niceButton" className="niceButton invisible" type="checkbox" onClick={ClickNice} /></p>
+        </div>
+
       </div>
     </>
   );
