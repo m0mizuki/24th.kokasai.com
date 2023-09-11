@@ -1,5 +1,5 @@
 import { Pages } from "../Pages";
-import backGround from "../../img/backGround/space.jpg"
+import backGround from "../../img/backGround/space.png"
 import planet_1 from "../../img/planet_1.png";
 import planet_2 from "../../img/astronaut.png";
 import "../../css/pageStyle.css";

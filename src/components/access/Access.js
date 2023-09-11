@@ -1,5 +1,5 @@
 import { Pages } from "../Pages";
-import backGround from "../../img/backGround/sea.jpg"
+import backGround from "../../img/backGround/sea.png"
 import "../../css/pageStyle.css";
 import "./accessStyle.css"
 

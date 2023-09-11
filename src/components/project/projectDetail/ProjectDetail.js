@@ -1,5 +1,5 @@
 import { Pages } from "../../Pages";
-import backGround from "../../../img/backGround/space.jpg";
+import backGround from "../../../img/backGround/space.png";
 import "../../../css/pageStyle.css";
 import "../projectStyle.css";
 import projectData from "../../../json/projectData.json";
