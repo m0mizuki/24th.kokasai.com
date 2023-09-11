@@ -15,7 +15,7 @@ function Home() {
         <p className="posterCatchphrase">～キャッチフレーズ～</p>
       </div>
 
-      <div className="contents">
+      <div className="contents contents_whitesmoke">
         <h2>詳細情報</h2>
         <h3>開催日時</h3>
         <p>11月4日(土) 9:00～17:00<br />
