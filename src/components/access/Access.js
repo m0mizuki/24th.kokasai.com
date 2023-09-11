@@ -6,9 +6,9 @@ import PopUp from "../common/PopUp";
 import openGoogleMapImg from "../../img/openGoogleMap.png";
 
 function Access() {
-  function openGoogleMap(){
+  function openGoogleMap() {
     const target = document.getElementById("popUp"); //popUpはPopUp.jsの要素,このファイルに無いので分かりづらい
-    if(target.classList.contains("invisible")){
+    if (target.classList.contains("invisible")) {
       target.classList.remove("invisible");
     }
   }
@@ -18,17 +18,17 @@ function Access() {
 
   return (
     <>
-    <PopUp>
+      <PopUp>
         <iframe id="googleMap" src="https://www.google.com/maps/d/embed?mid=1yr0FgpbJGUNZzaKegu56loIZQUq-Klo&ehbc=2E312F"></iframe>
       </PopUp>
 
-      <h1>{Pages.access.displayName}</h1>
+      <p></p>
       <img src={backGround} className="backGroundImage responsiveWidth" />
       <div className="contents">
         <p>あいうえお</p><br />
         <p>かきくけこ</p><br />
-      <p><input type="image" id="openGoogleMapButton" src={openGoogleMapImg} onClick={()=>openGoogleMap()} /></p>
-      <br />
+        <p><input type="image" id="openGoogleMapButton" src={openGoogleMapImg} onClick={() => openGoogleMap()} /></p>
+        <br />
         <p>さしすせそ</p><br />
         <p>たちつてと</p><br />
         <p>なにぬねの</p><br />

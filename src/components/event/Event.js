@@ -8,7 +8,7 @@ function Event() {
   return (
     <>
       <Plant />
-      <h1>{Pages.event.displayName}</h1>
+      <p></p>
       <img src={backGround} className="backGroundImage responsiveWidth" />
       <div className="contents">
         <p>あいうえお</p><br />

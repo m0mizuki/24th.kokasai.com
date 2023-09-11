@@ -1,5 +1,5 @@
 import { Pages } from "../Pages";
-import menuIcon from "../../img/menuIcon.png";
+import menuIcon from "../../img/astronaut.png";
 import "./commonStyle.css";
 import "./transitionalMotion/transitionalMotionStyle.css";
 //import "../../../src/index.css"; //書かなくても親が持ってたら大丈夫？
