@@ -10,7 +10,7 @@ function Home() {
   return (
     <>
       <img src={poster} className="backGroundImage responsiveWidth" />
-      <div id="posterArea">
+      <div className="posterArea">
         <p className="posterTitle">工華祭</p>
         <p className="posterCatchphrase">～キャッチフレーズ～</p>
       </div>
@@ -31,65 +31,60 @@ function Home() {
           <p>酒類の持ち込みはご遠慮ください</p>
 
           <p className="heading2">役員あいさつ</p>
-          <details className="portraitDetails">
-            <summary className="portraitSummary">
-              <div className="portraitFrame">
-                <img className="portraitImage" src={portrait_sakana} />
-              </div>
-              <div className="portraitTitle">
-                <p>工華祭実行委員長 本島琉矢</p>
-                <h4>タイトル</h4>
-              </div>
-              <img className="portraitArrow" src={portraitArrow} />
-            </summary>
-            <p>こんにちはこんにちはこんにちはこんにちはこんにちはこんにちは
-              こんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</p>
-          </details>
 
-          <details className="portraitDetails">
-            <summary className="portraitSummary">
+          <div className="portraitArea">
+            <div className="portraitFrameTitleArea">
               <div className="portraitFrame">
                 <img className="portraitImage" src={portrait_sakana} />
               </div>
               <div className="portraitTitle">
-                <p>工華祭実行委員長 本島琉矢</p>
-                <h4>タイトル</h4>
+                <p>工華祭実行委員長</p>
+                <p>日高 美希</p>
+                <p>第23回工華祭開催！</p>
               </div>
-              <img className="portraitArrow" src={portraitArrow} />
-            </summary>
-            <p>こんにちはこんにちはこんにちはこんにちはこんにちはこんにちは
-              こんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</p>
-          </details>
+            </div>
+            <div className="portraitTextArea">
+              <div className="portraitText">
+                <p>まずは工華祭が無事開催できることに実行委員長としてほっとしています。今年はコロナ禍ということもあり思うように活動時間が確保できない中でしたが、開催に向けて精一杯準備を進めてまいりました。特にポスターやパンフレットなどのデザイン関係は、短時間で制作したとは思えない高クオリティなものに仕上げてもらいました。 他にも飲食企画・学科の特色を生かした体験企画・まるでライブのようなステージ企画など、ぜひ五感全てで工華祭を楽しんでください。 最後に、開催にあたり多大なるご支援ご協力をいただいた関係者の皆様に感謝申し上げます。</p>
+              </div>
+            </div>
+          </div>
 
-          <details className="portraitDetails">
-            <summary className="portraitSummary">
+          <div className="portraitArea">
+            <div className="portraitFrameTitleArea">
               <div className="portraitFrame">
                 <img className="portraitImage" src={portrait_sakana} />
               </div>
               <div className="portraitTitle">
-                <p>工華祭実行委員長 本島琉矢</p>
-                <h4>タイトル</h4>
+                <p>工華祭実行委員長</p>
+                <p>日高 美希</p>
+                <p>第23回工華祭開催！</p>
               </div>
-              <img className="portraitArrow" src={portraitArrow} />
-            </summary>
-            <p>こんにちはこんにちはこんにちはこんにちはこんにちはこんにちは
-              こんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</p>
-          </details>
+            </div>
+            <div className="portraitTextArea">
+              <div className="portraitText">
+                <p>まずは工華祭が無事開催できることに実行委員長としてほっとしています。今年はコロナ禍ということもあり思うように活動時間が確保できない中でしたが、開催に向けて精一杯準備を進めてまいりました。特にポスターやパンフレットなどのデザイン関係は、短時間で制作したとは思えない高クオリティなものに仕上げてもらいました。 他にも飲食企画・学科の特色を生かした体験企画・まるでライブのようなステージ企画など、ぜひ五感全てで工華祭を楽しんでください。 最後に、開催にあたり多大なるご支援ご協力をいただいた関係者の皆様に感謝申し上げます。</p>
+              </div>
+            </div>
+          </div>
 
-          <details className="portraitDetails">
-            <summary className="portraitSummary">
+          <div className="portraitArea">
+            <div className="portraitFrameTitleArea">
               <div className="portraitFrame">
                 <img className="portraitImage" src={portrait_sakana} />
               </div>
               <div className="portraitTitle">
-                <p>工華祭実行委員長 本島琉矢</p>
-                <h4>タイトル</h4>
+                <p>工華祭実行委員長</p>
+                <p>日高 美希</p>
+                <p>第23回工華祭開催！</p>
               </div>
-              <img className="portraitArrow" src={portraitArrow} />
-            </summary>
-            <p>こんにちはこんにちはこんにちはこんにちはこんにちはこんにちは
-              こんにちはこんにちはこんにちはこんにちはこんにちはこんにちは</p>
-          </details>
+            </div>
+            <div className="portraitTextArea">
+              <div className="portraitText">
+                <p>まずは工華祭が無事開催できることに実行委員長としてほっとしています。今年はコロナ禍ということもあり思うように活動時間が確保できない中でしたが、開催に向けて精一杯準備を進めてまいりました。特にポスターやパンフレットなどのデザイン関係は、短時間で制作したとは思えない高クオリティなものに仕上げてもらいました。 他にも飲食企画・学科の特色を生かした体験企画・まるでライブのようなステージ企画など、ぜひ五感全てで工華祭を楽しんでください。 最後に、開催にあたり多大なるご支援ご協力をいただいた関係者の皆様に感謝申し上げます。</p>
+              </div>
+            </div>
+          </div>
 
           <br />
         </div>
