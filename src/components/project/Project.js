@@ -61,11 +61,11 @@ function Project() {
       for (let i = 0; i < planetText.length; i++) {
         planetText[i].classList.remove("invisible");
       }
-    }, 800+600);
+    }, 800 + 600);
 
   }
 
-  function CreatePlanets(galaxyNum){
+  function CreatePlanets(galaxyNum) {
     const planetArea = document.getElementById("planetArea");
 
     //既存の星を削除
@@ -75,7 +75,7 @@ function Project() {
     }
 
     //新たな星を作成
-    
+
     for (let i = 1; i < projectData[galaxyNum].length; i++) {
       //planetImage,planetTextはplanetBoxの子要素
       //planetBoxがplanetAreaの子要素になる
@@ -83,12 +83,12 @@ function Project() {
       planetBox.classList.add("planetBox");
 
       let planetImage = document.createElement("input");
-      planetImage.type="image";
-      planetImage.src=planet_1;
+      planetImage.type = "image";
+      planetImage.src = planet_1;
       planetImage.classList.add("planetImage");
-      planetImage.onclick=ToProjectDetail;
-      planetImage.style.animationDelay=parseInt(4000*i/(projectData[galaxyNum].length-1))+"ms";
-      planetImage.id=galaxyNum + "-" + i;
+      planetImage.onclick = ToProjectDetail;
+      planetImage.style.animationDelay = parseInt(4000 * i / (projectData[galaxyNum].length - 1)) + "ms";
+      planetImage.id = galaxyNum + "-" + i;
 
       let planetText = document.createElement("p");
       planetText.classList.add("planetText");
@@ -101,10 +101,10 @@ function Project() {
 
       planetArea.appendChild(planetBox);
     }
-    
+
 
     //位置を設定
-    addRad=0;
+    addRad = 0;
     SetPlanets(addRad);
   }
 
@@ -122,8 +122,8 @@ function Project() {
 
         const boxWidth = 30 + 10 * Math.cos(rad);
 
-        planetBox[i].style.left = 50-boxWidth/2 + 35 * Math.sin(rad) + "%";
-        planetBox[i].style.top = 45-boxWidth/2 + 15 * Math.cos(rad) + "%";
+        planetBox[i].style.left = 50 - boxWidth / 2 + 35 * Math.sin(rad) + "%";
+        planetBox[i].style.top = 45 - boxWidth / 2 + 15 * Math.cos(rad) + "%";
 
         planetBox[i].style.zIndex = 1000 + parseInt(100 * Math.cos(rad));
 
@@ -135,14 +135,14 @@ function Project() {
   }
 
 
-  var prePos = {x:0,y:0};
+  var prePos = { x: 0, y: 0 };
   var addRad = 0; //角度(ラジアン)
 
   //置かれた指の位置を取得
-  function SetPrePos(e){
+  function SetPrePos(e) {
     //e.preventDefault();
-    prePos.x=e.touches[0].clientX;
-    prePos.y=e.touches[0].clientY;
+    prePos.x = e.touches[0].clientX;
+    prePos.y = e.touches[0].clientY;
 
     SetPlanets(addRad);
   }
@@ -150,14 +150,14 @@ function Project() {
   //スクロールした際の星の移動
   function RotatePlanets(e) {
     e.preventDefault();
-    const pos={
-      x:e.touches[0].clientX,
-      y:e.touches[0].clientY
+    const pos = {
+      x: e.touches[0].clientX,
+      y: e.touches[0].clientY
     };
-    
-    addRad+=(pos.x-prePos.x)/100;
-    prePos.x=pos.x;
-    prePos.y=pos.y;
+
+    addRad += (pos.x - prePos.x) / 100;
+    prePos.x = pos.x;
+    prePos.y = pos.y;
     SetPlanets(addRad);
   }
 
@@ -165,19 +165,19 @@ function Project() {
   //パッシブでない関数を呼び出す
   const circleRef = useRef(null);
   useEffect(() => {
-    circleRef.current.addEventListener("touchstart",SetPrePos,{passive:false});
-    circleRef.current.addEventListener("touchmove",RotatePlanets,{passive:false});
-    return(() => {
-      circleRef.current.removeEventListener("touchstart",SetPrePos);
-      circleRef.current.removeEventListener("touchmove",RotatePlanets);
+    circleRef.current.addEventListener("touchstart", SetPrePos, { passive: false });
+    circleRef.current.addEventListener("touchmove", RotatePlanets, { passive: false });
+    return (() => {
+      circleRef.current.removeEventListener("touchstart", SetPrePos);
+      circleRef.current.removeEventListener("touchmove", RotatePlanets);
     });
   });
 
 
   //企画詳細ページに移動
-  function ToProjectDetail(){
+  function ToProjectDetail() {
     const ab = this.id.split("-");
-    window.location.assign(Pages.projectDetail.path + "?a="+ab[0]+"&b="+ab[1]);
+    window.location.assign(Pages.projectDetail.path + "?a=" + ab[0] + "&b=" + ab[1]);
   }
 
   return (
@@ -191,18 +191,18 @@ function Project() {
 
       <div className="contents">
         <div className="contents_innerBlock">
-        <p>あいうえお</p><br />
-        <p>かきくけこ</p><br />
-        <p>さしすせそ</p><br />
-        <p>たちつてと</p><br />
-        <p>なにぬねの</p><br />
-        <p>はひふへほ</p><br />
-        <p>まみむめも</p><br />
-        <p>やゆよ</p><br />
-        <p>らりるれろ</p><br />
-        <p>わをん</p>
+          <p>あいうえお</p><br />
+          <p>かきくけこ</p><br />
+          <p>さしすせそ</p><br />
+          <p>たちつてと</p><br />
+          <p>なにぬねの</p><br />
+          <p>はひふへほ</p><br />
+          <p>まみむめも</p><br />
+          <p>やゆよ</p><br />
+          <p>らりるれろ</p><br />
+          <p>わをん</p>
         </div>
-        
+
       </div>
     </>
   );

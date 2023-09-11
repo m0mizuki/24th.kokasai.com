@@ -1,12 +1,10 @@
-#googleMap{
-    position: absolute;
-    top: 20%;
-    left: 5%;
-    width: 90%;
-    height: 60%;
+.googleMap{
+    position: relative;
+    width: 100%;
+    height: 50vh;
 }
 
-#openGoogleMapButton{
-    background-color: cadetblue;
-    width: 10rem;
+.ul_access{
+    position: relative;
+    left: -1rem;
 }
