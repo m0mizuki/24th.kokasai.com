@@ -19,3 +19,29 @@
 .contents_whitesmoke{
     background-color: rgba(255, 255, 255, 0.5);
 }
+
+.contents_innerBlock{
+    position: relative;
+    width: 90%;
+    height: max-content;
+    margin-left: auto;
+    margin-right: auto;
+
+    /*background-color: rgba(127, 255, 212, 0.5);*/
+}
+
+.heading2{
+    text-align: center;
+    border-bottom: solid 2px black;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.heading3{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: underline;
+}

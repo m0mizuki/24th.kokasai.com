@@ -8,6 +8,7 @@
   overflow: hidden;
 }
 
+
 /*min-width: 600px
 画面比率のほうが良いと判断*/
 @media screen and (min-aspect-ratio:1/1.414) {
