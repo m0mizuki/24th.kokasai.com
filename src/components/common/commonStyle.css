@@ -24,10 +24,12 @@
 }
 
 .menuTexts{
-    background-color: beige;
     position: relative;
-    bottom: 2rem;
+    bottom: 3rem;
     z-index: 1001;
+
+    text-shadow: 0px 1px 0 white, 1px 1px 0 white, 1px 0px 0 white, 1px -1px 0 white, 0px -1px 0 white, -1px -1px 0 white, -1px 0px 0 white, -1px 1px 0 white;
+    font-size: 1.3rem;
 }
 
 .menuImages{

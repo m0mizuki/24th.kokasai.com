@@ -12,8 +12,10 @@
     margin-right: auto;
     top: 5%;
     width: 80%;
-    height: 5rem; /*ボタンの高さよりスクロールバー分大きくとる*/
-    white-space: nowrap; /*折り返しなし*/
+    height: 5rem;
+    /*ボタンの高さよりスクロールバー分大きくとる*/
+    white-space: nowrap;
+    /*折り返しなし*/
     overflow-x: scroll;
     overflow-y: hidden;
 
@@ -33,9 +35,14 @@
 .projectSelectButton {
     height: 4rem;
     width: 5rem;
+    border-radius: 5%;
+    border: 2px solid;
+
+    text-shadow: 0px 1px 0 white, 1px 1px 0 white, 1px 0px 0 white, 1px -1px 0 white, 0px -1px 0 white, -1px -1px 0 white, -1px 0px 0 white, -1px 1px 0 white;
+    font-size: 1rem;
 }
 
-.planetArea{
+.planetArea {
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -50,12 +57,13 @@
 }
 
 @keyframes fadeOut {
-    0%{
+    0% {
         width: 90%;
         height: 60%;
         top: 10%;
     }
-    100%{
+
+    100% {
         width: 0%;
         height: 0%;
         top: 30%;
@@ -63,19 +71,20 @@
 }
 
 @keyframes fadeIn {
-    0%{
+    0% {
         width: 0%;
         height: 0%;
         top: 30%;
     }
-    100%{
+
+    100% {
         width: 90%;
         height: 60%;
         top: 10%;
     }
 }
 
-.planetBox{
+.planetBox {
     position: absolute;
     top: 50%;
     left: 30%;
@@ -84,7 +93,7 @@
     /*background-color: yellowgreen;*/
 }
 
-.planetImage{
+.planetImage {
     position: relative;
     width: 100%;
     top: 5%;
@@ -99,24 +108,27 @@
 }
 
 @keyframes planetImageAnimation {
-    0%{
+    0% {
         top: 5%;
     }
-    100%{
+
+    100% {
         top: -5%;
     }
 }
 
-.planetText{
+.planetText {
     position: relative;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    background-color: aliceblue;
     width: 5rem;
-    top: -2rem;
+    top: -4rem;
+
+    text-shadow: 0px 1px 0 white, 1px 1px 0 white, 1px 0px 0 white, 1px -1px 0 white, 0px -1px 0 white, -1px -1px 0 white, -1px 0px 0 white, -1px 1px 0 white;
+    font-size: 2rem;
 }
 
-.niceButton{
+.niceButton {
     rotate: 0deg;
 }
