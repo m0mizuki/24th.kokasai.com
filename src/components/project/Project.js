@@ -2,6 +2,7 @@ import { Pages } from "../Pages";
 import backGround from "../../img/backGround/space.png"
 import planet_1 from "../../img/planet_1.png";
 import planet_2 from "../../img/astronaut.png";
+import rope from "../../img/rope.png";
 import "../../css/pageStyle.css";
 import "./projectStyle.css";
 import projectData from "../../json/projectData.json";
@@ -32,7 +33,11 @@ function Project() {
       for (let i = 0; i < planetText.length; i++) {
         planetText[i].classList.remove("invisible");
       }
-    }, 2000);
+
+      //セレクトバーを表示
+      let projectSelectBar = document.getElementById("projectSelectBar");
+      projectSelectBar.classList.remove("invisible");
+    }, 1700);
 
 
   }, []);
@@ -53,7 +58,7 @@ function Project() {
     for (let i = 0; i < planetBox.length; i++) {
       //planetBox[i].classList.add("boxMotion_out");
       planetBox[i].style.animationDelay = "0s";
-      planetBox[i].style.animationName = "boxAnimation_out"+(i+1);
+      planetBox[i].style.animationName = "boxAnimation_out" + (i + 1);
     }
 
     setTimeout(() => {
@@ -66,7 +71,7 @@ function Project() {
       for (let i = 0; i < planetText.length; i++) {
         planetText[i].classList.remove("invisible");
       }
-    }, 3000);
+    }, 2700);
 
   }
 
@@ -96,12 +101,18 @@ function Project() {
       planetImage.style.animationDelay = parseInt(4000 * i / (projectData[galaxyNum].length - 1)) + "ms";
       planetImage.id = galaxyNum + "-" + i;
 
+      let planetRope = document.createElement("img");
+      planetRope.src = rope;
+      planetRope.classList.add("planetRope");
+      planetRope.style.animationDelay = parseInt(4000 * i / (projectData[galaxyNum].length - 1)) + "ms";
+
       let planetText = document.createElement("p");
       planetText.classList.add("planetText");
       planetText.innerText = projectData[galaxyNum][i].groupName;
       //ラベルを非表示
       planetText.classList.add("invisible");
 
+      planetBox.appendChild(planetRope);
       planetBox.appendChild(planetImage);
       planetBox.appendChild(planetText);
 
@@ -122,7 +133,7 @@ function Project() {
       <img src={backGround} className="backGroundImage responsiveWidth" />
 
       <div className="moitonArea responsiveWidth">
-        <div id="projectSelectBar" className="projectSelectBar"></div>
+        <div id="projectSelectBar" className="projectSelectBar invisible"></div>
         <div id="planetArea" className="planetArea"></div>
       </div>
 

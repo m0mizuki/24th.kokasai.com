@@ -10,6 +10,7 @@
     position: relative;
     margin-left: auto;
     margin-right: auto;
+    z-index: 10000;
     top: 5%;
     width: 80%;
     height: 5rem;
@@ -50,8 +51,8 @@
 
     width: 90%;
     height: 60%;
-    top: 8%;
-    background-color: rgba(0, 0, 255, 0.5);
+    top: 6%;
+    /*background-color: rgba(0, 0, 255, 0.5);*/
 
     animation-duration: 0.6s;
     animation-fill-mode: forwards;
@@ -97,7 +98,7 @@
     opacity: 0%;
     top: -100%;
 
-    animation-delay: 0.5s;
+    animation-delay: 0.1s;
     animation-name: boxAnimation1;
     animation-duration: 1s;
     animation-timing-function: ease-in;
@@ -118,7 +119,7 @@
     opacity: 0%;
     top: -100%;
 
-    animation-delay: 0.5s;
+    animation-delay: 0.2s;
     animation-name: boxAnimation2;
     animation-duration: 1s;
     animation-timing-function: ease-in;
@@ -139,7 +140,7 @@
     opacity: 0%;
     top: -100%;
 
-    animation-delay: 0.5s;
+    animation-delay: 0.3s;
     animation-name: boxAnimation3;
     animation-duration: 1s;
     animation-timing-function: ease-in;
@@ -160,7 +161,7 @@
     opacity: 0%;
     top: -100%;
 
-    animation-delay: 0.5s;
+    animation-delay: 0.4s;
     animation-name: boxAnimation4;
     animation-duration: 1s;
     animation-timing-function: ease-in;
@@ -273,6 +274,31 @@
     }
 }
 
+.planetRope{
+    position: absolute;
+    width: 30%;
+    bottom: 45%;
+    left: 33%; /*中心は50-(width/2)*/
+
+    animation-name: planetRopeAnimation;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    /*filter: brightness(0.5);*/   
+}
+
+@keyframes planetRopeAnimation {
+    0% {
+        bottom: 45%;
+    }
+
+    100% {
+        bottom: 55%;
+    }
+}
+
 .planetText {
     position: relative;
     text-align: center;
@@ -282,7 +308,7 @@
     top: -4rem;
 
     text-shadow: 0px 1px 0 white, 1px 1px 0 white, 1px 0px 0 white, 1px -1px 0 white, 0px -1px 0 white, -1px -1px 0 white, -1px 0px 0 white, -1px 1px 0 white;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .niceButton {
