@@ -183,7 +183,6 @@ function Map() {
 
   return (
     <>
-      <p></p>
       <div id="mapCanvas" ref={circleRef}>
         <div id="mapMovingBox" className="mapMovingBox">
           <img id="campusMap_1" className="campusMap_1" src={campusMap_1} />
