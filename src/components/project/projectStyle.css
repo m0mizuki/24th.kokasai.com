@@ -50,8 +50,8 @@
 
     width: 90%;
     height: 60%;
-    top: 10%;
-    /*background-color: rgba(0, 0, 255, 0.5);*/
+    top: 8%;
+    background-color: rgba(0, 0, 255, 0.5);
 
     animation-duration: 0.6s;
     animation-fill-mode: forwards;
@@ -87,11 +87,166 @@
 
 .planetBox {
     position: absolute;
-    top: 50%;
-    left: 30%;
     width: 30%;
     height: 30%;
     /*background-color: yellowgreen;*/
+}
+
+.boxMotion1{
+    left: 1%; /*-5+6*/
+    opacity: 0%;
+    top: -100%;
+
+    animation-delay: 0.5s;
+    animation-name: boxAnimation1;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+@keyframes boxAnimation1 {
+    0%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 100%;
+        top: 20%;
+    }
+}
+
+.boxMotion2{
+    left: 18%; /*15+3*/
+    opacity: 0%;
+    top: -100%;
+
+    animation-delay: 0.5s;
+    animation-name: boxAnimation2;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+@keyframes boxAnimation2 {
+    0%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 100%;
+        top: 60%;
+    }
+}
+
+.boxMotion3{
+    left: 35%;
+    opacity: 0%;
+    top: -100%;
+
+    animation-delay: 0.5s;
+    animation-name: boxAnimation3;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+@keyframes boxAnimation3 {
+    0%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 100%;
+        top: 35%;
+    }
+}
+
+.boxMotion4{
+    left: 52%; /*55-3*/
+    opacity: 0%;
+    top: -100%;
+
+    animation-delay: 0.5s;
+    animation-name: boxAnimation4;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+@keyframes boxAnimation4 {
+    0%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 100%;
+        top: 10%;
+    }
+}
+
+.boxMotion5{
+    left: 69%; /*75-6*/
+    opacity: 0%;
+    top: -100%;
+
+    animation-delay: 0.5s;
+    animation-name: boxAnimation5;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+@keyframes boxAnimation5 {
+    0%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 100%;
+        top: 50%;
+    }
+}
+
+
+@keyframes boxAnimation_out1 {
+    0%{
+        opacity: 100%;
+        top: 20%;
+    }
+    100%{
+        opacity: 100%;
+        top: -100%;
+    }
+}
+@keyframes boxAnimation_out2 {
+    0%{
+        opacity: 100%;
+        top: 60%;
+    }
+    100%{
+        opacity: 100%;
+        top: -100%;
+    }
+}
+@keyframes boxAnimation_out3 {
+    0%{
+        opacity: 100%;
+        top: 35%;
+    }
+    100%{
+        opacity: 100%;
+        top: -100%;
+    }
+}
+@keyframes boxAnimation_out4 {
+    0%{
+        opacity: 100%;
+        top: 10%;
+    }
+    100%{
+        opacity: 100%;
+        top: -100%;
+    }
+}
+@keyframes boxAnimation_out5 {
+    0%{
+        opacity: 100%;
+        top: 50%;
+    }
+    100%{
+        opacity: 100%;
+        top: -100%;
+    }
 }
 
 .planetImage {

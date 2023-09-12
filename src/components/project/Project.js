@@ -27,17 +27,19 @@ function Project() {
 
     CreatePlanets(1); //初期設定:1年生の星を表示
     //ラベルを表示
-    let planetText = document.getElementsByClassName("planetText");
-    for (let i = 0; i < planetText.length; i++) {
-      planetText[i].classList.remove("invisible");
-    }
+    setTimeout(() => {
+      let planetText = document.getElementsByClassName("planetText");
+      for (let i = 0; i < planetText.length; i++) {
+        planetText[i].classList.remove("invisible");
+      }
+    }, 2000);
+
 
   }, []);
 
   //最終的にはcreateElementではなくひとまとまりの要素を追加できるようにしたい
 
   function changeGalaxy(galaxyNum) {
-    const planetArea = document.getElementById("planetArea");
 
     //ラベルを非表示
     let planetText = document.getElementsByClassName("planetText"); //競合注意
@@ -45,15 +47,18 @@ function Project() {
       planetText[i].classList.add("invisible");
     }
 
-    planetArea.style.animationTimingFunction = "ease-in";
-    planetArea.style.animationName = "fadeOut";
+    //アニメーションを追加
+
+    let planetBox = document.getElementsByClassName("planetBox"); //競合注意
+    for (let i = 0; i < planetBox.length; i++) {
+      //planetBox[i].classList.add("boxMotion_out");
+      planetBox[i].style.animationDelay = "0s";
+      planetBox[i].style.animationName = "boxAnimation_out"+(i+1);
+    }
+
     setTimeout(() => {
       CreatePlanets(galaxyNum);
-
-      planetArea.style.animationTimingFunction = "ease-out";
-      planetArea.style.animationName = "fadeIn";
-
-    }, 800);
+    }, 1000);
 
     setTimeout(() => {
       //ラベルを表示
@@ -61,7 +66,7 @@ function Project() {
       for (let i = 0; i < planetText.length; i++) {
         planetText[i].classList.remove("invisible");
       }
-    }, 800 + 600);
+    }, 3000);
 
   }
 
@@ -81,6 +86,7 @@ function Project() {
       //planetBoxがplanetAreaの子要素になる
       let planetBox = document.createElement("div");
       planetBox.classList.add("planetBox");
+      planetBox.classList.add("boxMotion" + i);
 
       let planetImage = document.createElement("input");
       planetImage.type = "image";
@@ -101,77 +107,8 @@ function Project() {
 
       planetArea.appendChild(planetBox);
     }
-
-
-    //位置を設定
-    addRad = 0;
-    SetPlanets(addRad);
   }
 
-
-  //星の位置を設定
-  function SetPlanets(addRad) {
-    let planetBox = document.getElementsByClassName("planetBox");
-
-    if (planetBox.length == 0) {
-      //console.log("ない");
-    }
-    else {
-      for (let i = 0; i < planetBox.length; i++) {
-        const rad = i * 2 * Math.PI / planetBox.length + addRad;
-
-        const boxWidth = 30 + 10 * Math.cos(rad);
-
-        planetBox[i].style.left = 50 - boxWidth / 2 + 35 * Math.sin(rad) + "%";
-        planetBox[i].style.top = 45 - boxWidth / 2 + 15 * Math.cos(rad) + "%";
-
-        planetBox[i].style.zIndex = 1000 + parseInt(100 * Math.cos(rad));
-
-        planetBox[i].style.width = boxWidth + "%";
-        planetBox[i].style.height = boxWidth + "%";
-      }
-    }
-
-  }
-
-
-  var prePos = { x: 0, y: 0 };
-  var addRad = 0; //角度(ラジアン)
-
-  //置かれた指の位置を取得
-  function SetPrePos(e) {
-    //e.preventDefault();
-    prePos.x = e.touches[0].clientX;
-    prePos.y = e.touches[0].clientY;
-
-    SetPlanets(addRad);
-  }
-
-  //スクロールした際の星の移動
-  function RotatePlanets(e) {
-    e.preventDefault();
-    const pos = {
-      x: e.touches[0].clientX,
-      y: e.touches[0].clientY
-    };
-
-    addRad += (pos.x - prePos.x) / 100;
-    prePos.x = pos.x;
-    prePos.y = pos.y;
-    SetPlanets(addRad);
-  }
-
-
-  //パッシブでない関数を呼び出す
-  const circleRef = useRef(null);
-  useEffect(() => {
-    circleRef.current.addEventListener("touchstart", SetPrePos, { passive: false });
-    circleRef.current.addEventListener("touchmove", RotatePlanets, { passive: false });
-    return (() => {
-      circleRef.current.removeEventListener("touchstart", SetPrePos);
-      circleRef.current.removeEventListener("touchmove", RotatePlanets);
-    });
-  });
 
 
   //企画詳細ページに移動
@@ -186,11 +123,12 @@ function Project() {
 
       <div className="moitonArea responsiveWidth">
         <div id="projectSelectBar" className="projectSelectBar"></div>
-        <div id="planetArea" className="planetArea" ref={circleRef}></div>
+        <div id="planetArea" className="planetArea"></div>
       </div>
 
       <div className="contents">
         <div className="contents_innerBlock">
+          <br />
           <p>あいうえお</p><br />
           <p>かきくけこ</p><br />
           <p>さしすせそ</p><br />
