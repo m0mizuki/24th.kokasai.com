@@ -1,4 +1,5 @@
 import { Pages } from "../Pages";
+import AccessContent from "./AccessContent";
 import backGround from "../../img/backGround/sea.png"
 import "../../css/pageStyle.css";
 import "./accessStyle.css"
@@ -20,41 +21,52 @@ function Access() {
 
           <p className="heading2">アクセス</p>
 
-          <p className="heading3">JR新前橋駅より</p>
-          <ul className="ul_access">
-            <li>徒歩約30分</li>
-            <li>タクシー約10分</li>
-          </ul>
+          <AccessContent>
+            <p className="heading3">JR新前橋駅より</p>
+            <ul className="ul_access">
+              <li>徒歩約30分</li>
+              <li>タクシー約10分</li>
+            </ul>
+          </AccessContent>
+          <br />
 
-          <p className="heading3">JR井野駅より</p>
-          <ul className="ul_access">
-            <li>
-              バス約20分<br />
-              井野駅北バス停<br />
-              &emsp;↓<br />
-              市内循環バス「ぐるりん」大八木線・中尾先回りで約20分（系統番号6）<br />
-              &emsp;↓<br />
-              群馬高専前下車
-            </li>
-          </ul>
+          <AccessContent>
+            <p className="heading3">JR井野駅より</p>
+            <ul className="ul_access">
+              <li>
+                バス約20分<br />
+                井野駅北バス停<br />
+                &emsp;↓<br />
+                市内循環バス「ぐるりん」大八木線・中尾先回りで約20分（系統番号6）<br />
+                &emsp;↓<br />
+                群馬高専前下車
+              </li>
+            </ul>
+          </AccessContent>
+          <br />
 
-          <p className="heading3">JR高崎駅より</p>
-          <ul className="ul_access">
-            <li>
-              バス約44分<br />
-              高崎駅西口バス停9番のりば<br />
-              &emsp;↓<br />
-              市内循環バス「ぐるりん」大八木線・中尾先回り（系統番号6）<br />
-              &emsp;↓<br />
-              群馬高専前下車
-            </li>
-            <li>タクシー約30分</li>
-          </ul>
+          <AccessContent>
+            <p className="heading3">JR高崎駅より</p>
+            <ul className="ul_access">
+              <li>
+                バス約44分<br />
+                高崎駅西口バス停9番のりば<br />
+                &emsp;↓<br />
+                市内循環バス「ぐるりん」大八木線・中尾先回り（系統番号6）<br />
+                &emsp;↓<br />
+                群馬高専前下車
+              </li>
+              <li>タクシー約30分</li>
+            </ul>
+          </AccessContent>
+          <br />
 
-          <p className="heading3">関越自動車道 前橋インターチェンジより（約1km）</p>
-          <ul className="ul_access">
-            <li>車で約5分</li>
-          </ul>
+          <AccessContent>
+            <p className="heading3">関越自動車道 前橋インターチェンジより（約1km）</p>
+            <ul className="ul_access">
+              <li>車で約5分</li>
+            </ul>
+          </AccessContent>
 
           <br />
 
