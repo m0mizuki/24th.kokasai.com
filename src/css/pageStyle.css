@@ -10,8 +10,8 @@
 
 .contents {
     position: relative;
-    top: 1rem;
-    width: 90%;
+    /*top: 1rem;*/
+    width: 100%;
     height: max-content;
     margin-left: auto;
     margin-right: auto;
