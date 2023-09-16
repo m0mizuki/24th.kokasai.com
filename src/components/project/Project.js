@@ -37,7 +37,7 @@ function Project() {
       //セレクトバーを表示
       let projectSelectBar = document.getElementById("projectSelectBar");
       projectSelectBar.classList.remove("invisible");
-    }, 1700);
+    }, 1400);
 
 
   }, []);
@@ -58,12 +58,13 @@ function Project() {
     for (let i = 0; i < planetBox.length; i++) {
       //planetBox[i].classList.add("boxMotion_out");
       planetBox[i].style.animationDelay = "0s";
-      planetBox[i].style.animationName = "boxAnimation_out" + (i + 1);
+      planetBox[i].style.animationName = "boxAnimation_out" + ((i % 5) + 1);
+      //console.log(i%5);
     }
 
     setTimeout(() => {
       CreatePlanets(galaxyNum);
-    }, 1000);
+    }, 700);
 
     setTimeout(() => {
       //ラベルを表示
@@ -71,7 +72,7 @@ function Project() {
       for (let i = 0; i < planetText.length; i++) {
         planetText[i].classList.remove("invisible");
       }
-    }, 2700);
+    }, 2300);
 
   }
 
@@ -86,12 +87,33 @@ function Project() {
 
     //新たな星を作成
 
+    var leftRatio = new Array(galaxyNum);
     for (let i = 1; i < projectData[galaxyNum].length; i++) {
       //planetImage,planetTextはplanetBoxの子要素
       //planetBoxがplanetAreaの子要素になる
       let planetBox = document.createElement("div");
       planetBox.classList.add("planetBox");
       planetBox.classList.add("boxMotion" + i);
+      leftRatio[i - 1] = 1 + 17 * (i - 1) + Math.random() * 10 - 5;
+      planetBox.style.left = leftRatio[i - 1] + "%";
+
+      let planetRope = document.createElement("img");
+      planetRope.src = rope;
+      planetRope.classList.add("planetRope");
+      planetRope.style.animationDelay = parseInt(4000 * i / (projectData[galaxyNum].length - 1)) + "ms";
+
+      planetBox.appendChild(planetRope);
+
+      planetArea.appendChild(planetBox);
+    }
+
+    for (let i = 1; i < projectData[galaxyNum].length; i++) {
+      //planetImage,planetTextはplanetBoxの子要素
+      //planetBoxがplanetAreaの子要素になる
+      let planetBox = document.createElement("div");
+      planetBox.classList.add("planetBox");
+      planetBox.classList.add("boxMotion" + i);
+      planetBox.style.left = leftRatio[i - 1] + "%";
 
       let planetImage = document.createElement("input");
       planetImage.type = "image";
@@ -101,10 +123,10 @@ function Project() {
       planetImage.style.animationDelay = parseInt(4000 * i / (projectData[galaxyNum].length - 1)) + "ms";
       planetImage.id = galaxyNum + "-" + i;
 
-      let planetRope = document.createElement("img");
+      /*let planetRope = document.createElement("img");
       planetRope.src = rope;
       planetRope.classList.add("planetRope");
-      planetRope.style.animationDelay = parseInt(4000 * i / (projectData[galaxyNum].length - 1)) + "ms";
+      planetRope.style.animationDelay = parseInt(4000 * i / (projectData[galaxyNum].length - 1)) + "ms";*/
 
       let planetText = document.createElement("p");
       planetText.classList.add("planetText");
@@ -112,12 +134,13 @@ function Project() {
       //ラベルを非表示
       planetText.classList.add("invisible");
 
-      planetBox.appendChild(planetRope);
+      //planetBox.appendChild(planetRope);
       planetBox.appendChild(planetImage);
       planetBox.appendChild(planetText);
 
       planetArea.appendChild(planetBox);
     }
+
   }
 
 

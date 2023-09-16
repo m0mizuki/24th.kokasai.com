@@ -53,44 +53,14 @@
     height: 60%;
     top: 6%;
     /*background-color: rgba(0, 0, 255, 0.5);*/
-
-    animation-duration: 0.6s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes fadeOut {
-    0% {
-        width: 90%;
-        height: 60%;
-        top: 10%;
-    }
-
-    100% {
-        width: 0%;
-        height: 0%;
-        top: 30%;
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        width: 0%;
-        height: 0%;
-        top: 30%;
-    }
-
-    100% {
-        width: 90%;
-        height: 60%;
-        top: 10%;
-    }
 }
 
 .planetBox {
     position: absolute;
     width: 30%;
     height: 30%;
-    /*background-color: yellowgreen;*/
+    /*background-color: rgba(153, 205, 50, 0.5);*/
+    z-index: 100;
 }
 
 .boxMotion1{
@@ -100,7 +70,7 @@
 
     animation-delay: 0.1s;
     animation-name: boxAnimation1;
-    animation-duration: 1s;
+    animation-duration: 0.7s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
 }
@@ -121,7 +91,7 @@
 
     animation-delay: 0.2s;
     animation-name: boxAnimation2;
-    animation-duration: 1s;
+    animation-duration: 0.7s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
 }
@@ -131,7 +101,7 @@
     }
     100%{
         opacity: 100%;
-        top: 60%;
+        top: 65%;
     }
 }
 
@@ -142,7 +112,7 @@
 
     animation-delay: 0.3s;
     animation-name: boxAnimation3;
-    animation-duration: 1s;
+    animation-duration: 0.7s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
 }
@@ -163,7 +133,7 @@
 
     animation-delay: 0.4s;
     animation-name: boxAnimation4;
-    animation-duration: 1s;
+    animation-duration: 0.7s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
 }
@@ -173,7 +143,7 @@
     }
     100%{
         opacity: 100%;
-        top: 10%;
+        top: 5%;
     }
 }
 
@@ -184,7 +154,7 @@
 
     animation-delay: 0.5s;
     animation-name: boxAnimation5;
-    animation-duration: 1s;
+    animation-duration: 0.7s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
 }
@@ -212,7 +182,7 @@
 @keyframes boxAnimation_out2 {
     0%{
         opacity: 100%;
-        top: 60%;
+        top: 65%;
     }
     100%{
         opacity: 100%;
@@ -232,7 +202,7 @@
 @keyframes boxAnimation_out4 {
     0%{
         opacity: 100%;
-        top: 10%;
+        top: 5%;
     }
     100%{
         opacity: 100%;
@@ -252,10 +222,11 @@
 
 .planetImage {
     position: relative;
-    width: 100%;
-    top: 5%;
+    width: 130%;
+    left: -15%;
+    top: -15%;
 
-    animation-name: planetImageAnimation;
+    /*animation-name: planetImageAnimation;*/
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
@@ -266,7 +237,7 @@
 
 @keyframes planetImageAnimation {
     0% {
-        top: 5%;
+        top: -15%;
     }
 
     100% {
@@ -280,7 +251,7 @@
     bottom: 45%;
     left: 33%; /*中心は50-(width/2)*/
 
-    animation-name: planetRopeAnimation;
+    /*animation-name: planetRopeAnimation;*/
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
@@ -305,7 +276,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 5rem;
-    top: -4rem;
+    top: -65%;
 
     text-shadow: 0px 1px 0 white, 1px 1px 0 white, 1px 0px 0 white, 1px -1px 0 white, 0px -1px 0 white, -1px -1px 0 white, -1px 0px 0 white, -1px 1px 0 white;
     font-size: 1.5rem;
