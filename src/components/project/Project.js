@@ -115,18 +115,15 @@ function Project() {
       planetBox.classList.add("boxMotion" + i);
       planetBox.style.left = leftRatio[i - 1] + "%";
 
-      let planetImage = document.createElement("input");
-      planetImage.type = "image";
+      let planetImageHref = document.createElement("a");
+      const path = Pages.projectDetail.path + "?a=" + galaxyNum + "&b=" + i;
+      planetImageHref.href = path;
+
+      let planetImage = document.createElement("img");
       planetImage.src = planet_1;
       planetImage.classList.add("planetImage");
-      planetImage.onclick = ToProjectDetail;
       planetImage.style.animationDelay = parseInt(4000 * i / (projectData[galaxyNum].length - 1)) + "ms";
       planetImage.id = galaxyNum + "-" + i;
-
-      /*let planetRope = document.createElement("img");
-      planetRope.src = rope;
-      planetRope.classList.add("planetRope");
-      planetRope.style.animationDelay = parseInt(4000 * i / (projectData[galaxyNum].length - 1)) + "ms";*/
 
       let planetText = document.createElement("p");
       planetText.classList.add("planetText");
@@ -134,8 +131,8 @@ function Project() {
       //ラベルを非表示
       planetText.classList.add("invisible");
 
-      //planetBox.appendChild(planetRope);
-      planetBox.appendChild(planetImage);
+      planetImageHref.appendChild(planetImage);
+      planetBox.appendChild(planetImageHref);
       planetBox.appendChild(planetText);
 
       planetArea.appendChild(planetBox);
@@ -143,13 +140,6 @@ function Project() {
 
   }
 
-
-
-  //企画詳細ページに移動
-  function ToProjectDetail() {
-    const ab = this.id.split("-");
-    window.location.assign(Pages.projectDetail.path + "?a=" + ab[0] + "&b=" + ab[1]);
-  }
 
   return (
     <>
