@@ -1,6 +1,8 @@
 import { Pages } from "../Pages";
+import { useEffect } from "react";
 import AccessContent from "./AccessContent";
-import backGround from "../../img/backGround/sea.png"
+import backGround from "../../img/backGround/sea.png";
+import fish1 from "../../img/fish1.png";
 import "../../css/pageStyle.css";
 import "./accessStyle.css"
 
@@ -8,18 +10,41 @@ function Access() {
   //普通のgooglemap
   //<iframe id="googleMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3212.3668851173343!2d139.02025627574992!3d36.37611147237107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601e8cc32e0daf8d%3A0x207d7e6356e87ed8!2z576k6aas5bel5qWt6auY562J5bCC6ZaA5a2m5qCh!5e0!3m2!1sja!2sjp!4v1691332826280!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-  window.addEventListener("scroll",function(){
-    var scroll=this.window.scrollY;
-    var windowHeight=this.window.innerHeight;
-    var targets=this.document.getElementsByClassName("accessContent"); //accessContent:AccessContent内のクラス
+  window.addEventListener("scroll", function () {
+    var scroll = this.window.scrollY;
+    var windowHeight = this.window.innerHeight;
+    var targets = this.document.getElementsByClassName("accessContent"); //accessContent:AccessContent内のクラス
     for (let target of targets) {
       var targetPos = target.getBoundingClientRect().top + scroll;
       //スクロール量>ターゲット要素の位置のとき
       if (scroll > targetPos - windowHeight * 0.7) {
-        target.style.animationName="accessContentAnimation";
+        target.style.animationName = "accessContentAnimation";
       }
     }
   });
+
+  //1度だけ実行
+  //2回実行されないよう一時的にindex.jsの<React.StrictMode>を外している
+  useEffect(() => {
+    //さかなを生成
+    const fishArea = document.getElementById("fishArea");
+    for (let i = 0; i < 5; i++) {
+      for (let j = 0; j < 6; j++) {
+        let fish = document.createElement("img");
+        fish.src = fish1;
+        fish.classList.add("fish");
+        fish.style.animationDelay = i * 0.2 + Math.random() * 0.2 - 0.1 + "s";
+        fish.style.animationName = "fishAnimation";
+        fish.style.top = -4 + j * 16 + Math.random() * 8 - 4 + "%";
+        fishArea.appendChild(fish);
+      }
+    }
+
+    //fishAreaに当たり判定吸われるので非表示にする
+    setTimeout(() => {
+      fishArea.style.display="none";
+    }, 2700); //アニメーション時間+delayの最大
+  }, []);
 
   return (
     <>
@@ -83,6 +108,8 @@ function Access() {
           <br />
 
         </div>
+
+        <div id="fishArea" className="fishArea responsiveWidth"></div>
 
       </div>
     </>

@@ -3,7 +3,6 @@ import "./homeStyle.css";
 import "../../css/pageStyle.css";
 import poster from "../../img/backGround/poster.jpg";
 import portrait_sakana from "../../img/portrait/portrait_sakana.png";
-import portraitArrow from "../../img/portraitArrow.png";
 
 
 function Home() {

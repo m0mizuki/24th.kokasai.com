@@ -12,8 +12,8 @@ import { useEffect, useRef } from "react";
 function Project() {
 
   //1度だけ実行
+  //2回実行されないよう一時的にindex.jsの<React.StrictMode>を外している
   useEffect(() => {
-    //2回実行されないよう一時的にindex.jsの<React.StrictMode>を外している
 
     let parent = document.getElementById("projectSelectBar");
     for (let i in projectData) {
@@ -57,7 +57,7 @@ function Project() {
     let planetBox = document.getElementsByClassName("planetBox"); //競合注意
     for (let i = 0; i < planetBox.length; i++) {
       //planetBox[i].classList.add("boxMotion_out");
-      planetBox[i].style.animationDelay = "0s";
+      planetBox[i].style.animationDelay = 0+"s";
       planetBox[i].style.animationName = "boxAnimation_out" + ((i % 5) + 1);
       //console.log(i%5);
     }
