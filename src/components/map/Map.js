@@ -17,7 +17,7 @@ function Map() {
   var mapPos = { x: 0, y: 0 };
   const mapWidth = 500; //画像によるので読み込めるようにする
   var mapSize = mapWidth;
-
+  var isMouseDown = 0; //マウスが押されたか
 
   //1度だけ実行
   useEffect(() => {
@@ -28,7 +28,7 @@ function Map() {
   }, []);
 
 
-  //置かれた指の位置を取得
+  //置かれた指の位置を取得(指)
   function SetPrePos(e) {
     //e.preventDefault();
     prePos0.x = e.touches[0].clientX;
@@ -42,8 +42,15 @@ function Map() {
       preDis = Math.hypot(prePos1.x - prePos0.x, prePos1.y - prePos0.y); //2本の指の距離
     }
   }
+  //クリックされたマウスの位置を取得(マウス)
+  function SetPrePos_mouse(e) {
+    e.preventDefault();
+    isMouseDown = 1;
+    prePos0.x = e.clientX;
+    prePos0.y = e.clientY;
+  }
 
-  //マップのスクロール
+  //マップのスクロール(指)
   function ScrollMap(e) {
     e.preventDefault();
     if (e.touches.length == 1) {
@@ -106,14 +113,70 @@ function Map() {
       }
     }
   }
+  //マップのスクロール(マウス)
+  function ScrollMap_mouse(e) {
+    e.preventDefault();
+    if (isMouseDown == 1) {
+      const pos = {
+        x: e.clientX,
+        y: e.clientY
+      };
 
-  //マップが瞬間移動しないようにする
+      mapPos.x += pos.x - prePos0.x;
+      mapPos.y += pos.y - prePos0.y;
+
+      prePos0.x = pos.x;
+      prePos0.y = pos.y;
+
+      SetMapPos(mapPos.x, mapPos.y, mapSize);
+    }
+  }
+  //マップのズーム(マウス)
+  function ZoomMap_mouse(e) {
+    e.preventDefault();
+    const pos = {
+      x: e.clientX,
+      y: e.clientY
+    };
+
+    let campusMap = document.getElementById("mapMovingBox"); //画像によるので引数で変えられるようにする
+    let campusMapBounds = campusMap.getBoundingClientRect();
+
+    const zoomRate = e.deltaY * -0.4 * mapSize / mapWidth;
+    mapSize += zoomRate; //ズームイン・アウト
+
+    mapPos.x += zoomRate * (campusMapBounds.left - pos.x) / mapSize;
+    mapPos.y += zoomRate * (campusMapBounds.top - pos.y) / mapSize;
+
+    SetMapPos(mapPos.x, mapPos.y, mapSize);
+
+    //一定の拡大倍率になったら表示
+    if (mapSize >= 800 && mapSize - zoomRate < 800) {
+      let mapObjectBox = document.getElementsByClassName("mapObjectBox");
+      for (let i = 0; i < mapObjectBox.length; i++) {
+        mapObjectBox[i].classList.remove("invisible");
+      }
+    }
+    else if (mapSize < 800 && mapSize - zoomRate >= 800) {
+      let mapObjectBox = document.getElementsByClassName("mapObjectBox");
+      for (let i = 0; i < mapObjectBox.length; i++) {
+        mapObjectBox[i].classList.add("invisible");
+      }
+    }
+  }
+
+  //マップが瞬間移動しないようにする(指)
   function SetEndPos(e) {
     //e.preventDefault();
     if (e.touches.length == 1) {
       prePos0.x = e.touches[0].clientX;
       prePos0.y = e.touches[0].clientY;
     }
+  }
+  //マウスが押されていない判定にする(マウス)
+  function SetEndPos_mosue(e) {
+    //e.preventDefault();
+    isMouseDown = 0;
   }
 
   //マップの位置,大きさを設定
@@ -166,10 +229,14 @@ function Map() {
     circleRef.current.addEventListener("touchstart", SetPrePos, { passive: false });
     circleRef.current.addEventListener("touchmove", ScrollMap, { passive: false });
     circleRef.current.addEventListener("touchend", SetEndPos, { passive: false });
+
+    circleRef.current.addEventListener("wheel", ZoomMap_mouse, { passive: false });
     return (() => {
       circleRef.current.removeEventListener("touchstart", SetPrePos);
       circleRef.current.removeEventListener("touchmove", ScrollMap);
       circleRef.current.removeEventListener("touchend", SetEndPos);
+
+      circleRef.current.removeEventListener("wheel", ZoomMap_mouse);
     });
   });
 
@@ -183,7 +250,7 @@ function Map() {
 
   return (
     <>
-      <div id="mapCanvas" ref={circleRef}>
+      <div id="mapCanvas" ref={circleRef} onMouseDown={SetPrePos_mouse} onMouseMove={ScrollMap_mouse} onMouseUp={SetEndPos_mosue} onMouseLeave={SetEndPos_mosue}>
         <div id="mapMovingBox" className="mapMovingBox">
           <img id="campusMap_1" className="campusMap_1" src={campusMap_1} />
         </div>
