@@ -1,9 +1,21 @@
 .posterArea {
     position: relative;
-    height: 100vh;
+    /*height: 100vh;*/
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.3);
+    /*background-color: rgba(255, 255, 255, 0.3);*/
 }
+
+@media screen and (min-aspect-ratio:1/1.414) {
+    .posterArea {
+      height: 100vh;
+    }
+  }
+  
+  @media screen and (max-aspect-ratio:1/1.414) {
+    .posterArea {
+      height: calc(100vw*1.414);
+    }
+  }
 
 .posterTitle{
     position: absolute;
@@ -76,4 +88,144 @@
     margin-right: auto;
     width: 100%;
     /*background-color: azure;*/
+}
+
+
+.kokasaiPoster{
+    position: absolute;
+    width: 110%;
+    top: -5%;
+    left: -5%;
+    filter: blur(10px);
+    
+    animation-duration: 5s;
+    animation-delay: 0s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-name: kokasaiPosterAnimation;
+}
+@keyframes kokasaiPosterAnimation{
+    80%{
+        filter: blur(0px);
+    }
+    100%{
+        width: 100%;
+        top: 0%;
+        left: 0%;
+        filter: blur(0px);
+    }
+}
+
+.kosenText{
+    position: absolute;
+    width: 34%;
+    top: 80%;
+    left: 33%;
+    opacity: 0%;
+
+    animation-duration: 2s;
+    animation-delay: 5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-name: kosenTextAnimation;
+}
+@keyframes kosenTextAnimation{
+    100%{
+        opacity: 100%;
+    }
+}
+
+.kosenTitle{
+    position: absolute;
+    width: 60%;
+    top: 1%;
+    left: 20%;
+    opacity: 0%;
+
+    animation-duration: 2s;
+    animation-delay: 3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-name: kosenTitleAnimation;
+}
+@keyframes kosenTitleAnimation{
+    100%{
+        opacity: 100%;
+    }
+}
+
+.mojamoja{
+    position: absolute;
+    width: 30%;
+    top: 81%;
+    left: 2%;
+    opacity: 0%;
+
+    animation-duration: 2s;
+    animation-delay: 5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-name: mojamojaAnimation;
+}
+@keyframes mojamojaAnimation{
+    100%{
+        opacity: 100%;
+    }
+}
+
+.mainTitle{
+    position: absolute;
+    width: 90%;
+    top: 9%;
+    left: 7%;
+    opacity: 0%;
+
+    animation-duration: 2s;
+    animation-delay: 3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-name: mainTitleAnimation;
+}
+@keyframes mainTitleAnimation{
+    100%{
+        opacity: 100%;
+    }
+}
+
+.subTitle{
+    position: absolute;
+    width: 50%;
+    top: 30%;
+    left: 25%;
+    opacity: 0%;
+
+    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-name: subTitleAnimation;
+}
+@keyframes subTitleAnimation{
+    100%{
+        opacity: 100%;
+    }
+}
+
+.text24th{
+    position: absolute;
+    width: 24%;
+    top: 5%;
+    left: 38%;
+    opacity: 0%;
+
+    animation-duration: 2s;
+    animation-delay: 3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-name: text24thAnimation;
+}
+@keyframes text24thAnimation{
+    100%{
+        opacity: 100%;
+    }
 }

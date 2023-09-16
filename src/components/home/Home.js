@@ -1,17 +1,29 @@
 import { Pages } from "../Pages";
 import "./homeStyle.css";
 import "../../css/pageStyle.css";
-import poster from "../../img/backGround/poster.jpg";
 import portrait_sakana from "../../img/portrait/portrait_sakana.png";
 
+import kokasaiPoster from "../../img/poster/kokasaiPoster.jpg";
+import kosenText from "../../img/poster/kosenText.png";
+import kosenTitle from "../../img/poster/kosenTitle.png";
+import mojamoja from "../../img/poster/mojamoja.png";
+import mainTitle from "../../img/poster/mainTitle.png";
+import subTitle from "../../img/poster/subTitle.png";
+import text24th from "../../img/poster/text24th.png";
 
 function Home() {
   return (
     <>
-      <img src={poster} className="backGroundImage responsiveWidth" />
+      <div className="backGroundImage responsiveWidth">
+        <img src={kokasaiPoster} className="kokasaiPoster" />
+      </div>
       <div className="posterArea">
-        <p className="posterTitle">工華祭</p>
-        <p className="posterCatchphrase">～キャッチフレーズ～</p>
+        <img src={kosenText} className="kosenText" />
+        <img src={kosenTitle} className="kosenTitle" />
+        <img src={mojamoja} className="mojamoja" />
+        <img src={mainTitle} className="mainTitle" />
+        <img src={subTitle} className="subTitle" />
+        <img src={text24th} className="text24th" />
       </div>
 
       <div className="contents contents_whitesmoke">
@@ -85,6 +97,7 @@ function Home() {
             </div>
           </div>
 
+          <br />
           <br />
         </div>
 

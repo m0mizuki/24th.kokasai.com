@@ -1,11 +1,11 @@
 import { Pages } from "../Pages";
 import "../../css/pageStyle.css";
-import poster from "../../img/backGround/poster.jpg";
+import kokasaiPoster from "../../img/poster/kokasaiPoster.jpg";
 
 function Credit() {
   return (
     <>
-      <img src={poster} className="backGroundImage responsiveWidth" />
+      <img src={kokasaiPoster} className="backGroundImage responsiveWidth" />
 
       <div className="contents contents_whitesmoke">
         <div className="contents_innerBlock">
@@ -54,7 +54,8 @@ function Credit() {
           <p>高専 大郎</p>
         </div>
 
-
+        <br />
+        <br />
       </div>
     </>
   );
