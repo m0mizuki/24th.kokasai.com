@@ -3,6 +3,7 @@ import backGround from "../../../img/backGround/space.png";
 import "../../../css/pageStyle.css";
 import "../projectStyle.css";
 import projectData from "../../../json/projectData.json";
+import ccimg from "../../../img/circleCut/cc1-1.png";
 
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -35,6 +36,10 @@ function ProjectDetail() {
 
     const description = document.getElementById("description");
     description.innerText = projectData[a][b].description;
+
+    const projectImage = document.getElementById("projectImage");
+    projectImage.src=ccimg;
+    //projectImage.src=projectData[1][1].imgPath;
   }, []);
 
 
@@ -152,7 +157,7 @@ function ProjectDetail() {
       }
     }
 
-    console.log(outputText);
+    //console.log(outputText);
     let output = document.getElementById("voteInfo");
     //output.innerText = "outputText";
     /*if(outputText!=""){
@@ -187,8 +192,9 @@ function ProjectDetail() {
       <img src={backGround} className="backGroundImage responsiveWidth" />
 
 
-      <div id="contents" className="contents">
+      <div id="contents" className="contents contents_whitesmoke">
         <div className="contents_innerBlock">
+          <img id="projectImage" className="projectImage" />
           <h2 id="groupName"></h2>
           <h2 id="projectName"></h2>
           <p id="description"></p>

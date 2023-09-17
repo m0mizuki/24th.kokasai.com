@@ -282,6 +282,13 @@
     font-size: 1.5rem;
 }
 
+
 .niceButton {
     rotate: 0deg;
+}
+
+.projectImage{
+    position: relative;
+    top: 2rem;
+    left: 10%;
 }

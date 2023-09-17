@@ -6,6 +6,7 @@
             "groupName":"1-1",
             "projectName":"たこやき",
             "description":"出来立てのたこやきはいかが？",
+            "imgPath":"../../../img/circleCut/cc1-1.png",
             "posTop":"20%",
             "posLeft":"15%"
         },
