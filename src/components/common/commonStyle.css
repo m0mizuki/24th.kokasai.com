@@ -8,11 +8,36 @@
     top: 0rem;
 }
 
+.pageListArea{
+    position: relative;
+    display: inline-block;
+    /*background-color: rgba(0, 255, 255, 0.5);*/
+    width: 50%;
+}
+
+.snsListArea{
+    position: absolute;
+    margin-left: -1rem;
+    display: inline-block;
+    /*background-color: rgba(127, 255, 212, 0.5);*/
+}
+
+.snsIcon{
+    position: relative;
+    display: inline-block;
+    width: 4rem;
+    margin-right: 1rem;
+}
+
 .pathStyle{
     color: white;
     text-decoration-line: none;
     font-size: 1.2rem;
     /*background-color: aquamarine;*/
+}
+
+.textWhite{
+    color: white;
 }
 
 .copyrightMark{

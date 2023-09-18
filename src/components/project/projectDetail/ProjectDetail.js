@@ -119,12 +119,12 @@ function ProjectDetail() {
     changeHeart(heart1);
   }
 
-  function changeHeart(heartImg){
+  function changeHeart(heartImg) {
     let niceImage = document.getElementById("niceImage");
-    niceImage.style.animationName="niceOutAnimation";
+    niceImage.style.animationName = "niceOutAnimation";
     setTimeout(() => {
-      niceImage.src=heartImg;
-      niceImage.style.animationName="niceInAnimation";
+      niceImage.src = heartImg;
+      niceImage.style.animationName = "niceInAnimation";
       recieveVoteData();
     }, 400);
   }
@@ -163,16 +163,16 @@ function ProjectDetail() {
             let niceImage = document.getElementById("niceImage");
             if (isChecked) {
               niceButton.checked = true;
-              niceImage.src=heart2;
+              niceImage.src = heart2;
             }
-            else{
+            else {
               niceButton.checked = false;
-              niceImage.src=heart1;
+              niceImage.src = heart1;
             }
             niceButton.classList.remove("invisible");
 
             let numberOfLikes = document.getElementById("numberOfLikes");
-            numberOfLikes.innerText=querySnapshot.docs.length;
+            numberOfLikes.innerText = querySnapshot.docs.length;
           }
         });
       }
@@ -204,7 +204,7 @@ function ProjectDetail() {
 
   recieveVoteData();
 
-  function backToProjectPage(){
+  function backToProjectPage() {
     let path = Pages.project.path + "?num=" + a;
     window.location.assign(path);
   }
@@ -229,20 +229,20 @@ function ProjectDetail() {
           </div>
 
           <div className="niceArea">
-          <div id="numberOfLikes" className="numberOfLikes"></div>
-              <input id="niceButton" className="niceButton invisible" type="checkbox" onClick={ClickNice} />
-              <div className="niceImageArea">
-                <label for="niceButton">
-                  <img id="niceImage" className="niceImage" />
-                </label>
-              </div>
-              
+            <div id="numberOfLikes" className="numberOfLikes"></div>
+            <input id="niceButton" className="niceButton invisible" type="checkbox" onClick={ClickNice} />
+            <div className="niceImageArea">
+              <label for="niceButton">
+                <img id="niceImage" className="niceImage" />
+              </label>
+            </div>
+
           </div>
 
           <div className="descriptionArea">
             <p id="description"></p>
             <p><button onClick={backToProjectPage}>企画一覧に戻る</button></p>
-            <p><button onClick={()=>{alert("未作成");}}>マップを確認</button></p>
+            <p><button onClick={() => { alert("未作成"); }}>マップを確認</button></p>
           </div>
           <br />
         </div>
