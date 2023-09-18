@@ -1,9 +1,30 @@
 .footer {
     position: relative;
-    background-color: lightcyan;
-    height: 30rem;
+    background-color: rgba(32, 32, 32, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 1rem 2rem 1rem 2rem;
+    height: 28rem;
     width: 100%;
-    top: -1.5rem;
+    top: 0rem;
+}
+
+.pathStyle{
+    color: white;
+    text-decoration-line: none;
+    font-size: 1.2rem;
+    /*background-color: aquamarine;*/
+}
+
+.copyrightMark{
+    position: absolute;
+    color: white;
+    text-decoration-line: none;
+    /*background-color: aqua;*/
+    font-size: 0.8rem;
+    bottom: 13vh;
+    left: -2rem;
+    width: 100%;
+    text-align: center;
 }
 
 .menuBar {
@@ -13,7 +34,8 @@
     bottom: 0%;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(63, 63, 63);
+    background-color: rgb(64, 64, 64);
+    box-shadow: 0px -4px 4px rgba(255, 255, 255, 0.3);
     /*aspect-ratio: 1/0.1414;*/
     height: 10%;
 }
