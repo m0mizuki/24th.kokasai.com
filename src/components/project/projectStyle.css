@@ -222,9 +222,9 @@
 
 .planetImage {
     position: relative;
-    width: 130%;
-    left: -15%;
-    top: -15%;
+    width: 80%;
+    left: 10%;
+    top: 10%;
 
     /*animation-name: planetImageAnimation;*/
     animation-duration: 2s;
@@ -237,11 +237,11 @@
 
 @keyframes planetImageAnimation {
     0% {
-        top: -15%;
+        top: 10%;
     }
 
     100% {
-        top: -5%;
+        top: 15%;
     }
 }
 
@@ -276,19 +276,98 @@
     margin-left: auto;
     margin-right: auto;
     width: 5rem;
-    top: -65%;
+    top: -10%;
 
     text-shadow: 0px 1px 0 white, 1px 1px 0 white, 1px 0px 0 white, 1px -1px 0 white, 0px -1px 0 white, -1px -1px 0 white, -1px 0px 0 white, -1px 1px 0 white;
     font-size: 1.5rem;
 }
 
 
-.niceButton {
-    rotate: 0deg;
+.imageTitleArea{
+    position: relative;
+    /*background-color: rgba(255, 0, 0, 0.5);*/
+}
+
+.titleArea{
+    position: absolute;
+    display: inline-block;
+    margin-top: 1rem;
+    padding:1rem 1rem 1rem 1rem;
+    height: 10rem;
+    /*background-color: rgba(0, 0, 255, 0.5);*/
 }
 
 .projectImage{
     position: relative;
-    top: 2rem;
-    left: 10%;
+    margin: 1rem 1rem 1rem 1rem;
+    height: 12rem;
+}
+
+.niceArea{
+    position: relative;
+    /*background-color: rgba(0, 255, 255, 0.5);*/
+}
+
+.niceButton {
+    position: relative;
+    height: 2rem;
+    margin: 1rem 1rem 1rem 2rem;
+    display: none;
+}
+
+.numberOfLikes{
+    position: absolute;
+    /*display: inline-block;*/
+    margin-left: 5rem;
+    padding-left: 0rem;
+    height: 2rem;
+    /*background-color: rgba(137, 43, 226, 0.5);*/
+}
+
+.niceImageArea{
+    position: relative;
+    aspect-ratio: 1/1;
+    height: 2rem;
+    margin: 1rem 1rem 1rem 2rem;
+    /*background-color: aliceblue;*/
+}
+
+.niceImage{
+    position: absolute;
+    width: 100%;
+
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    /*background-color: rgb(0, 136, 255);*/
+}
+
+@keyframes niceOutAnimation{
+    0%{
+        width: 120%;
+        top: -10%;
+        left: -10%;
+    }
+    100%{
+        width: 0%;
+        top: 50%;
+        left: 50%;
+    }
+}
+@keyframes niceInAnimation{
+    0%{
+        width: 0%;
+        top: 50%;
+        left: 50%;
+    }
+    100%{
+        width: 100%;
+        top: 0%;
+        left: 0%;
+    }
+}
+
+.descriptionArea{
+    position: relative;
+    padding: 1rem 1rem 1rem 1rem;
+    /*background-color: rgba(127, 255, 212, 0.5);*/
 }

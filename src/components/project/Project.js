@@ -1,15 +1,20 @@
 import { Pages } from "../Pages";
 import backGround from "../../img/backGround/space.png"
-import planet_1 from "../../img/planet_1.png";
-import planet_2 from "../../img/astronaut.png";
 import rope from "../../img/rope.png";
 import "../../css/pageStyle.css";
 import "./projectStyle.css";
 import projectData from "../../json/projectData.json";
 
 import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 
 function Project() {
+
+  //クエリを取得
+  const quely = new URLSearchParams(useLocation().search);
+  var initGalNum = quely.get("num"); //初期の星を指定
+  if (initGalNum == null) initGalNum = 1;
+
 
   //1度だけ実行
   //2回実行されないよう一時的にindex.jsの<React.StrictMode>を外している
@@ -26,7 +31,7 @@ function Project() {
       parent.appendChild(element);
     }
 
-    CreatePlanets(1); //初期設定:1年生の星を表示
+    CreatePlanets(initGalNum); //初期設定:1年生の星を表示
     //ラベルを表示
     setTimeout(() => {
       let planetText = document.getElementsByClassName("planetText");
@@ -57,9 +62,9 @@ function Project() {
     let planetBox = document.getElementsByClassName("planetBox"); //競合注意
     for (let i = 0; i < planetBox.length; i++) {
       //planetBox[i].classList.add("boxMotion_out");
-      planetBox[i].style.animationDelay = 0+"s";
-      planetBox[i].style.animationName = "boxAnimation_out" + ((i % 5) + 1);
-      //console.log(i%5);
+      planetBox[i].style.animationDelay = 0 + "s";
+      planetBox[i].style.animationName = "boxAnimation_out" + ((i % (planetBox.length/2)) + 1);
+      //console.log((i % (planetBox.length/2)) + 1);
     }
 
     setTimeout(() => {
@@ -120,7 +125,9 @@ function Project() {
       planetImageHref.href = path;
 
       let planetImage = document.createElement("img");
-      planetImage.src = planet_1;
+      //planetImage.src = planet_1;
+      const planetNum = (i * 13 + galaxyNum*9) % 7;
+      planetImage.src = "./img/planet/planet_" + planetNum + ".png";
       planetImage.classList.add("planetImage");
       planetImage.style.animationDelay = parseInt(4000 * i / (projectData[galaxyNum].length - 1)) + "ms";
       planetImage.id = galaxyNum + "-" + i;

@@ -250,7 +250,7 @@ function Map() {
 
   return (
     <>
-      <div id="mapCanvas" ref={circleRef} onMouseDown={SetPrePos_mouse} onMouseMove={ScrollMap_mouse} onMouseUp={SetEndPos_mosue} onMouseLeave={SetEndPos_mosue}>
+      <div id="mapCanvas" className="mapCanvas" ref={circleRef} onMouseDown={SetPrePos_mouse} onMouseMove={ScrollMap_mouse} onMouseUp={SetEndPos_mosue} onMouseLeave={SetEndPos_mosue}>
         <div id="mapMovingBox" className="mapMovingBox">
           <img id="campusMap_1" className="campusMap_1" src={campusMap_1} />
         </div>

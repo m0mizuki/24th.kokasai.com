@@ -3,7 +3,9 @@ import backGround from "../../../img/backGround/space.png";
 import "../../../css/pageStyle.css";
 import "../projectStyle.css";
 import projectData from "../../../json/projectData.json";
-import ccimg from "../../../img/circleCut/cc1-1.png";
+import heart1 from "../../../img/heart1.png";
+import heart2 from "../../../img/heart2.png"
+import cc1_1 from "../../../img/cc1-1.png";
 
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -16,7 +18,6 @@ import "firebase/compat/firestore";
 
 function ProjectDetail() {
   //useEffect外で大丈夫？
-
 
   //クエリを取得
   const quely = new URLSearchParams(useLocation().search);
@@ -38,11 +39,9 @@ function ProjectDetail() {
     description.innerText = projectData[a][b].description;
 
     const projectImage = document.getElementById("projectImage");
-    projectImage.src=ccimg;
-    //projectImage.src=projectData[1][1].imgPath;
+    //projectImage.src="./img/circleCut/cc1-2.png";
+    projectImage.src = cc1_1;
   }, []);
-
-
 
 
   //初期設定
@@ -106,6 +105,7 @@ function ProjectDetail() {
       console.log("send failed");
     }
 
+    changeHeart(heart2);
   }
 
   function unsetNice(word) {
@@ -115,6 +115,18 @@ function ProjectDetail() {
     }).catch((error) => {
       console.error("Error removing document: ", error);
     });
+
+    changeHeart(heart1);
+  }
+
+  function changeHeart(heartImg){
+    let niceImage = document.getElementById("niceImage");
+    niceImage.style.animationName="niceOutAnimation";
+    setTimeout(() => {
+      niceImage.src=heartImg;
+      niceImage.style.animationName="niceInAnimation";
+      recieveVoteData();
+    }, 400);
   }
 
   function recieveVoteData() {
@@ -137,7 +149,7 @@ function ProjectDetail() {
           else {
             voteInfo.innerText = "none";
           }
-          contents.appendChild(voteInfo);
+          //contents.appendChild(voteInfo);
 
           if (i == a && j == b) {
             let isChecked = false;
@@ -148,17 +160,26 @@ function ProjectDetail() {
             });
 
             let niceButton = document.getElementById("niceButton");
+            let niceImage = document.getElementById("niceImage");
             if (isChecked) {
               niceButton.checked = true;
+              niceImage.src=heart2;
+            }
+            else{
+              niceButton.checked = false;
+              niceImage.src=heart1;
             }
             niceButton.classList.remove("invisible");
+
+            let numberOfLikes = document.getElementById("numberOfLikes");
+            numberOfLikes.innerText=querySnapshot.docs.length;
           }
         });
       }
     }
 
     //console.log(outputText);
-    let output = document.getElementById("voteInfo");
+    //let output = document.getElementById("voteInfo");
     //output.innerText = "outputText";
     /*if(outputText!=""){
       output.innerText = outputText;
@@ -183,8 +204,12 @@ function ProjectDetail() {
 
   recieveVoteData();
 
+  function backToProjectPage(){
+    let path = Pages.project.path + "?num=" + a;
+    window.location.assign(path);
+  }
 
-  //todo:チェックボックスの状態が確定するまで表示されないようにする
+  //todo:チェックボックスの状態が確定するまで表示されないようにする->ok
   //匿名だと,タブ切り替えるとID変わって何回でも投票できてしまう
 
   return (
@@ -194,13 +219,32 @@ function ProjectDetail() {
 
       <div id="contents" className="contents contents_whitesmoke">
         <div className="contents_innerBlock">
-          <img id="projectImage" className="projectImage" />
-          <h2 id="groupName"></h2>
-          <h2 id="projectName"></h2>
-          <p id="description"></p>
+          <br />
+          <div className="imageTitleArea">
+            <img id="projectImage" className="projectImage" />
+            <div className="titleArea">
+              <p id="groupName"></p>
+              <p id="projectName"></p>
+            </div>
+          </div>
 
-          <p>↓投票</p>
-          <p><input id="niceButton" className="niceButton invisible" type="checkbox" onClick={ClickNice} /></p>
+          <div className="niceArea">
+          <div id="numberOfLikes" className="numberOfLikes"></div>
+              <input id="niceButton" className="niceButton invisible" type="checkbox" onClick={ClickNice} />
+              <div className="niceImageArea">
+                <label for="niceButton">
+                  <img id="niceImage" className="niceImage" />
+                </label>
+              </div>
+              
+          </div>
+
+          <div className="descriptionArea">
+            <p id="description"></p>
+            <p><button onClick={backToProjectPage}>企画一覧に戻る</button></p>
+            <p><button onClick={()=>{alert("未作成");}}>マップを確認</button></p>
+          </div>
+          <br />
         </div>
 
       </div>
