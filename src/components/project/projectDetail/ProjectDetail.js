@@ -30,17 +30,17 @@ function ProjectDetail() {
   useEffect(() => {
     //2回実行されないよう一時的にindex.jsの<React.StrictMode>を外している
     const groupName = document.getElementById("groupName");
-    groupName.innerText = projectData[a][b].groupName;
+    groupName.innerHTML = projectData[a][b].groupName;
 
     const projectName = document.getElementById("projectName");
-    projectName.innerText = projectData[a][b].projectName;
+    projectName.innerHTML = projectData[a][b].projectName;
 
     const description = document.getElementById("description");
-    description.innerText = projectData[a][b].description;
+    description.innerHTML = projectData[a][b].description;
 
     const projectImage = document.getElementById("projectImage");
-    //projectImage.src="./img/circleCut/cc1-2.png";
-    projectImage.src = cc1_1;
+    //projectImage.src="../img/circleCut/cc"+a+"-"+b+".png";
+    projectImage.src=projectData[a][b].imgPath;
   }, []);
 
 
