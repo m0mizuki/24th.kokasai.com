@@ -42,8 +42,10 @@ function Project() {
       let planetGroupName = document.getElementsByClassName("planetGroupName");
       let planetProjectName = document.getElementsByClassName("planetProjectName");
       for (let i = 0; i < planetGroupName.length; i++) {
-        planetGroupName[i].classList.remove("invisible");
-        planetProjectName[i].classList.remove("invisible");
+        //planetGroupName[i].classList.remove("invisible");
+        //planetProjectName[i].classList.remove("invisible");
+        planetGroupName[i].style.visibility="visible";
+        planetProjectName[i].style.visibility="visible";
       }
     }, 600);
 
@@ -58,8 +60,10 @@ function Project() {
     let planetGroupName = document.getElementsByClassName("planetGroupName");
       let planetProjectName = document.getElementsByClassName("planetProjectName");
       for (let i = 0; i < planetGroupName.length; i++) {
-        planetGroupName[i].classList.add("invisible");
-        planetProjectName[i].classList.add("invisible");
+        //planetGroupName[i].classList.add("invisible");
+        //planetProjectName[i].classList.add("invisible");
+        planetGroupName[i].style.visibility="hidden";
+        planetProjectName[i].style.visibility="hidden";
       }
 
     planetArea.style.animationTimingFunction = "ease-in";
@@ -78,8 +82,10 @@ function Project() {
       let planetGroupName = document.getElementsByClassName("planetGroupName");
       let planetProjectName = document.getElementsByClassName("planetProjectName");
       for (let i = 0; i < planetGroupName.length; i++) {
-        planetGroupName[i].classList.remove("invisible");
-        planetProjectName[i].classList.remove("invisible");
+        //planetGroupName[i].classList.remove("invisible");
+        //planetProjectName[i].classList.remove("invisible");
+        planetGroupName[i].style.visibility="visible";
+        planetProjectName[i].style.visibility="visible";
       }
     }, 800 + 600);
 
@@ -124,13 +130,15 @@ function Project() {
       planetGroupName.classList.add("planetGroupName");
       planetGroupName.innerHTML = projectData[galaxyNum][i].groupName;
       //ラベルを非表示
-      planetGroupName.classList.add("invisible");
+      //planetGroupName.classList.add("invisible");
+      planetGroupName.style.visibility="hidden";
 
       let planetProjectName = document.createElement("p");
       planetProjectName.classList.add("planetProjectName");
       planetProjectName.innerHTML = projectData[galaxyNum][i].projectName;
       //ラベルを非表示
-      planetProjectName.classList.add("invisible");
+      //planetProjectName.classList.add("invisible");
+      planetProjectName.style.visibility="hidden";
 
       planetImageHref.appendChild(planetImage);
 

@@ -90,8 +90,9 @@
     position: absolute;
     width: 30%;
     height: 30%;
-    /*background-color: rgba(153, 205, 50, 0.5);*/
+    background-color: rgba(153, 205, 50, 0.5);
     z-index: 100;
+    visibility: hidden;
 }
 
 
@@ -100,6 +101,7 @@
     width: 40%;
     left: 30%;
     top: -2rem;
+    visibility: visible;
 
     /*animation-name: planetImageAnimation;*/
     animation-duration: 2s;
@@ -151,30 +153,86 @@
 }
 
 
+
+.contents_spaceSmoke{
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+
 .imageTitleArea{
     position: relative;
     /*background-color: rgba(255, 0, 0, 0.5);*/
 }
 
 .titleArea{
-    position: absolute;
-    display: inline-block;
-    margin-top: 1rem;
-    padding:1rem 1rem 1rem 1rem;
-    height: 10rem;
+    position: relative;
+    padding: 0rem 1rem 0rem 1.5rem;
+    height: max-content;
 
-    font-size: 1.5rem;
+    color: white;
     /*background-color: rgba(0, 0, 255, 0.5);*/
+}
+
+.groupNameText{
+    position: relative;
+    font-size: 1.2rem;
+    line-height: 0rem;
+    top: 0.6rem;
+}
+.projectNameText{
+    position: relative;
+    font-size: 1.6rem;
+    top: 0rem;
+    line-height: 1.6rem;
+}
+
+.titleMark{
+    position: absolute;
+    width: 1rem;
+    height: 100%;
+    top: 0rem;
+    left: 0rem;
+    background-color: aqua;
+}
+
+.imageArea{
+    position: relative;
+    /*margin: 1rem 1rem 1rem 1rem;*/
+    margin-left: auto;
+    margin-right: auto;
+    height: 16rem;
+    width: 100%;
+    /*background-color: aqua;*/
 }
 
 .projectImage{
     position: relative;
-    margin: 1rem 1rem 1rem 1rem;
-    height: 12rem;
+    display: block;
+    /*margin: 1rem 1rem 1rem 1rem;*/
+    margin-left: auto;
+    margin-right: auto;
+    height: 16rem;
+}
+
+.leftButton{
+    position: absolute;
+    top: 6.5rem;
+    height: 3rem;
+    left: 10%;
+}
+
+.rightButton{
+    position: absolute;
+    top: 6.5rem;
+    height: 3rem;
+    right: 10%;
 }
 
 .niceArea{
     position: relative;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
     /*background-color: rgba(0, 255, 255, 0.5);*/
 }
 
@@ -191,6 +249,7 @@
     margin-left: 5rem;
     padding-left: 0rem;
     height: 2rem;
+    color: white;
     
     /*background-color: rgba(137, 43, 226, 0.5);*/
     font-size: 1.5rem;
@@ -240,6 +299,43 @@
 
 .descriptionArea{
     position: relative;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 0rem 1rem 1rem 1rem;
+    color: white;
+    top: -1rem;
     /*background-color: rgba(127, 255, 212, 0.5);*/
+}
+
+.heading_comment{
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    font-size: 1.5rem;
+    top: 1rem;
+}
+
+.description{
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border-bottom: solid 2px white;
+    border-top: solid 2px white;
+}
+
+.backButton{
+    position: relative;
+    color: white;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+}
+
+.toMapButton{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: 0rem;
+    color: paleturquoise;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
 }

@@ -4,8 +4,9 @@ import "../../../css/pageStyle.css";
 import "../projectStyle.css";
 import projectData from "../../../json/projectData.json";
 import heart1 from "../../../img/heart1.png";
-import heart2 from "../../../img/heart2.png"
-import cc1_1 from "../../../img/cc1-1.png";
+import heart2 from "../../../img/heart2.png";
+import leftArrow from "../../../img/leftArrow.png";
+import rightArrow from "../../../img/rightArrow.png";
 
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -21,8 +22,8 @@ function ProjectDetail() {
 
   //クエリを取得
   const quely = new URLSearchParams(useLocation().search);
-  var a = quely.get("a");
-  var b = quely.get("b");
+  var a = parseInt(quely.get("a"));
+  var b = parseInt(quely.get("b"));
   if (a == null) a = 1;
   if (b == null) b = 1;
 
@@ -40,8 +41,82 @@ function ProjectDetail() {
 
     const projectImage = document.getElementById("projectImage");
     //projectImage.src="../img/circleCut/cc"+a+"-"+b+".png";
-    projectImage.src=projectData[a][b].imgPath;
+    projectImage.src = projectData[a][b].imgPath;
+
+    const titleMark = document.getElementById("titleMark");
+    setColor(titleMark,a,b);
   }, []);
+
+  function setColor(target,a,b){
+    const markColor=[
+      "#0000ff",
+      "#ffa500",
+      "#ff0000",
+      "#ffff00",
+      "#008000"
+    ];
+    if(1<=a&&a<=5){
+      target.style.backgroundColor=markColor[b-1]; //学科の色
+    }
+    else if(6<=a&&a<=8){
+      target.style.backgroundColor="#00ffff"; //水色
+    }
+    else if(9<=a&&a<=10){
+      target.style.backgroundColor="#ffc0cb"; //ピンク
+    }
+    else if(11<=a&&a<=12){
+      target.style.backgroundColor="#00ff00"; //ライム
+    }
+    else if(a==13){
+      target.style.backgroundColor="#8a2be2"; //紫色
+    }
+    else{
+      target.style.backgroundColor="#696969"; //灰色
+    }
+  }
+
+
+  //右の企画へ飛ぶ
+  function changeLeftPage(){
+    let newA=1;
+    let newB=1;
+    if(b==1){
+      if(a==1){
+        newA=projectData.length-1; //企画の最後の組
+        newB=projectData[newA].length-1; //企画の最後の組の最後の要素
+      }
+      else{
+        newA=a-1; //aの1つ前の組
+        newB=projectData[newA].length-1; //aの1つ前の組の最後の要素
+      }
+    }
+    else{
+      newA=a;
+      newB=b-1;
+    }
+    window.location.assign(Pages.projectDetail.path + "?a=" + newA + "&b=" + newB);
+  }
+
+  //左の企画へ飛ぶ
+  function changeRightPage(){
+    let newA=1;
+    let newB=1;
+    if(b==projectData[a].length-1){
+      if(a==projectData.length-1){
+        newA=1;
+        newB=1;
+      }
+      else{
+        newA=a+1;
+        newB=1;
+      }
+    }
+    else{
+      newA=a;
+      newB=b+1;
+    }
+    window.location.assign(Pages.projectDetail.path + "?a=" + newA + "&b=" + newB);
+  }
 
 
   //初期設定
@@ -217,14 +292,21 @@ function ProjectDetail() {
       <img src={backGround} className="backGroundImage responsiveWidth" />
 
 
-      <div id="contents" className="contents contents_whitesmoke">
+      <div id="contents" className="contents contents_spaceSmoke">
         <div className="contents_innerBlock">
           <br />
+          <button className="backButton" onClick={backToProjectPage}>◀back</button>
+
           <div className="imageTitleArea">
-            <img id="projectImage" className="projectImage" />
             <div className="titleArea">
-              <p id="groupName"></p>
-              <p id="projectName"></p>
+              <div id="titleMark" className="titleMark" />
+              <p id="groupName" className="groupNameText"></p>
+              <p id="projectName" className="projectNameText"></p>
+            </div>
+            <div className="imageArea">
+              <input type="image" className="leftButton" src={leftArrow} onClick={changeLeftPage} />
+              <input type="image" className="rightButton" src={rightArrow} onClick={changeRightPage} />
+              <img id="projectImage" className="projectImage" />
             </div>
           </div>
 
@@ -240,9 +322,9 @@ function ProjectDetail() {
           </div>
 
           <div className="descriptionArea">
-            <p id="description"></p>
-            <p><button onClick={backToProjectPage}>企画一覧に戻る</button></p>
-            <p><button onClick={() => { alert("未作成"); }}>マップを確認</button></p>
+            <p className="heading_comment">comment</p>
+            <p id="description" className="description"></p>
+            <button className="toMapButton" onClick={() => { alert("未作成"); }}>&gt;&gt;マップで場所を確認</button>
           </div>
           <br />
         </div>
