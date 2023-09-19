@@ -53,6 +53,37 @@
     height: 60%;
     top: 6%;
     /*background-color: rgba(0, 0, 255, 0.5);*/
+
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        width: 90%;
+        height: 60%;
+        top: 6%;
+    }
+
+    100% {
+        width: 0%;
+        height: 0%;
+        top: 30%;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        width: 0%;
+        height: 0%;
+        top: 30%;
+    }
+
+    100% {
+        width: 90%;
+        height: 60%;
+        top: 6%;
+    }
 }
 
 .planetBox {
@@ -63,162 +94,6 @@
     z-index: 100;
 }
 
-.boxMotion1{
-    left: 1%; /*-5+6*/
-    opacity: 0%;
-    top: -100%;
-
-    animation-delay: 0.1s;
-    animation-name: boxAnimation1;
-    animation-duration: 0.7s;
-    animation-timing-function: ease-in;
-    animation-fill-mode: forwards;
-}
-@keyframes boxAnimation1 {
-    0%{
-        opacity: 100%;
-    }
-    100%{
-        opacity: 100%;
-        top: 20%;
-    }
-}
-
-.boxMotion2{
-    left: 18%; /*15+3*/
-    opacity: 0%;
-    top: -100%;
-
-    animation-delay: 0.2s;
-    animation-name: boxAnimation2;
-    animation-duration: 0.7s;
-    animation-timing-function: ease-in;
-    animation-fill-mode: forwards;
-}
-@keyframes boxAnimation2 {
-    0%{
-        opacity: 100%;
-    }
-    100%{
-        opacity: 100%;
-        top: 65%;
-    }
-}
-
-.boxMotion3{
-    left: 35%;
-    opacity: 0%;
-    top: -100%;
-
-    animation-delay: 0.3s;
-    animation-name: boxAnimation3;
-    animation-duration: 0.7s;
-    animation-timing-function: ease-in;
-    animation-fill-mode: forwards;
-}
-@keyframes boxAnimation3 {
-    0%{
-        opacity: 100%;
-    }
-    100%{
-        opacity: 100%;
-        top: 35%;
-    }
-}
-
-.boxMotion4{
-    left: 52%; /*55-3*/
-    opacity: 0%;
-    top: -100%;
-
-    animation-delay: 0.4s;
-    animation-name: boxAnimation4;
-    animation-duration: 0.7s;
-    animation-timing-function: ease-in;
-    animation-fill-mode: forwards;
-}
-@keyframes boxAnimation4 {
-    0%{
-        opacity: 100%;
-    }
-    100%{
-        opacity: 100%;
-        top: 5%;
-    }
-}
-
-.boxMotion5{
-    left: 69%; /*75-6*/
-    opacity: 0%;
-    top: -100%;
-
-    animation-delay: 0.5s;
-    animation-name: boxAnimation5;
-    animation-duration: 0.7s;
-    animation-timing-function: ease-in;
-    animation-fill-mode: forwards;
-}
-@keyframes boxAnimation5 {
-    0%{
-        opacity: 100%;
-    }
-    100%{
-        opacity: 100%;
-        top: 50%;
-    }
-}
-
-
-@keyframes boxAnimation_out1 {
-    0%{
-        opacity: 100%;
-        top: 20%;
-    }
-    100%{
-        opacity: 100%;
-        top: -100%;
-    }
-}
-@keyframes boxAnimation_out2 {
-    0%{
-        opacity: 100%;
-        top: 65%;
-    }
-    100%{
-        opacity: 100%;
-        top: -100%;
-    }
-}
-@keyframes boxAnimation_out3 {
-    0%{
-        opacity: 100%;
-        top: 35%;
-    }
-    100%{
-        opacity: 100%;
-        top: -100%;
-    }
-}
-@keyframes boxAnimation_out4 {
-    0%{
-        opacity: 100%;
-        top: 5%;
-    }
-    100%{
-        opacity: 100%;
-        top: -100%;
-    }
-}
-@keyframes boxAnimation_out5 {
-    0%{
-        opacity: 100%;
-        top: 50%;
-    }
-    100%{
-        opacity: 100%;
-        top: -100%;
-    }
-}
 
 .planetImage {
     position: relative;
@@ -245,30 +120,6 @@
     }
 }
 
-.planetRope{
-    position: absolute;
-    width: 30%;
-    bottom: 45%;
-    left: 33%; /*中心は50-(width/2)*/
-
-    /*animation-name: planetRopeAnimation;*/
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-
-    /*filter: brightness(0.5);*/   
-}
-
-@keyframes planetRopeAnimation {
-    0% {
-        bottom: 45%;
-    }
-
-    100% {
-        bottom: 55%;
-    }
-}
 
 .planetText {
     position: relative;
