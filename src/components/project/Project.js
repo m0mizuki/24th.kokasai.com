@@ -39,9 +39,11 @@ function Project() {
 
     setTimeout(() => {
       //ラベルを表示
-      let planetText = document.getElementsByClassName("planetText");
-      for (let i = 0; i < planetText.length; i++) {
-        planetText[i].classList.remove("invisible");
+      let planetGroupName = document.getElementsByClassName("planetGroupName");
+      let planetProjectName = document.getElementsByClassName("planetProjectName");
+      for (let i = 0; i < planetGroupName.length; i++) {
+        planetGroupName[i].classList.remove("invisible");
+        planetProjectName[i].classList.remove("invisible");
       }
     }, 600);
 
@@ -53,10 +55,12 @@ function Project() {
     const planetArea = document.getElementById("planetArea");
 
     //ラベルを非表示
-    let planetText = document.getElementsByClassName("planetText"); //競合注意
-    for (let i = 0; i < planetText.length; i++) {
-      planetText[i].classList.add("invisible");
-    }
+    let planetGroupName = document.getElementsByClassName("planetGroupName");
+      let planetProjectName = document.getElementsByClassName("planetProjectName");
+      for (let i = 0; i < planetGroupName.length; i++) {
+        planetGroupName[i].classList.add("invisible");
+        planetProjectName[i].classList.add("invisible");
+      }
 
     planetArea.style.animationTimingFunction = "ease-in";
     planetArea.style.animationName = "fadeOut";
@@ -71,9 +75,11 @@ function Project() {
 
     setTimeout(() => {
       //ラベルを表示
-      planetText = document.getElementsByClassName("planetText");
-      for (let i = 0; i < planetText.length; i++) {
-        planetText[i].classList.remove("invisible");
+      let planetGroupName = document.getElementsByClassName("planetGroupName");
+      let planetProjectName = document.getElementsByClassName("planetProjectName");
+      for (let i = 0; i < planetGroupName.length; i++) {
+        planetGroupName[i].classList.remove("invisible");
+        planetProjectName[i].classList.remove("invisible");
       }
     }, 800 + 600);
 
@@ -106,22 +112,31 @@ function Project() {
       planetImageHref.href = path;
 
       let planetImage = document.createElement("img");
-      //planetImage.src = planet_1;
-      const planetNum = (i * 13 + galaxyNum * 9) % 7;
-      planetImage.src = "./img/planet/planet_" + planetNum + ".png";
+      //projectDataのパスの最初のドットを削除する
+      let pathOfData=projectData[galaxyNum][i].imgPath;
+      let imgPath = pathOfData.substr(1);
+      planetImage.src = imgPath;
       planetImage.classList.add("planetImage");
       planetImage.style.animationDelay = parseInt(4000 * i / (projectData[galaxyNum].length - 1)) + "ms";
       planetImage.id = galaxyNum + "-" + i;
 
-      let planetText = document.createElement("p");
-      planetText.classList.add("planetText");
-      planetText.innerText = projectData[galaxyNum][i].groupName;
+      let planetGroupName = document.createElement("p");
+      planetGroupName.classList.add("planetGroupName");
+      planetGroupName.innerHTML = projectData[galaxyNum][i].groupName;
       //ラベルを非表示
-      planetText.classList.add("invisible");
+      planetGroupName.classList.add("invisible");
+
+      let planetProjectName = document.createElement("p");
+      planetProjectName.classList.add("planetProjectName");
+      planetProjectName.innerHTML = projectData[galaxyNum][i].projectName;
+      //ラベルを非表示
+      planetProjectName.classList.add("invisible");
 
       planetImageHref.appendChild(planetImage);
+
+      planetBox.appendChild(planetGroupName);
       planetBox.appendChild(planetImageHref);
-      planetBox.appendChild(planetText);
+      planetBox.appendChild(planetProjectName);
 
       planetArea.appendChild(planetBox);
     }
@@ -142,15 +157,23 @@ function Project() {
       for (let i = 0; i < planetBox.length; i++) {
         const rad = i * 2 * Math.PI / planetBox.length + addRad;
 
-        const boxWidth = 30 + 10 * Math.cos(rad);
+        const boxWidth = (30 + 10 * Math.cos(rad)) * 2;
 
         planetBox[i].style.left = 50 - boxWidth / 2 + 35 * Math.sin(rad) + "%";
-        planetBox[i].style.top = 45 - boxWidth / 2 + 15 * Math.cos(rad) + "%";
+        planetBox[i].style.top = 50 - boxWidth / 2 + 20 * Math.cos(rad) + "%";
 
-        planetBox[i].style.zIndex = 1000 + parseInt(100 * Math.cos(rad));
+        const zVal=parseInt(100 * Math.cos(rad));
+        planetBox[i].style.zIndex = 1000 + zVal;
 
         planetBox[i].style.width = boxWidth + "%";
         planetBox[i].style.height = boxWidth + "%";
+
+        if(zVal>80){
+          planetBox[i].classList.remove("imgBlur");
+        }
+        else{
+          planetBox[i].classList.add("imgBlur");
+        }
       }
     }
 

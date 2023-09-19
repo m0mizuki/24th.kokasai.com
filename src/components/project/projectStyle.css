@@ -97,9 +97,9 @@
 
 .planetImage {
     position: relative;
-    width: 80%;
-    left: 10%;
-    top: 10%;
+    width: 40%;
+    left: 30%;
+    top: -2rem;
 
     /*animation-name: planetImageAnimation;*/
     animation-duration: 2s;
@@ -108,6 +108,10 @@
     animation-direction: alternate;
 
     /*filter: brightness(0.5);*/
+}
+
+.imgBlur{
+    filter: blur(1px);
 }
 
 @keyframes planetImageAnimation {
@@ -121,13 +125,26 @@
 }
 
 
-.planetText {
+.planetGroupName {
     position: relative;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    width: 5rem;
-    top: 0%;
+    width: 10rem;
+    bottom: 2rem;
+    /*background-color: aqua;*/
+
+    text-shadow: 0px 1px 0 white, 1px 1px 0 white, 1px 0px 0 white, 1px -1px 0 white, 0px -1px 0 white, -1px -1px 0 white, -1px 0px 0 white, -1px 1px 0 white;
+    font-size: 1rem;
+}
+
+.planetProjectName {
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10rem;
+    top: -2rem;
 
     text-shadow: 0px 1px 0 white, 1px 1px 0 white, 1px 0px 0 white, 1px -1px 0 white, 0px -1px 0 white, -1px -1px 0 white, -1px 0px 0 white, -1px 1px 0 white;
     font-size: 1rem;
