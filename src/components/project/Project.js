@@ -12,8 +12,11 @@ function Project() {
 
   //クエリを取得
   const quely = new URLSearchParams(useLocation().search);
-  var initGalNum = quely.get("num"); //初期の星を指定
+  var initGalNum = parseInt(quely.get("grd")); //初期の星を指定
   if (initGalNum == null) initGalNum = 1;
+  if(projectData[initGalNum]==undefined)initGalNum = 1;
+  //console.log(projectData[initGalNum]);
+  //if(projectData[initGalNum][1]==undefined)console.log("aaa");//initGalNum=1;
 
 
   //1度だけ実行
@@ -114,7 +117,7 @@ function Project() {
       planetBox.style.left = leftRatio[i - 1] + "%";
 
       let planetImageHref = document.createElement("a");
-      const path = Pages.projectDetail.path + "?a=" + galaxyNum + "&b=" + i;
+      const path = Pages.projectDetail.path + "?grd=" + galaxyNum + "&cls=" + i;
       planetImageHref.href = path;
 
       let planetImage = document.createElement("img");

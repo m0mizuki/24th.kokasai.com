@@ -22,29 +22,33 @@ function ProjectDetail() {
 
   //クエリを取得
   const quely = new URLSearchParams(useLocation().search);
-  var a = parseInt(quely.get("a"));
-  var b = parseInt(quely.get("b"));
-  if (a == null) a = 1;
-  if (b == null) b = 1;
+  var grd = parseInt(quely.get("grd"));
+  var cls = parseInt(quely.get("cls"));
+  if (grd == null) grd = 1;
+  if (cls == null) cls = 1;
+  if(projectData[grd][cls]==undefined){
+    grd=1;
+    cls=1;
+  }
 
   //1度だけ実行
   useEffect(() => {
     //2回実行されないよう一時的にindex.jsの<React.StrictMode>を外している
     const groupName = document.getElementById("groupName");
-    groupName.innerHTML = projectData[a][b].groupName;
+    groupName.innerHTML = projectData[grd][cls].groupName;
 
     const projectName = document.getElementById("projectName");
-    projectName.innerHTML = projectData[a][b].projectName;
+    projectName.innerHTML = projectData[grd][cls].projectName;
 
     const description = document.getElementById("description");
-    description.innerHTML = projectData[a][b].description;
+    description.innerHTML = projectData[grd][cls].description;
 
     const projectImage = document.getElementById("projectImage");
     //projectImage.src="../img/circleCut/cc"+a+"-"+b+".png";
-    projectImage.src = projectData[a][b].imgPath;
+    projectImage.src = projectData[grd][cls].imgPath;
 
     const titleMark = document.getElementById("titleMark");
-    setColor(titleMark,a,b);
+    setColor(titleMark,grd,cls);
   }, []);
 
   function setColor(target,a,b){
@@ -80,42 +84,42 @@ function ProjectDetail() {
   function changeLeftPage(){
     let newA=1;
     let newB=1;
-    if(b==1){
-      if(a==1){
+    if(cls==1){
+      if(grd==1){
         newA=projectData.length-1; //企画の最後の組
         newB=projectData[newA].length-1; //企画の最後の組の最後の要素
       }
       else{
-        newA=a-1; //aの1つ前の組
+        newA=grd-1; //aの1つ前の組
         newB=projectData[newA].length-1; //aの1つ前の組の最後の要素
       }
     }
     else{
-      newA=a;
-      newB=b-1;
+      newA=grd;
+      newB=cls-1;
     }
-    window.location.assign(Pages.projectDetail.path + "?a=" + newA + "&b=" + newB);
+    window.location.assign(Pages.projectDetail.path + "?grd=" + newA + "&cls=" + newB);
   }
 
   //左の企画へ飛ぶ
   function changeRightPage(){
     let newA=1;
     let newB=1;
-    if(b==projectData[a].length-1){
-      if(a==projectData.length-1){
+    if(cls==projectData[grd].length-1){
+      if(grd==projectData.length-1){
         newA=1;
         newB=1;
       }
       else{
-        newA=a+1;
+        newA=grd+1;
         newB=1;
       }
     }
     else{
-      newA=a;
-      newB=b+1;
+      newA=grd;
+      newB=cls+1;
     }
-    window.location.assign(Pages.projectDetail.path + "?a=" + newA + "&b=" + newB);
+    window.location.assign(Pages.projectDetail.path + "?grd=" + newA + "&cls=" + newB);
   }
 
 
@@ -226,7 +230,7 @@ function ProjectDetail() {
           }
           //contents.appendChild(voteInfo);
 
-          if (i == a && j == b) {
+          if (i == grd && j == cls) {
             let isChecked = false;
             querySnapshot.forEach(doc => {
               if (doc.id == uid) {
@@ -267,10 +271,10 @@ function ProjectDetail() {
   function ClickNice() {
     let niceButton = document.getElementById("niceButton");
     if (niceButton.checked) {
-      setNice(a + "-" + b);
+      setNice(grd + "-" + cls);
     }
     else {
-      unsetNice(a + "-" + b);
+      unsetNice(grd + "-" + cls);
     }
   }
 
@@ -279,8 +283,9 @@ function ProjectDetail() {
 
   recieveVoteData();
 
+  //企画一覧にもどる
   function backToProjectPage() {
-    let path = Pages.project.path + "?num=" + a;
+    let path = Pages.project.path + "?grd=" + grd;
     window.location.assign(path);
   }
 
