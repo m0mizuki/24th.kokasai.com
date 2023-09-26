@@ -15,7 +15,7 @@
     backdrop-filter: blur(5px);
     border-radius: 1rem;
     border: 2px solid black;
-    left: 100%;
+    right: 100%;
     opacity: 0%;
 
     animation-delay: 0s;
@@ -26,12 +26,12 @@
 
 @keyframes accessContentAnimation {
     0% {
-        left: 100%;
+        right: 100%;
         opacity: 0%;
     }
 
     100% {
-        left: 0%;
+        right: 0%;
         opacity: 100%;
     }
 }

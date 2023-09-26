@@ -9,12 +9,14 @@ import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 function Project() {
+  //変更前の銀河の番号
+  var preGalNum=1;
 
   //クエリを取得
   const quely = new URLSearchParams(useLocation().search);
-  var initGalNum = parseInt(quely.get("grd")); //初期の星を指定
-  if (initGalNum == null) initGalNum = 1;
-  if(projectData[initGalNum]==undefined)initGalNum = 1;
+  var grd = parseInt(quely.get("grd")); //初期の星を指定
+  if (grd == null) grd = 1;
+  if(projectData[grd]==undefined)grd = 1;
   //console.log(projectData[initGalNum]);
   //if(projectData[initGalNum][1]==undefined)console.log("aaa");//initGalNum=1;
 
@@ -29,12 +31,13 @@ function Project() {
 
       let element = document.createElement("button"); //divとかでもいい
       element.classList.add("projectSelectButton");
+      if(i==grd)element.classList.add("projectSelectButton_selected");
       element.innerText = projectData[i][0];
-      element.addEventListener("click", () => changeGalaxy(i));
+      element.addEventListener("click", () => changeGalaxy(i,preGalNum));
       parent.appendChild(element);
     }
 
-    CreatePlanets(initGalNum); //初期設定:1年生の星を表示
+    CreatePlanets(grd); //初期設定:1年生の星を表示
 
     const planetArea = document.getElementById("planetArea");
     planetArea.style.animationTimingFunction = "ease-out";
@@ -56,7 +59,7 @@ function Project() {
 
   //最終的にはcreateElementではなくひとまとまりの要素を追加できるようにしたい
 
-  function changeGalaxy(galaxyNum) {
+  function changeGalaxy(galNum,preGalNum_local) {
     const planetArea = document.getElementById("planetArea");
 
     //ラベルを非表示
@@ -72,8 +75,13 @@ function Project() {
     planetArea.style.animationTimingFunction = "ease-in";
     planetArea.style.animationName = "fadeOut";
 
+    let projectSelectButton = document.getElementsByClassName("projectSelectButton");
+    projectSelectButton[preGalNum_local-1].classList.remove("projectSelectButton_selected");
+    projectSelectButton[galNum-1].classList.add("projectSelectButton_selected");
+    preGalNum=galNum;
+
     setTimeout(() => {
-      CreatePlanets(galaxyNum);
+      CreatePlanets(galNum);
 
       planetArea.style.animationTimingFunction = "ease-out";
       planetArea.style.animationName = "fadeIn";
