@@ -53,7 +53,7 @@ function Project() {
         //planetProjectName[i].classList.remove("invisible");
         planetGroupName[i].style.visibility = "visible";
         planetProjectName[i].style.visibility = "visible";
-        planetImage[i].style.border="double 8px #000000";
+        planetImage[i].style.border = "double 8px #000000";
         setColor(planetImage[i], grd);
       }
     }, 600);
@@ -74,7 +74,7 @@ function Project() {
       //planetProjectName[i].classList.add("invisible");
       planetGroupName[i].style.visibility = "hidden";
       planetProjectName[i].style.visibility = "hidden";
-      planetImage[i].style.border="solid 8px #00000000";
+      planetImage[i].style.border = "solid 8px #00000000";
     }
 
     planetArea.style.animationTimingFunction = "ease-in";
@@ -103,7 +103,7 @@ function Project() {
         //planetProjectName[i].classList.remove("invisible");
         planetGroupName[i].style.visibility = "visible";
         planetProjectName[i].style.visibility = "visible";
-        planetImage[i].style.border="double 8px #000000";
+        planetImage[i].style.border = "double 8px #000000";
         setColor(planetImage[i], galNum);
       }
     }, 800 + 600);
@@ -237,8 +237,9 @@ function Project() {
 
   var prePos = { x: 0, y: 0 };
   var addRad = 0; //角度(ラジアン)
+  var isMouseDown = 0; //マウスが押されたか
 
-  //置かれた指の位置を取得
+  //置かれた指の位置を取得(指)
   function SetPrePos(e) {
     //e.preventDefault();
     prePos.x = e.touches[0].clientX;
@@ -247,7 +248,17 @@ function Project() {
     SetPlanets(addRad);
   }
 
-  //スクロールした際の星の移動
+  //置かれた指の位置を取得(マウス)
+  function SetPrePos_mouse(e) {
+    //e.preventDefault();
+    isMouseDown = 1;
+    prePos.x = e.clientX;
+    prePos.y = e.clientY;
+
+    SetPlanets(addRad);
+  }
+
+  //スクロールした際の星の移動(指)
   function RotatePlanets(e) {
     e.preventDefault();
     const pos = {
@@ -259,6 +270,27 @@ function Project() {
     prePos.x = pos.x;
     prePos.y = pos.y;
     SetPlanets(addRad);
+  }
+
+  //スクロールした際の星の移動(マウス)
+  function RotatePlanets_mouse(e) {
+    if (isMouseDown == 1) {
+      e.preventDefault();
+      const pos = {
+        x: e.clientX,
+        y: e.clientY
+      };
+
+      addRad += (pos.x - prePos.x) / 100;
+      prePos.x = pos.x;
+      prePos.y = pos.y;
+      SetPlanets(addRad);
+    }
+  }
+
+  function SetEndPos_mosue(e) {
+    //e.preventDefault();
+    isMouseDown = 0;
   }
 
 
@@ -281,7 +313,7 @@ function Project() {
 
       <div className="moitonArea responsiveWidth">
         <div id="projectSelectBar" className="projectSelectBar"></div>
-        <div id="planetArea" className="planetArea" ref={circleRef}></div>
+        <div id="planetArea" className="planetArea" ref={circleRef} onMouseDown={SetPrePos_mouse} onMouseMove={RotatePlanets_mouse} onMouseUp={SetEndPos_mosue} onMouseLeave={SetEndPos_mosue}></div>
       </div>
 
       <div className="contents">
