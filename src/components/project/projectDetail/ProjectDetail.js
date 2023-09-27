@@ -18,17 +18,37 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 
 function ProjectDetail() {
-  //useEffect外で大丈夫？
 
+  //初期設定
+  const firebaseConfig = {
+    apiKey: "AIzaSyDtOvDLeIPRmBtRRVRTFxvkWS3sZjSlCuo",
+    authDomain: "kokasaivotetest-1.firebaseapp.com",
+    projectId: "kokasaivotetest-1",
+    storageBucket: "kokasaivotetest-1.appspot.com",
+    messagingSenderId: "740547025901",
+    appId: "1:740547025901:web:1f23829c617c04886c25e4"
+  }
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  var uid = "";
+  var isSignedIn = false;
+
+
+  var clickNikeDate = Date.now();
+  const cooltime=2000; //いいねのクールタイム[ms]
+
+
+  //useEffect外で大丈夫？
   //クエリを取得
   const quely = new URLSearchParams(useLocation().search);
   var grd = parseInt(quely.get("grd"));
   var cls = parseInt(quely.get("cls"));
   if (grd == null) grd = 1;
   if (cls == null) cls = 1;
-  if(projectData[grd][cls]==undefined){
-    grd=1;
-    cls=1;
+  if (projectData[grd][cls] == undefined) {
+    grd = 1;
+    cls = 1;
   }
 
   //1度だけ実行
@@ -48,96 +68,79 @@ function ProjectDetail() {
     projectImage.src = projectData[grd][cls].imgPath;
 
     const titleMark = document.getElementById("titleMark");
-    setColor(titleMark,grd,cls);
+    setColor(titleMark, grd, cls);
   }, []);
 
-  function setColor(target,grd,cls){
-    const markColor=[
+  function setColor(target, grd, cls) {
+    const markColor = [
       "#0000ff",
       "#ffa500",
       "#ff0000",
       "#ffff00",
       "#008000"
     ];
-    if(1<=grd&&grd<=5){
-      target.style.backgroundColor=markColor[cls-1]; //学科の色
+    if (1 <= grd && grd <= 5) {
+      target.style.backgroundColor = markColor[cls - 1]; //学科の色
     }
-    else if(6<=grd&&grd<=8){
-      target.style.backgroundColor="#00ffff"; //水色
+    else if (6 <= grd && grd <= 8) {
+      target.style.backgroundColor = "#00ffff"; //水色
     }
-    else if(9<=grd&&grd<=10){
-      target.style.backgroundColor="#ffc0cb"; //ピンク
+    else if (9 <= grd && grd <= 10) {
+      target.style.backgroundColor = "#ffc0cb"; //ピンク
     }
-    else if(11<=grd&&grd<=12){
-      target.style.backgroundColor="#00ff00"; //ライム
+    else if (11 <= grd && grd <= 12) {
+      target.style.backgroundColor = "#00ff00"; //ライム
     }
-    else if(grd==13){
-      target.style.backgroundColor="#8a2be2"; //紫色
+    else if (grd == 13) {
+      target.style.backgroundColor = "#8a2be2"; //紫色
     }
-    else{
-      target.style.backgroundColor="#696969"; //灰色
+    else {
+      target.style.backgroundColor = "#696969"; //灰色
     }
   }
 
 
   //右の企画へ飛ぶ
-  function changeLeftPage(){
-    let newA=1;
-    let newB=1;
-    if(cls==1){
-      if(grd==1){
-        newA=projectData.length-1; //企画の最後の組
-        newB=projectData[newA].length-1; //企画の最後の組の最後の要素
+  function changeLeftPage() {
+    let newA = 1;
+    let newB = 1;
+    if (cls == 1) {
+      if (grd == 1) {
+        newA = projectData.length - 1; //企画の最後の組
+        newB = projectData[newA].length - 1; //企画の最後の組の最後の要素
       }
-      else{
-        newA=grd-1; //aの1つ前の組
-        newB=projectData[newA].length-1; //aの1つ前の組の最後の要素
+      else {
+        newA = grd - 1; //aの1つ前の組
+        newB = projectData[newA].length - 1; //aの1つ前の組の最後の要素
       }
     }
-    else{
-      newA=grd;
-      newB=cls-1;
+    else {
+      newA = grd;
+      newB = cls - 1;
     }
     window.location.assign(Pages.projectDetail.path + "?grd=" + newA + "&cls=" + newB);
   }
 
   //左の企画へ飛ぶ
-  function changeRightPage(){
-    let newA=1;
-    let newB=1;
-    if(cls==projectData[grd].length-1){
-      if(grd==projectData.length-1){
-        newA=1;
-        newB=1;
+  function changeRightPage() {
+    let newA = 1;
+    let newB = 1;
+    if (cls == projectData[grd].length - 1) {
+      if (grd == projectData.length - 1) {
+        newA = 1;
+        newB = 1;
       }
-      else{
-        newA=grd+1;
-        newB=1;
+      else {
+        newA = grd + 1;
+        newB = 1;
       }
     }
-    else{
-      newA=grd;
-      newB=cls+1;
+    else {
+      newA = grd;
+      newB = cls + 1;
     }
     window.location.assign(Pages.projectDetail.path + "?grd=" + newA + "&cls=" + newB);
   }
-
-
-  //初期設定
-  const firebaseConfig = {
-    apiKey: "AIzaSyDtOvDLeIPRmBtRRVRTFxvkWS3sZjSlCuo",
-    authDomain: "kokasaivotetest-1.firebaseapp.com",
-    projectId: "kokasaivotetest-1",
-    storageBucket: "kokasaivotetest-1.appspot.com",
-    messagingSenderId: "740547025901",
-    appId: "1:740547025901:web:1f23829c617c04886c25e4"
-  }
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-
-
-  var uid = "";
-  var isSignedIn = false;
 
 
   //サインイン(匿名)
@@ -203,9 +206,13 @@ function ProjectDetail() {
     niceImage.style.animationName = "niceOutAnimation";
     setTimeout(() => {
       niceImage.src = heartImg;
+      niceImage.style.opacity=50+"%";
       niceImage.style.animationName = "niceInAnimation";
       recieveVoteData();
-    }, 400);
+    }, 200);
+    setTimeout(() => {
+      niceImage.style.opacity=100+"%";
+    }, cooltime);
   }
 
   function recieveVoteData() {
@@ -249,6 +256,10 @@ function ProjectDetail() {
               niceImage.src = heart1;
             }
             niceButton.classList.remove("invisible");
+            niceImage.style.opacity=50+"%";
+            setTimeout(() => {
+              niceImage.style.opacity=100+"%";
+            }, cooltime);
 
             let numberOfLikes = document.getElementById("numberOfLikes");
             numberOfLikes.innerText = querySnapshot.docs.length;
@@ -269,12 +280,23 @@ function ProjectDetail() {
 
 
   function ClickNice() {
-    let niceButton = document.getElementById("niceButton");
-    if (niceButton.checked) {
-      setNice(grd + "-" + cls);
+    let nowDate = Date.now();
+    let elapsedTime = nowDate - clickNikeDate;
+    if (elapsedTime > cooltime) {
+      let niceButton = document.getElementById("niceButton");
+      if (niceButton.checked) {
+        setNice(grd + "-" + cls);
+      }
+      else {
+        unsetNice(grd + "-" + cls);
+      }
+
+      clickNikeDate = nowDate;
     }
     else {
-      unsetNice(grd + "-" + cls);
+      //alert入れるとボタン効かなくなる
+      //let elapsedTime_s = elapsedTime / 1000;
+      //alert("クールタイム中\n" + elapsedTime_s.toFixed(1) + "秒待ってください");
     }
   }
 

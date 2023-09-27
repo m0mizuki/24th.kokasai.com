@@ -277,7 +277,7 @@
     position: absolute;
     width: 100%;
 
-    animation-duration: 0.4s;
+    animation-duration: 0.2s;
     animation-fill-mode: forwards;
     /*background-color: rgb(0, 136, 255);*/
 }
