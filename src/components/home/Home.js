@@ -1,4 +1,5 @@
 import { Pages } from "../Pages";
+import { useEffect } from "react";
 import "./homeStyle.css";
 import "../../css/pageStyle.css";
 import portrait_sakana from "../../img/portrait/portrait_sakana.png";
@@ -12,12 +13,31 @@ import subTitle from "../../img/poster/subTitle.png";
 import text24th from "../../img/poster/text24th.png";
 
 function Home() {
+  //1度だけ実行
+  //2回実行されないよう一時的にindex.jsの<React.StrictMode>を外している
+  useEffect(() => {
+    const ref = document.referrer;
+    console.log(ref);
+
+    //このページへの遷移前のパスにkokasai_demo2_reactが含まれるとき
+    let kokasaiPoster = document.getElementById("kokasaiPoster");
+    kokasaiPoster.style.animationDelay=0+"s";
+    kokasaiPoster.style.animationDuration=0+"s";
+    if(ref.indexOf("kokasai_demo2_react")!=-1){
+      let posterArea = document.getElementById("posterArea");
+      for(let child of posterArea.children){
+        child.style.animationDelay=0+"s";
+        child.style.animationDuration=0+"s";
+      }
+    }
+  }, []);
+
   return (
     <>
       <div className="backGroundImage responsiveWidth">
-        <img src={kokasaiPoster} className="kokasaiPoster" />
+        <img src={kokasaiPoster} id="kokasaiPoster" className="kokasaiPoster" />
       </div>
-      <div className="posterArea">
+      <div id="posterArea" className="posterArea">
         <img src={kosenText} className="kosenText" />
         <img src={kosenTitle} className="kosenTitle" />
         <img src={mojamoja} className="mojamoja" />
