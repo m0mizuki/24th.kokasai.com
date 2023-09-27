@@ -327,7 +327,6 @@ function ProjectDetail() {
           </div>
 
           <div className="descriptionArea">
-            <p className="heading_comment">comment</p>
             <p id="description" className="description"></p>
             <button className="toMapButton" onClick={() => { alert("未作成"); }}>&gt;&gt;マップで場所を確認</button>
           </div>
