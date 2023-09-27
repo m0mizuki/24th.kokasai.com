@@ -10,13 +10,13 @@ import { useLocation } from "react-router-dom";
 
 function Project() {
   //変更前の銀河の番号
-  var preGalNum=1;
+  var preGalNum = 1;
 
   //クエリを取得
   const quely = new URLSearchParams(useLocation().search);
   var grd = parseInt(quely.get("grd")); //初期の星を指定
   if (grd == null) grd = 1;
-  if(projectData[grd]==undefined)grd = 1;
+  if (projectData[grd] == undefined) grd = 1;
   //console.log(projectData[initGalNum]);
   //if(projectData[initGalNum][1]==undefined)console.log("aaa");//initGalNum=1;
 
@@ -31,9 +31,9 @@ function Project() {
 
       let element = document.createElement("button"); //divとかでもいい
       element.classList.add("projectSelectButton");
-      if(i==grd)element.classList.add("projectSelectButton_selected");
+      if (i == grd) element.classList.add("projectSelectButton_selected");
       element.innerText = projectData[i][0];
-      element.addEventListener("click", () => changeGalaxy(i,preGalNum));
+      element.addEventListener("click", () => changeGalaxy(i, preGalNum));
       parent.appendChild(element);
     }
 
@@ -47,11 +47,14 @@ function Project() {
       //ラベルを表示
       let planetGroupName = document.getElementsByClassName("planetGroupName");
       let planetProjectName = document.getElementsByClassName("planetProjectName");
+      let planetImage = document.getElementsByClassName("planetImage");
       for (let i = 0; i < planetGroupName.length; i++) {
         //planetGroupName[i].classList.remove("invisible");
         //planetProjectName[i].classList.remove("invisible");
-        planetGroupName[i].style.visibility="visible";
-        planetProjectName[i].style.visibility="visible";
+        planetGroupName[i].style.visibility = "visible";
+        planetProjectName[i].style.visibility = "visible";
+        planetImage[i].style.border="double 8px #000000";
+        setColor(planetImage[i], grd);
       }
     }, 600);
 
@@ -59,26 +62,28 @@ function Project() {
 
   //最終的にはcreateElementではなくひとまとまりの要素を追加できるようにしたい
 
-  function changeGalaxy(galNum,preGalNum_local) {
+  function changeGalaxy(galNum, preGalNum_local) {
     const planetArea = document.getElementById("planetArea");
 
     //ラベルを非表示
     let planetGroupName = document.getElementsByClassName("planetGroupName");
-      let planetProjectName = document.getElementsByClassName("planetProjectName");
-      for (let i = 0; i < planetGroupName.length; i++) {
-        //planetGroupName[i].classList.add("invisible");
-        //planetProjectName[i].classList.add("invisible");
-        planetGroupName[i].style.visibility="hidden";
-        planetProjectName[i].style.visibility="hidden";
-      }
+    let planetProjectName = document.getElementsByClassName("planetProjectName");
+    let planetImage = document.getElementsByClassName("planetImage");
+    for (let i = 0; i < planetGroupName.length; i++) {
+      //planetGroupName[i].classList.add("invisible");
+      //planetProjectName[i].classList.add("invisible");
+      planetGroupName[i].style.visibility = "hidden";
+      planetProjectName[i].style.visibility = "hidden";
+      planetImage[i].style.border="solid 8px #00000000";
+    }
 
     planetArea.style.animationTimingFunction = "ease-in";
     planetArea.style.animationName = "fadeOut";
 
     let projectSelectButton = document.getElementsByClassName("projectSelectButton");
-    projectSelectButton[preGalNum_local-1].classList.remove("projectSelectButton_selected");
-    projectSelectButton[galNum-1].classList.add("projectSelectButton_selected");
-    preGalNum=galNum;
+    projectSelectButton[preGalNum_local - 1].classList.remove("projectSelectButton_selected");
+    projectSelectButton[galNum - 1].classList.add("projectSelectButton_selected");
+    preGalNum = galNum;
 
     setTimeout(() => {
       CreatePlanets(galNum);
@@ -92,18 +97,21 @@ function Project() {
       //ラベルを表示
       let planetGroupName = document.getElementsByClassName("planetGroupName");
       let planetProjectName = document.getElementsByClassName("planetProjectName");
+      let planetImage = document.getElementsByClassName("planetImage");
       for (let i = 0; i < planetGroupName.length; i++) {
         //planetGroupName[i].classList.remove("invisible");
         //planetProjectName[i].classList.remove("invisible");
-        planetGroupName[i].style.visibility="visible";
-        planetProjectName[i].style.visibility="visible";
+        planetGroupName[i].style.visibility = "visible";
+        planetProjectName[i].style.visibility = "visible";
+        planetImage[i].style.border="double 8px #000000";
+        setColor(planetImage[i], galNum);
       }
     }, 800 + 600);
 
   }
 
 
-  function CreatePlanets(galaxyNum) {
+  function CreatePlanets(galNum) {
     const planetArea = document.getElementById("planetArea");
 
     //既存の星を削除
@@ -114,9 +122,9 @@ function Project() {
 
     //新たな星を作成
 
-    var leftRatio = new Array(galaxyNum);
+    var leftRatio = new Array(galNum);
 
-    for (let i = 1; i < projectData[galaxyNum].length; i++) {
+    for (let i = 1; i < projectData[galNum].length; i++) {
       //planetImage,planetTextはplanetBoxの子要素
       //planetBoxがplanetAreaの子要素になる
       let planetBox = document.createElement("div");
@@ -125,31 +133,31 @@ function Project() {
       planetBox.style.left = leftRatio[i - 1] + "%";
 
       let planetImageHref = document.createElement("a");
-      const path = Pages.projectDetail.path + "?grd=" + galaxyNum + "&cls=" + i;
+      const path = Pages.projectDetail.path + "?grd=" + galNum + "&cls=" + i;
       planetImageHref.href = path;
 
       let planetImage = document.createElement("img");
       //projectDataのパスの最初のドットを削除する
-      let pathOfData=projectData[galaxyNum][i].imgPath;
+      let pathOfData = projectData[galNum][i].imgPath;
       let imgPath = pathOfData.substr(1);
       planetImage.src = imgPath;
       planetImage.classList.add("planetImage");
-      planetImage.style.animationDelay = parseInt(4000 * i / (projectData[galaxyNum].length - 1)) + "ms";
-      planetImage.id = galaxyNum + "-" + i;
+      planetImage.style.animationDelay = parseInt(4000 * i / (projectData[galNum].length - 1)) + "ms";
+      planetImage.id = galNum + "-" + i;
 
       let planetGroupName = document.createElement("p");
       planetGroupName.classList.add("planetGroupName");
-      planetGroupName.innerHTML = projectData[galaxyNum][i].groupName;
+      planetGroupName.innerHTML = projectData[galNum][i].groupName;
       //ラベルを非表示
       //planetGroupName.classList.add("invisible");
-      planetGroupName.style.visibility="hidden";
+      planetGroupName.style.visibility = "hidden";
 
       let planetProjectName = document.createElement("p");
       planetProjectName.classList.add("planetProjectName");
-      planetProjectName.innerHTML = projectData[galaxyNum][i].projectName;
+      planetProjectName.innerHTML = projectData[galNum][i].projectName;
       //ラベルを非表示
       //planetProjectName.classList.add("invisible");
-      planetProjectName.style.visibility="hidden";
+      planetProjectName.style.visibility = "hidden";
 
       planetImageHref.appendChild(planetImage);
 
@@ -163,6 +171,35 @@ function Project() {
     //位置を設定
     addRad = 0;
     SetPlanets(addRad);
+  }
+
+  //borderの色を設定
+  function setColor(target, galNum) {
+    const markColor = [
+      "#0000ff",
+      "#ffa500",
+      "#ff0000",
+      "#ffff00",
+      "#008000"
+    ];
+    if (1 <= galNum && galNum <= 5) {
+      target.style.borderColor = markColor[galNum - 1]; //学科の色
+    }
+    else if (6 <= galNum && galNum <= 8) {
+      target.style.borderColor = "#00ffff"; //水色
+    }
+    else if (9 <= galNum && galNum <= 10) {
+      target.style.borderColor = "#ffc0cb"; //ピンク
+    }
+    else if (11 <= galNum && galNum <= 12) {
+      target.style.borderColor = "#00ff00"; //ライム
+    }
+    else if (galNum == 13) {
+      target.style.borderColor = "#8a2be2"; //紫色
+    }
+    else {
+      target.style.borderColor = "#696969"; //灰色
+    }
   }
 
   //星の位置を設定
@@ -181,16 +218,16 @@ function Project() {
         planetBox[i].style.left = 50 - boxWidth / 2 + 35 * Math.sin(rad) + "%";
         planetBox[i].style.top = 50 - boxWidth / 2 + 20 * Math.cos(rad) + "%";
 
-        const zVal=parseInt(100 * Math.cos(rad));
+        const zVal = parseInt(100 * Math.cos(rad));
         planetBox[i].style.zIndex = 1000 + zVal;
 
         planetBox[i].style.width = boxWidth + "%";
         planetBox[i].style.height = boxWidth + "%";
 
-        if(zVal>80){
+        if (zVal > 80) {
           planetBox[i].classList.remove("imgBlur");
         }
-        else{
+        else {
           planetBox[i].classList.add("imgBlur");
         }
       }

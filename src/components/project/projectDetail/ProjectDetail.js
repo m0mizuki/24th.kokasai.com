@@ -51,7 +51,7 @@ function ProjectDetail() {
     setColor(titleMark,grd,cls);
   }, []);
 
-  function setColor(target,a,b){
+  function setColor(target,grd,cls){
     const markColor=[
       "#0000ff",
       "#ffa500",
@@ -59,19 +59,19 @@ function ProjectDetail() {
       "#ffff00",
       "#008000"
     ];
-    if(1<=a&&a<=5){
-      target.style.backgroundColor=markColor[b-1]; //学科の色
+    if(1<=grd&&grd<=5){
+      target.style.backgroundColor=markColor[cls-1]; //学科の色
     }
-    else if(6<=a&&a<=8){
+    else if(6<=grd&&grd<=8){
       target.style.backgroundColor="#00ffff"; //水色
     }
-    else if(9<=a&&a<=10){
+    else if(9<=grd&&grd<=10){
       target.style.backgroundColor="#ffc0cb"; //ピンク
     }
-    else if(11<=a&&a<=12){
+    else if(11<=grd&&grd<=12){
       target.style.backgroundColor="#00ff00"; //ライム
     }
-    else if(a==13){
+    else if(grd==13){
       target.style.backgroundColor="#8a2be2"; //紫色
     }
     else{
