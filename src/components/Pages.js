@@ -1,39 +1,39 @@
 export const Pages={
     access:{
         displayName:"アクセス",
-        path:"/kokasai_demo2_react/access",
+        path:"/24th.kokasai.com/access",
         icon:"../../static/img/menuIcon.png",
     },
     event:{
         displayName:"ステージ企画",
-        path:"/kokasai_demo2_react/event",
+        path:"/24th.kokasai.com/event",
         icon:"../../static/img/menuIcon.png",
     },
     home:{
         displayName:"ホーム",
-        path:"/kokasai_demo2_react",
+        path:"/24th.kokasai.com",
         icon:"../../static/img/menuIcon.png",
     },
     map:{
         displayName:"マップ",
-        path:"/kokasai_demo2_react/map",
+        path:"/24th.kokasai.com/map",
         icon:"../../static/img/menuIcon.png",
     },
     project:{
         displayName:"企画",
-        path:"/kokasai_demo2_react/project",
+        path:"/24th.kokasai.com/project",
         icon:"../../static/img/menuIcon.png",
     },
     credit:{
         displayName:"クレジット",
-        path:"/kokasai_demo2_react/home/credit",
+        path:"/24th.kokasai.com/home/credit",
     },
     apologize:{
         displayName:"作成中",
-        path:"/kokasai_demo2_react/home/apologize",
+        path:"/24th.kokasai.com/home/apologize",
     },
     projectDetail:{
         displayName:"企画詳細",
-        path:"/kokasai_demo2_react/project/projectDetail",
+        path:"/24th.kokasai.com/project/projectDetail",
     }
 };

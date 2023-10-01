@@ -19,8 +19,8 @@ function Home() {
     const ref = document.referrer;
     //console.log(ref);
 
-    //このページへの遷移前のパスにkokasai_demo2_reactが含まれるとき
-    if (ref.indexOf("kokasai_demo2_react") != -1) {
+    //このページへの遷移前のパスに"24th.kokasai.com"が含まれるとき
+    if (ref.indexOf("24th.kokasai.com") != -1) {
       let kokasaiPoster = document.getElementById("kokasaiPoster");
       kokasaiPoster.style.animationDelay = 0 + "s";
       kokasaiPoster.style.animationDuration = 0 + "s";

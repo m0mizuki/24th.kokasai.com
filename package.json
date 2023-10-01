@@ -1,5 +1,5 @@
 {
-  "name": "kokasai_demo2_react",
+  "name": "24th.kokasai.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -42,5 +42,5 @@
   "devDependencies": {
     "gh-pages": "^5.0.0"
   },
-  "homepage": "https://m0mizuki.github.io/kokasai_demo2_react/"
+  "homepage": "https://m0mizuki.github.io/24th.kokasai.com/"
 }
