@@ -105,8 +105,8 @@
 
 .planetImage {
     position: relative;
-    width: 40%;
-    left: 30%;
+    width: 44%;
+    left: 28%;
     top: -2rem;
     box-sizing: border-box; /*枠線もサイズに含む*/
     border-radius: 10%;
@@ -123,7 +123,7 @@
 }
 
 .imgBlur{
-    filter: blur(1px);
+    filter: blur(1.5px);
 }
 
 @keyframes planetImageAnimation {
@@ -147,7 +147,7 @@
     /*background-color: aqua;*/
 
     text-shadow: 0px 1px 0 white, 1px 1px 0 white, 1px 0px 0 white, 1px -1px 0 white, 0px -1px 0 white, -1px -1px 0 white, -1px 0px 0 white, -1px 1px 0 white;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .planetProjectName {

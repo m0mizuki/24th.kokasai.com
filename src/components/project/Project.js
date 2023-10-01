@@ -175,6 +175,7 @@ function Project() {
 
   //borderの色を設定
   function setColor(target, galNum) {
+    /*
     const markColor = [
       "#0000ff",
       "#ffa500",
@@ -199,7 +200,8 @@ function Project() {
     }
     else {
       target.style.borderColor = "#696969"; //灰色
-    }
+    }*/
+    target.style.borderColor = "#3FFFFF";
   }
 
   //星の位置を設定
