@@ -279,7 +279,7 @@ function ProjectDetail() {
   }
 
 
-  function ClickNice() {
+  function clickNice() {
     let nowDate = Date.now();
     let elapsedTime = nowDate - clickNikeDate;
     if (elapsedTime > cooltime) {
@@ -339,7 +339,7 @@ function ProjectDetail() {
 
           <div className="niceArea">
             <div id="numberOfLikes" className="numberOfLikes"></div>
-            <input id="niceButton" className="niceButton invisible" type="checkbox" onClick={ClickNice} />
+            <input id="niceButton" className="niceButton invisible" type="checkbox" onClick={clickNice} />
             <div className="niceImageArea">
               <label for="niceButton">
                 <img id="niceImage" className="niceImage" />

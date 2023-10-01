@@ -24,13 +24,13 @@ function Map() {
   useEffect(() => {
     //2回実行されないよう一時的にindex.jsの<React.StrictMode>を外している
 
-    CreateMapObjects();
+    createMapObjects();
 
   }, []);
 
 
   //置かれた指の位置を取得(指)
-  function SetPrePos(e) {
+  function setPrePos(e) {
     //e.preventDefault();
     prePos0.x = e.touches[0].clientX;
     prePos0.y = e.touches[0].clientY;
@@ -44,7 +44,7 @@ function Map() {
     }
   }
   //クリックされたマウスの位置を取得(マウス)
-  function SetPrePos_mouse(e) {
+  function setPrePos_mouse(e) {
     e.preventDefault();
     isMouseDown = 1;
     prePos0.x = e.clientX;
@@ -52,7 +52,7 @@ function Map() {
   }
 
   //マップのスクロール(指)
-  function ScrollMap(e) {
+  function scrollMap(e) {
     e.preventDefault();
     if (e.touches.length == 1) {
       const pos = {
@@ -66,7 +66,7 @@ function Map() {
       prePos0.x = pos.x;
       prePos0.y = pos.y;
 
-      SetMapPos(mapPos.x, mapPos.y, mapSize);
+      setMapPos(mapPos.x, mapPos.y, mapSize);
     }
     else if (e.touches.length == 2) {
 
@@ -97,7 +97,7 @@ function Map() {
       preMidPos.x = midPos.x;
       preMidPos.y = midPos.y;
 
-      SetMapPos(mapPos.x, mapPos.y, mapSize);
+      setMapPos(mapPos.x, mapPos.y, mapSize);
 
       //一定の拡大倍率になったら表示
       if (mapSize >= 800 && mapSize - zoomRate < 800) {
@@ -115,7 +115,7 @@ function Map() {
     }
   }
   //マップのスクロール(マウス)
-  function ScrollMap_mouse(e) {
+  function scrollMap_mouse(e) {
     e.preventDefault();
     if (isMouseDown == 1) {
       const pos = {
@@ -129,11 +129,11 @@ function Map() {
       prePos0.x = pos.x;
       prePos0.y = pos.y;
 
-      SetMapPos(mapPos.x, mapPos.y, mapSize);
+      setMapPos(mapPos.x, mapPos.y, mapSize);
     }
   }
   //マップのズーム(マウス)
-  function ZoomMap_mouse(e) {
+  function zoomMap_mouse(e) {
     e.preventDefault();
     const pos = {
       x: e.clientX,
@@ -149,7 +149,7 @@ function Map() {
     mapPos.x += zoomRate * (campusMapBounds.left - pos.x) / mapSize;
     mapPos.y += zoomRate * (campusMapBounds.top - pos.y) / mapSize;
 
-    SetMapPos(mapPos.x, mapPos.y, mapSize);
+    setMapPos(mapPos.x, mapPos.y, mapSize);
 
     //一定の拡大倍率になったら表示
     if (mapSize >= appearSize && mapSize - zoomRate < appearSize) {
@@ -167,7 +167,7 @@ function Map() {
   }
 
   //マップが瞬間移動しないようにする(指)
-  function SetEndPos(e) {
+  function setEndPos(e) {
     //e.preventDefault();
     if (e.touches.length == 1) {
       prePos0.x = e.touches[0].clientX;
@@ -175,13 +175,13 @@ function Map() {
     }
   }
   //マウスが押されていない判定にする(マウス)
-  function SetEndPos_mosue(e) {
+  function setEndPos_mosue(e) {
     //e.preventDefault();
     isMouseDown = 0;
   }
 
   //マップの位置,大きさを設定
-  function SetMapPos(mapPosX, mapPosY, mapSize) {
+  function setMapPos(mapPosX, mapPosY, mapSize) {
     let campusMap = document.getElementById("mapMovingBox");
     campusMap.style.width = mapSize + "px";
     campusMap.style.left = mapPosX + "px";
@@ -189,7 +189,7 @@ function Map() {
   }
 
 
-  function CreateMapObjects() {
+  function createMapObjects() {
     const mapMovingBox = document.getElementById("mapMovingBox");
 
     //マップ上のアイコンを生成
@@ -207,7 +207,7 @@ function Map() {
         mapObjectImage.type = "image";
         mapObjectImage.src = mapObjectIcon;
         mapObjectImage.classList.add("mapObjectImage");
-        mapObjectImage.onclick = ToProjectDetail;
+        mapObjectImage.onclick = toProjectDetail;
         mapObjectImage.id = i + "-" + j;
 
         let mapObjectText = document.createElement("p");
@@ -227,23 +227,23 @@ function Map() {
   //パッシブでない関数を呼び出す
   const circleRef = useRef(null);
   useEffect(() => {
-    circleRef.current.addEventListener("touchstart", SetPrePos, { passive: false });
-    circleRef.current.addEventListener("touchmove", ScrollMap, { passive: false });
-    circleRef.current.addEventListener("touchend", SetEndPos, { passive: false });
+    circleRef.current.addEventListener("touchstart", setPrePos, { passive: false });
+    circleRef.current.addEventListener("touchmove", scrollMap, { passive: false });
+    circleRef.current.addEventListener("touchend", setEndPos, { passive: false });
 
-    circleRef.current.addEventListener("wheel", ZoomMap_mouse, { passive: false });
+    circleRef.current.addEventListener("wheel", zoomMap_mouse, { passive: false });
     return (() => {
-      circleRef.current.removeEventListener("touchstart", SetPrePos);
-      circleRef.current.removeEventListener("touchmove", ScrollMap);
-      circleRef.current.removeEventListener("touchend", SetEndPos);
+      circleRef.current.removeEventListener("touchstart", setPrePos);
+      circleRef.current.removeEventListener("touchmove", scrollMap);
+      circleRef.current.removeEventListener("touchend", setEndPos);
 
-      circleRef.current.removeEventListener("wheel", ZoomMap_mouse);
+      circleRef.current.removeEventListener("wheel", zoomMap_mouse);
     });
   });
 
 
   //企画詳細ページに移動
-  function ToProjectDetail() {
+  function toProjectDetail() {
     const ab = this.id.split("-");
     window.location.assign(Pages.projectDetail.path + "?a=" + ab[0] + "&b=" + ab[1]);
   }
@@ -251,7 +251,7 @@ function Map() {
 
   return (
     <>
-      <div id="mapCanvas" className="mapCanvas" ref={circleRef} onMouseDown={SetPrePos_mouse} onMouseMove={ScrollMap_mouse} onMouseUp={SetEndPos_mosue} onMouseLeave={SetEndPos_mosue}>
+      <div id="mapCanvas" className="mapCanvas" ref={circleRef} onMouseDown={setPrePos_mouse} onMouseMove={scrollMap_mouse} onMouseUp={setEndPos_mosue} onMouseLeave={setEndPos_mosue}>
         <div id="mapMovingBox" className="mapMovingBox">
           <img id="campusMap_1" className="campusMap_1" src={campusMap_1} />
         </div>

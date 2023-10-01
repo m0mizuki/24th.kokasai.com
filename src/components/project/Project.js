@@ -37,7 +37,7 @@ function Project() {
       parent.appendChild(element);
     }
 
-    CreatePlanets(grd); //初期設定:1年生の星を表示
+    createPlanets(grd); //初期設定:1年生の星を表示
 
     const planetArea = document.getElementById("planetArea");
     planetArea.style.animationTimingFunction = "ease-out";
@@ -86,7 +86,7 @@ function Project() {
     preGalNum = galNum;
 
     setTimeout(() => {
-      CreatePlanets(galNum);
+      createPlanets(galNum);
 
       planetArea.style.animationTimingFunction = "ease-out";
       planetArea.style.animationName = "fadeIn";
@@ -111,7 +111,7 @@ function Project() {
   }
 
 
-  function CreatePlanets(galNum) {
+  function createPlanets(galNum) {
     const planetArea = document.getElementById("planetArea");
 
     //既存の星を削除
@@ -170,7 +170,7 @@ function Project() {
 
     //位置を設定
     addRad = 0;
-    SetPlanets(addRad);
+    setPlanets(addRad);
   }
 
   //borderの色を設定
@@ -203,7 +203,7 @@ function Project() {
   }
 
   //星の位置を設定
-  function SetPlanets(addRad) {
+  function setPlanets(addRad) {
     let planetBox = document.getElementsByClassName("planetBox");
 
     if (planetBox.length == 0) {
@@ -240,26 +240,26 @@ function Project() {
   var isMouseDown = 0; //マウスが押されたか
 
   //置かれた指の位置を取得(指)
-  function SetPrePos(e) {
+  function setPrePos(e) {
     //e.preventDefault();
     prePos.x = e.touches[0].clientX;
     prePos.y = e.touches[0].clientY;
 
-    SetPlanets(addRad);
+    setPlanets(addRad);
   }
 
   //置かれた指の位置を取得(マウス)
-  function SetPrePos_mouse(e) {
+  function setPrePos_mouse(e) {
     //e.preventDefault();
     isMouseDown = 1;
     prePos.x = e.clientX;
     prePos.y = e.clientY;
 
-    SetPlanets(addRad);
+    setPlanets(addRad);
   }
 
   //スクロールした際の星の移動(指)
-  function RotatePlanets(e) {
+  function rotatePlanets(e) {
     e.preventDefault();
     const pos = {
       x: e.touches[0].clientX,
@@ -269,11 +269,11 @@ function Project() {
     addRad += (pos.x - prePos.x) / 100;
     prePos.x = pos.x;
     prePos.y = pos.y;
-    SetPlanets(addRad);
+    setPlanets(addRad);
   }
 
   //スクロールした際の星の移動(マウス)
-  function RotatePlanets_mouse(e) {
+  function rotatePlanets_mouse(e) {
     if (isMouseDown == 1) {
       e.preventDefault();
       const pos = {
@@ -284,11 +284,11 @@ function Project() {
       addRad += (pos.x - prePos.x) / 100;
       prePos.x = pos.x;
       prePos.y = pos.y;
-      SetPlanets(addRad);
+      setPlanets(addRad);
     }
   }
 
-  function SetEndPos_mosue(e) {
+  function setEndPos_mosue(e) {
     //e.preventDefault();
     isMouseDown = 0;
   }
@@ -297,11 +297,11 @@ function Project() {
   //パッシブでない関数を呼び出す
   const circleRef = useRef(null);
   useEffect(() => {
-    circleRef.current.addEventListener("touchstart", SetPrePos, { passive: false });
-    circleRef.current.addEventListener("touchmove", RotatePlanets, { passive: false });
+    circleRef.current.addEventListener("touchstart", setPrePos, { passive: false });
+    circleRef.current.addEventListener("touchmove", rotatePlanets, { passive: false });
     return (() => {
-      circleRef.current.removeEventListener("touchstart", SetPrePos);
-      circleRef.current.removeEventListener("touchmove", RotatePlanets);
+      circleRef.current.removeEventListener("touchstart", setPrePos);
+      circleRef.current.removeEventListener("touchmove", rotatePlanets);
     });
   });
 
@@ -313,7 +313,7 @@ function Project() {
 
       <div className="moitonArea responsiveWidth">
         <div id="projectSelectBar" className="projectSelectBar"></div>
-        <div id="planetArea" className="planetArea" ref={circleRef} onMouseDown={SetPrePos_mouse} onMouseMove={RotatePlanets_mouse} onMouseUp={SetEndPos_mosue} onMouseLeave={SetEndPos_mosue}></div>
+        <div id="planetArea" className="planetArea" ref={circleRef} onMouseDown={setPrePos_mouse} onMouseMove={rotatePlanets_mouse} onMouseUp={setEndPos_mosue} onMouseLeave={setEndPos_mosue}></div>
       </div>
 
       <div className="contents">
