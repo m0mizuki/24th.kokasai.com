@@ -2,12 +2,20 @@
     position: relative;
     /*height: 100vh;*/
     width: 100%;
-    /*background-color: rgba(255, 255, 255, 0.3);*/
+    /*background-color: rgba(255, 0, 0, 0.3);*/
+}
+
+.posterArea_noPosterText{
+    position: absolute;
+    width: 100%;
 }
 
 @media screen and (min-aspect-ratio:1/1.414) {
     .posterArea {
       height: 100vh;
+    }
+    .posterArea_noPosterText{
+        height: 100vh;
     }
   }
   
@@ -15,6 +23,9 @@
     .posterArea {
       height: calc(100vw*1.414);
     }
+    .posterArea_noPosterText {
+        height: calc(100vw*1.414);
+      }
   }
 
 .posterTitle{
@@ -114,6 +125,16 @@
         left: 0%;
         filter: blur(0px);
     }
+}
+
+.kokasaiPoster_mirror{
+    position: absolute;
+    transform: scale(1,-1);
+    width: 100%;
+    top: calc(99vw*1.414);
+    left: 0%;
+    /*filter: blur(10px);*/
+    z-index: -10;
 }
 
 .kosenText{

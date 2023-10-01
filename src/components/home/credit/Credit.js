@@ -1,13 +1,18 @@
-import { Pages } from "../Pages";
-import "../../css/pageStyle.css";
-import kokasaiPoster from "../../img/poster/kokasaiPoster.jpg";
+import "../homeStyle.css";
+import "../../../css/pageStyle.css";
+import kokasaiPoster from "../../../img/poster/kokasaiPoster.jpg";
 
 function Credit() {
   return (
     <>
-      <img src={kokasaiPoster} className="backGroundImage responsiveWidth" />
+      <div className="backGroundImage responsiveWidth">
+        <img src={kokasaiPoster} id="kokasaiPoster" className="kokasaiPoster" />
+        <img src={kokasaiPoster} id="kokasaiPoster_mirror" className="kokasaiPoster_mirror" />
+      </div>
 
-      <div className="contents contents_whitesmoke">
+      <div className="posterArea_noPosterText"></div>
+
+      <div className="contents contents_whitesmoke noPosterText">
         <div className="contents_innerBlock">
           <br />
           <h2>工華祭実行委員長</h2>

@@ -26,7 +26,7 @@ export const Pages={
     },
     credit:{
         displayName:"クレジット",
-        path:"/kokasai_demo2_react/credit",
+        path:"/kokasai_demo2_react/home/credit",
     },
     projectDetail:{
         displayName:"企画詳細",

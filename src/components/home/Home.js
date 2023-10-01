@@ -24,7 +24,7 @@ function Home() {
       let kokasaiPoster = document.getElementById("kokasaiPoster");
       kokasaiPoster.style.animationDelay = 0 + "s";
       kokasaiPoster.style.animationDuration = 0 + "s";
-      
+
       let posterArea = document.getElementById("posterArea");
       for (let child of posterArea.children) {
         child.style.animationDelay = 0 + "s";
@@ -37,6 +37,7 @@ function Home() {
     <>
       <div className="backGroundImage responsiveWidth">
         <img src={kokasaiPoster} id="kokasaiPoster" className="kokasaiPoster" />
+        <img src={kokasaiPoster} id="kokasaiPoster_mirror" className="kokasaiPoster_mirror" />
       </div>
       <div id="posterArea" className="posterArea">
         <img src={kosenText} className="kosenText" />

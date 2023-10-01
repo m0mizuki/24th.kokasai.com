@@ -8,7 +8,7 @@ import Event from "./components/event/Event";
 import Home from "./components/home/Home";
 import Map from "./components/map/Map";
 import Project from "./components/project/Project";
-import Credit from "./components/credit/Credit";
+import Credit from "./components/home/credit/Credit";
 import ProjectDetail from "./components/project/projectDetail/ProjectDetail";
 
 import './index.css';
