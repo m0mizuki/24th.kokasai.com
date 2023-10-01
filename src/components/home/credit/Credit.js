@@ -6,8 +6,8 @@ function Credit() {
   return (
     <>
       <div className="backGroundImage responsiveWidth">
-        <img src={kokasaiPoster} id="kokasaiPoster" className="kokasaiPoster" />
-        <img src={kokasaiPoster} id="kokasaiPoster_mirror" className="kokasaiPoster_mirror" />
+        <img src={kokasaiPoster} className="kokasaiPoster_noAnimation" />
+        <img src={kokasaiPoster} className="kokasaiPoster_mirror" />
       </div>
 
       <div className="posterArea_noPosterText"></div>

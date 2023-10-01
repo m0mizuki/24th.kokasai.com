@@ -9,6 +9,7 @@ import Home from "./components/home/Home";
 import Map from "./components/map/Map";
 import Project from "./components/project/Project";
 import Credit from "./components/home/credit/Credit";
+import Apologize from "./components/home/apologize/Apologize";
 import ProjectDetail from "./components/project/projectDetail/ProjectDetail";
 
 import './index.css';
@@ -23,11 +24,12 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path={Pages.access.path} element={<Access />} />
-          <Route exact path={Pages.event.path} element={<Event />} />
+          <Route exact path={Pages.event.path} element={<Apologize />} />
           <Route exact path={Pages.home.path} element={<Home />} />
-          <Route exact path={Pages.map.path} element={<Map />} />
+          <Route exact path={Pages.map.path} element={<Apologize />} />
           <Route exact path={Pages.project.path} element={<Project />} />
-          <Route exact path={Pages.credit.path} element={<Credit />} />
+          <Route exact path={Pages.credit.path} element={<Apologize />} />
+          <Route exact path={Pages.apologize.path} element={<Apologize />} />
           <Route exact path={Pages.projectDetail.path} element={<ProjectDetail />} />
         </Routes>
       </BrowserRouter>

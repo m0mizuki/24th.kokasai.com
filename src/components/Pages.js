@@ -28,6 +28,10 @@ export const Pages={
         displayName:"クレジット",
         path:"/kokasai_demo2_react/home/credit",
     },
+    apologize:{
+        displayName:"作成中",
+        path:"/kokasai_demo2_react/home/apologize",
+    },
     projectDetail:{
         displayName:"企画詳細",
         path:"/kokasai_demo2_react/project/projectDetail",

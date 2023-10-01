@@ -127,6 +127,13 @@
     }
 }
 
+.kokasaiPoster_noAnimation{
+    position: absolute;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+}
+
 .kokasaiPoster_mirror{
     position: absolute;
     transform: scale(1,-1);
