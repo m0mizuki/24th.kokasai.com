@@ -17,17 +17,18 @@ function Home() {
   //2回実行されないよう一時的にindex.jsの<React.StrictMode>を外している
   useEffect(() => {
     const ref = document.referrer;
-    console.log(ref);
+    //console.log(ref);
 
     //このページへの遷移前のパスにkokasai_demo2_reactが含まれるとき
-    let kokasaiPoster = document.getElementById("kokasaiPoster");
-    kokasaiPoster.style.animationDelay=0+"s";
-    kokasaiPoster.style.animationDuration=0+"s";
-    if(ref.indexOf("kokasai_demo2_react")!=-1){
+    if (ref.indexOf("kokasai_demo2_react") != -1) {
+      let kokasaiPoster = document.getElementById("kokasaiPoster");
+      kokasaiPoster.style.animationDelay = 0 + "s";
+      kokasaiPoster.style.animationDuration = 0 + "s";
+      
       let posterArea = document.getElementById("posterArea");
-      for(let child of posterArea.children){
-        child.style.animationDelay=0+"s";
-        child.style.animationDuration=0+"s";
+      for (let child of posterArea.children) {
+        child.style.animationDelay = 0 + "s";
+        child.style.animationDuration = 0 + "s";
       }
     }
   }, []);

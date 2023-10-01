@@ -18,6 +18,7 @@ function Map() {
   const mapWidth = 500; //画像によるので読み込めるようにする
   var mapSize = mapWidth;
   var isMouseDown = 0; //マウスが押されたか
+  const appearSize = 800; //アイコンの表示/非表示の境目のサイズ[px]
 
   //1度だけ実行
   useEffect(() => {
@@ -151,13 +152,13 @@ function Map() {
     SetMapPos(mapPos.x, mapPos.y, mapSize);
 
     //一定の拡大倍率になったら表示
-    if (mapSize >= 800 && mapSize - zoomRate < 800) {
+    if (mapSize >= appearSize && mapSize - zoomRate < appearSize) {
       let mapObjectBox = document.getElementsByClassName("mapObjectBox");
       for (let i = 0; i < mapObjectBox.length; i++) {
         mapObjectBox[i].classList.remove("invisible");
       }
     }
-    else if (mapSize < 800 && mapSize - zoomRate >= 800) {
+    else if (mapSize < appearSize && mapSize - zoomRate >= appearSize) {
       let mapObjectBox = document.getElementsByClassName("mapObjectBox");
       for (let i = 0; i < mapObjectBox.length; i++) {
         mapObjectBox[i].classList.add("invisible");
