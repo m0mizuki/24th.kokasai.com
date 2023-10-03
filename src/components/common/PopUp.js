@@ -12,8 +12,8 @@ function PopUp({ children }) {
     }
 
     return (
-        <div id="popUp" className="responsiveWidth invisible">
-            <input type="image" src={closeIcon} id="closeIcon" onClick={()=>closePopUp()} />
+        <div id="popUp" className="popUP responsiveWidth invisible">
+            <input type="image" src={closeIcon} id="closeIcon" className="closeIcon" onClick={()=>closePopUp()} />
             {children}
         </div>
     )
