@@ -53,8 +53,8 @@ function Project() {
         //planetProjectName[i].classList.remove("invisible");
         planetGroupName[i].style.visibility = "visible";
         planetProjectName[i].style.visibility = "visible";
-        planetImage[i].style.border = "double 8px #000000";
-        setColor(planetImage[i], grd);
+        planetImage[i].style.border = "double 8px #00FFFF";
+        //setColor(planetImage[i], grd);
       }
     }, 600);
 
@@ -74,6 +74,7 @@ function Project() {
       //planetProjectName[i].classList.add("invisible");
       planetGroupName[i].style.visibility = "hidden";
       planetProjectName[i].style.visibility = "hidden";
+      planetImage[i].style.animationName="none";
       planetImage[i].style.border = "solid 8px #00000000";
     }
 
@@ -103,8 +104,8 @@ function Project() {
         //planetProjectName[i].classList.remove("invisible");
         planetGroupName[i].style.visibility = "visible";
         planetProjectName[i].style.visibility = "visible";
-        planetImage[i].style.border = "double 8px #000000";
-        setColor(planetImage[i], galNum);
+        planetImage[i].style.border = "double 8px #00FFFF";
+        //setColor(planetImage[i], galNum);
       }
     }, 800 + 600);
 

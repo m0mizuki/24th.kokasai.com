@@ -517,6 +517,14 @@
             "imgPath":"../img/circleCut/cc13-3.jpg",
             "posTop":"20%",
             "posLeft":"45%"
+        },
+        {
+            "groupName":"その他",
+            "projectName":"入試広報ブース",
+            "description":"群馬高専への入学を考えている小学生・中学生・高校生の皆さん、是非お立ち寄りください。本校教員へ質問・相談できる時間帯も設ける予定です。",
+            "imgPath":"../img/circleCut/cc13-4.jpg",
+            "posTop":"20%",
+            "posLeft":"45%"
         }
     ]
 ]
