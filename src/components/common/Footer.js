@@ -1,8 +1,8 @@
 import { Pages } from "../Pages";
 import "./commonStyle.css";
 import "../../css/pageStyle.css";
-import xIcon from "../../img/snsIcon/XIcon.png";
-import instagramIcon from "../../img/snsIcon/instagramIcon.png";
+//import xIcon from "../../img/snsIcon/XIcon.png";
+//import instagramIcon from "../../img/snsIcon/instagramIcon.png";
 
 function Footer() {
 
@@ -19,8 +19,8 @@ function Footer() {
             </div>
             <div className="snsListArea">
                 <p className="heading3 textWhite">公式SNS</p>
-                <a href="https://twitter.com/nitgc_kokasai" target="_blank" rel="noreferrer noopener"><img src={xIcon} className="snsIcon" /></a>
-                <a href="https://instagram.com/nitgc_kokasai" target="_blank" rel="noreferrer noopener"><img src={instagramIcon} className="snsIcon" /></a>
+                <a href="https://twitter.com/nitgc_kokasai" target="_blank" rel="noreferrer noopener"><img src={`${process.env.PUBLIC_URL}/img/snsIcon/XIcon.png`} className="snsIcon" /></a>
+                <a href="https://instagram.com/nitgc_kokasai" target="_blank" rel="noreferrer noopener"><img src={`${process.env.PUBLIC_URL}/img/snsIcon/instagramIcon.png`} className="snsIcon" /></a>
             </div>
 
             <p className="copyrightMark">© 2023 工華祭実行委員会</p>

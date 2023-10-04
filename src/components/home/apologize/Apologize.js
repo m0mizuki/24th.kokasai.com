@@ -1,13 +1,13 @@
 import "../homeStyle.css";
 import "../../../css/pageStyle.css";
-import kokasaiPoster from "../../../img/poster/kokasaiPoster.jpg";
+//import kokasaiPoster from "../../../img/poster/kokasaiPoster.jpg";
 
 function Apologize() {
   return (
     <>
       <div className="backGroundImage responsiveWidth">
-        <img src={kokasaiPoster} className="kokasaiPoster_noAnimation" />
-        <img src={kokasaiPoster} className="kokasaiPoster_mirror" />
+        <img src={`${process.env.PUBLIC_URL}/img/poster/kokasaiPoster.jpg`} className="kokasaiPoster_noAnimation" />
+        <img src={`${process.env.PUBLIC_URL}/img/poster/kokasaiPoster.jpg`} className="kokasaiPoster_mirror" />
       </div>
 
       <div className="posterArea_noPosterText"></div>

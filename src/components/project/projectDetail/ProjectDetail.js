@@ -1,5 +1,4 @@
 import { Pages } from "../../Pages";
-import backGround from "../../../img/backGround/space.png";
 import "../../../css/pageStyle.css";
 import "../projectStyle.css";
 import projectData from "../../../json/projectData.json";
@@ -316,7 +315,7 @@ function ProjectDetail() {
 
   return (
     <>
-      <img src={backGround} className="backGroundImage responsiveWidth" />
+      <img src={`${process.env.PUBLIC_URL}/img/backGround/space.png`} className="backGroundImage responsiveWidth" />
 
 
       <div id="contents" className="contents contents_spaceSmoke">

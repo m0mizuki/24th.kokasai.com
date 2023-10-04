@@ -1,5 +1,4 @@
 import { Pages } from "../Pages";
-import backGround from "../../img/backGround/space.png"
 import rope from "../../img/rope.png";
 import "../../css/pageStyle.css";
 import "./projectStyle.css";
@@ -139,9 +138,10 @@ function Project() {
 
       let planetImage = document.createElement("img");
       //projectDataのパスの最初のドットを削除する
-      let pathOfData = projectData[galNum][i].imgPath;
-      let imgPath = pathOfData.substr(1);
-      planetImage.src = imgPath;
+      //let pathOfData = projectData[galNum][i].imgPath;
+      //let imgPath = pathOfData.substr(1);
+      //planetImage.src = imgPath;
+      planetImage.src = projectData[galNum][i].imgPath;
       planetImage.classList.add("planetImage");
       planetImage.style.animationDelay = parseInt(4000 * i / (projectData[galNum].length - 1)) + "ms";
       planetImage.id = galNum + "-" + i;
@@ -312,7 +312,7 @@ function Project() {
 
   return (
     <>
-      <img src={backGround} className="backGroundImage responsiveWidth" />
+      <img src={`${process.env.PUBLIC_URL}/img/backGround/space.png`} className="backGroundImage responsiveWidth" />
 
       <div className="moitonArea responsiveWidth">
         <div id="projectSelectBar" className="projectSelectBar"></div>

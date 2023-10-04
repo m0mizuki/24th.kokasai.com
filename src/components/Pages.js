@@ -26,14 +26,14 @@ export const Pages={
     },
     credit:{
         displayName:"クレジット",
-        path:"/24th.kokasai.com/home/credit",
+        path:"/24th.kokasai.com/credit",
     },
     apologize:{
         displayName:"作成中",
-        path:"/24th.kokasai.com/home/apologize",
+        path:"/24th.kokasai.com/apologize",
     },
     projectDetail:{
         displayName:"企画詳細",
-        path:"/24th.kokasai.com/project/projectDetail",
+        path:"/24th.kokasai.com/projectDetail",
     }
 };

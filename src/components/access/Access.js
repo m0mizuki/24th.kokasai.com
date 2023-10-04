@@ -1,7 +1,6 @@
 import { Pages } from "../Pages";
 import { useEffect } from "react";
 import AccessContent from "./AccessContent";
-import backGround from "../../img/backGround/sea.png";
 import fish1 from "../../img/fish1.png";
 import "../../css/pageStyle.css";
 import "./accessStyle.css"
@@ -49,7 +48,7 @@ function Access() {
   return (
     <>
 
-      <img src={backGround} className="backGroundImage responsiveWidth" />
+      <img src={`${process.env.PUBLIC_URL}/img/backGround/sea.png`} className="backGroundImage responsiveWidth" />
       <div className="contents">
         <div className="contents_innerBlock">
           <br />

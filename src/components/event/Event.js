@@ -1,5 +1,4 @@
 import { Pages } from "../Pages";
-import backGround from "../../img/backGround/plant.jpg"
 import "../../css/pageStyle.css";
 
 import Plant from "../common/transitionalMotion/Plant";
@@ -9,7 +8,7 @@ function Event() {
     <>
       <Plant />
       <p></p>
-      <img src={backGround} className="backGroundImage responsiveWidth" />
+      <img src={`${process.env.PUBLIC_URL}/img/backGround/plant.jpg`} className="backGroundImage responsiveWidth" />
       <div className="contents">
         <div className="contents_innerBlock">
           <p>あいうえお</p><br />

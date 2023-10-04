@@ -1,5 +1,4 @@
 import { Pages } from "../Pages";
-import backGround from "../../img/backGround/fantasy.jpg";
 import "../../css/pageStyle.css";
 import "../common/commonStyle.css";
 import "./mapStyle.css";
@@ -257,7 +256,7 @@ function Map() {
         </div>
       </div>
 
-      <img src={backGround} className="backGroundImage responsiveWidth" />
+      <img src={`${process.env.PUBLIC_URL}/img/backGround/fantasy.jpg`} className="backGroundImage responsiveWidth" />
       <div className="contents">
         <div className="contents_innerBlock">
           <br />
