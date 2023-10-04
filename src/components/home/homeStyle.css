@@ -144,25 +144,6 @@
     z-index: -10;
 }
 
-.kosenText{
-    position: absolute;
-    width: 34%;
-    top: 94%;
-    left: 33%;
-    opacity: 0%;
-
-    animation-duration: 2s;
-    animation-delay: 5s;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    animation-name: kosenTextAnimation;
-}
-@keyframes kosenTextAnimation{
-    100%{
-        opacity: 100%;
-    }
-}
-
 .kosenTitle{
     position: absolute;
     width: 60%;
@@ -186,7 +167,7 @@
     position: absolute;
     width: 30%;
     top: 95%;
-    left: 2%;
+    left: 8%;
     opacity: 0%;
 
     animation-duration: 2s;

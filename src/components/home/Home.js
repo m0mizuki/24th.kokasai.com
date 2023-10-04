@@ -5,7 +5,6 @@ import "../../css/pageStyle.css";
 //import portrait_sakana from "../../img/portrait/portrait_sakana.png";
 
 //import kokasaiPoster from "../../img/poster/kokasaiPoster.jpg";
-//import kosenText from "../../img/poster/kosenText.png";
 //import kosenTitle from "../../img/poster/kosenTitle.png";
 //import mojamoja from "../../img/poster/mojamoja.png";
 //import mainTitle from "../../img/poster/mainTitle.png";
@@ -40,7 +39,6 @@ function Home() {
         <img src={`${process.env.PUBLIC_URL}/img/poster/kokasaiPoster.jpg`} id="kokasaiPoster_mirror" className="kokasaiPoster_mirror" />
       </div>
       <div id="posterArea" className="posterArea">
-        <img src={`${process.env.PUBLIC_URL}/img/poster/kosenText.png`} className="kosenText" />
         <img src={`${process.env.PUBLIC_URL}/img/poster/kosenTitle.png`} className="kosenTitle" />
         <img src={`${process.env.PUBLIC_URL}/img/poster/mojamoja.png`} className="mojamoja" />
         <img src={`${process.env.PUBLIC_URL}/img/poster/mainTitle.png`} className="mainTitle" />
