@@ -13,13 +13,13 @@ function Apologize() {
       <div className="posterArea_noPosterText"></div>
 
       <div className="contents contents_whitesmoke noPosterText">
-        <div className="contents_innerBlock">
+        <div className="contents_innerBlock apologize_center">
           <br />
           <br />
           <br />
           <br />
-          <p>このページは現在作成中です。</p>
-          <p>公開まで今しばらくお待ちください。</p>
+          <p>このページは近日公開予定です</p>
+          <p>公開まで今しばらくお待ちください</p>
           <br />
           <br />
           <br />
