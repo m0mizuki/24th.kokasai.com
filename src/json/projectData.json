@@ -89,7 +89,7 @@
     [
         "3年生",
         {
-            "groupName":"3年<br />機械工学科",
+            "groupName":"3年 機械工学科",
             "projectName":"3MCRAFT",
             "description":"3Mではワークショップをします！<br />ものづくりの楽しさを知ってもらいたく、実習で使う道具を用いてオルゴール、ミニ四駆作成ができます。ぜひ来てください！",
             "imgPath":"./img/circleCut/cc3-1.jpg",
@@ -97,7 +97,7 @@
             "posLeft":"15%"
         },
         {
-            "groupName":"3年<br />電子メディア工学科",
+            "groupName":"3年 電子メディア工学科",
             "projectName":"cafeコンドルチェ",
             "description":"工華祭を楽しんでいる皆さん！カフェで少し休んでいきませんか？<br />可愛い電気系学生がいる空間でお茶とお菓子をどうぞ。<br />クラシックなメイドカフェをイメージしたCafeコンドルチェへぜひお越しください。",
             "imgPath":"./img/circleCut/cc3-2.jpg",
@@ -105,7 +105,7 @@
             "posLeft":"30%"
         },
         {
-            "groupName":"3年<br />電子情報工学科",
+            "groupName":"3年 電子情報工学科",
             "projectName":"タコス",
             "description":"準備中。。。",
             "imgPath":"./img/circleCut/inPreparation.jpg",
@@ -113,7 +113,7 @@
             "posLeft":"45%"
         },
         {
-            "groupName":"3年<br />物質工学科",
+            "groupName":"3年 物質工学科",
             "projectName":"Café 3K Lab.",
             "description":"3Kは実験をコンセプトとしたカフェを行います。カフェラテのほか色が変わる飲み物や培地ゼリーを販売します。ぜひお越しください。",
             "imgPath":"./img/circleCut/cc3-4.jpg",
@@ -121,7 +121,7 @@
             "posLeft":"60%"
         },
         {
-            "groupName":"3年<br />環境都市工学科",
+            "groupName":"3年 環境都市工学科",
             "projectName":"スタンプラリー",
             "description":"工華祭を楽しむついでにウォークラリーをしてみませんか?無料で気軽に楽しく参加できます!!<br />赤の広場で景品と交換ができるので是非お越しください。",
             "imgPath":"./img/circleCut/cc3-5.jpg",
@@ -132,7 +132,7 @@
     [
         "4年生",
         {
-            "groupName":"4年<br />機械工学科",
+            "groupName":"4年 機械工学科",
             "projectName":"M印良品",
             "description":"高専らしさ満点のグッズを販売！<br />高専の技術力をその目と手で感じろ！！",
             "imgPath":"./img/circleCut/cc4-1.jpg",
@@ -140,7 +140,7 @@
             "posLeft":"15%"
         },
         {
-            "groupName":"4年<br />電子メディア工学科",
+            "groupName":"4年 電子メディア工学科",
             "projectName":"4Eパンケーキませっち",
             "description":"4Eはパンケーキを作ります！全力で美味しくなるよう作るので是非食べにきてください！店名の&quot;ませっち&quot;は4Eの誰かのあだ名です!!",
             "imgPath":"./img/circleCut/cc4-2.jpg",
@@ -148,7 +148,7 @@
             "posLeft":"30%"
         },
         {
-            "groupName":"4年<br />電子情報工学科",
+            "groupName":"4年 電子情報工学科",
             "projectName":"ボードゲーム喫茶「高専の旅団」",
             "description":"4Jの出し物はボドゲ喫茶です！遊びやすいボードゲームと、遊びながら食べるのに適しているサンドイッチを用意しています。また、ゲームが強いスタッフもおりますので、おひとり様もグループ様もぜひお越しください！",
             "imgPath":"./img/circleCut/inPreparation.jpg",
@@ -156,7 +156,7 @@
             "posLeft":"45%"
         },
         {
-            "groupName":"4年<br />物質工学科",
+            "groupName":"4年 物質工学科",
             "projectName":"赤羽たいちの萌え燃えメイドカフェ",
             "description":"化学についてちょっとだけ学べちゃうメイドカフェ、可愛いメイドさんたちが美味しいドリンクや飲み物を提供してくれちゃいます！記念にチェキも撮れるよ！",
             "imgPath":"./img/circleCut/cc4-4.jpg",
@@ -164,7 +164,7 @@
             "posLeft":"60%"
         },
         {
-            "groupName":"4年<br />環境都市工学科",
+            "groupName":"4年 環境都市工学科",
             "projectName":"C科ちゃんのポップなコーン",
             "description":"やっほ～！私はc科ちゃんだよ！<br />４cの出し物みんな絶対来てくれるよね！<br />美味しくて何度も食べられちゃう！<br />なにを売っているかは言わなくてもわかるよね？<br />じゃあ、みんな４cで会おうね～",
             "imgPath":"./img/circleCut/cc4-5.jpg",
@@ -175,7 +175,7 @@
     [
         "5年生",
         {
-            "groupName":"5年<br />機械工学科",
+            "groupName":"5年 機械工学科",
             "projectName":"対戦型シューティングゲーム",
             "description":"響き渡る砲声ロマン…まだ見ぬ戦場が君を待つ！",
             "imgPath":"./img/circleCut/cc5-1.jpg",
@@ -183,7 +183,7 @@
             "posLeft":"15%"
         },
         {
-            "groupName":"5年<br />電子メディア工学科",
+            "groupName":"5年 電子メディア工学科",
             "projectName":"美男美女が焼く素晴らしいベビーカステラ",
             "description":"ベビーカステラ売ってます！",
             "imgPath":"./img/circleCut/cc5-2.jpg",
@@ -191,7 +191,7 @@
             "posLeft":"30%"
         },
         {
-            "groupName":"5年<br />電子情報工学科",
+            "groupName":"5年 電子情報工学科",
             "projectName":"お化け屋敷",
             "description":"高貴なる探検家様へ。富と名声を手にした我が父ですが、つい先日永眠しました。父の遺書が墓所にあるのですが、事情により自ら赴くことが許されず困っております。どうか貴殿に遺書を取ってきていただきたいのです。",
             "imgPath":"./img/circleCut/cc5-3.jpg",
@@ -199,7 +199,7 @@
             "posLeft":"45%"
         },
         {
-            "groupName":"5年<br />物質工学科",
+            "groupName":"5年 物質工学科",
             "projectName":"K科クイズ",
             "description":"群馬高専、物質工学科に関するクイズに正解して、お菓子をもらおう！<br />椅子、机も準備しているので、休憩所として使っていただいても大丈夫です！",
             "imgPath":"./img/circleCut/cc5-4.jpg",
@@ -207,7 +207,7 @@
             "posLeft":"60%"
         },
         {
-            "groupName":"5年<br />環境都市工学科",
+            "groupName":"5年 環境都市工学科",
             "projectName":"高専綿菓C組",
             "description":"準備中。。。",
             "imgPath":"./img/circleCut/inPreparation.jpg",

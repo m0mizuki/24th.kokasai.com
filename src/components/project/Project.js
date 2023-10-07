@@ -73,7 +73,7 @@ function Project() {
       //planetProjectName[i].classList.add("invisible");
       planetGroupName[i].style.visibility = "hidden";
       planetProjectName[i].style.visibility = "hidden";
-      planetImage[i].style.animationName="none";
+      planetImage[i].style.animationName = "none";
       planetImage[i].style.border = "solid 8px #00000000";
     }
 
@@ -148,7 +148,8 @@ function Project() {
 
       let planetGroupName = document.createElement("p");
       planetGroupName.classList.add("planetGroupName");
-      planetGroupName.innerHTML = projectData[galNum][i].groupName;
+      //3年~5年のクラス名は改行する
+      planetGroupName.innerHTML = (galNum >= 3 && galNum <= 5) ? projectData[galNum][i].groupName.replace(" ", "<br />") : projectData[galNum][i].groupName;
       //ラベルを非表示
       //planetGroupName.classList.add("invisible");
       planetGroupName.style.visibility = "hidden";
@@ -176,7 +177,7 @@ function Project() {
 
   //borderの色を設定
   function setColor(target, galNum) {
-    
+
     /*const markColor = [
       "#0000ff",
       "#ffa500",
@@ -199,7 +200,7 @@ function Project() {
         赤紫border-color: rgb(215, 32, 112);
         */
 
-    target.style.borderColor = markColor[galNum%5];
+    target.style.borderColor = markColor[galNum % 5];
 
     /*
     if (1 <= galNum && galNum <= 5) {
@@ -316,20 +317,20 @@ function Project() {
   }
 
 
-  function scrollSelectBar(e){
+  function scrollSelectBar(e) {
     e.preventDefault();
     const zoomRate = e.deltaY * -0.02;
-    scrollBarLeft+=zoomRate;
-    if(scrollBarLeft>0){
-      scrollBarLeft=0;
+    scrollBarLeft += zoomRate;
+    if (scrollBarLeft > 0) {
+      scrollBarLeft = 0;
     }
-    if(scrollBarLeft<-50){
-      scrollBarLeft=-50;
+    if (scrollBarLeft < -50) {
+      scrollBarLeft = -50;
     }
 
     let projectSelectButtons = document.getElementsByClassName("projectSelectButton");
-    for(let projectSelectButton of projectSelectButtons){
-      projectSelectButton.style.left=scrollBarLeft+"rem";
+    for (let projectSelectButton of projectSelectButtons) {
+      projectSelectButton.style.left = scrollBarLeft + "rem";
     }
   }
 
