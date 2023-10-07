@@ -349,7 +349,7 @@ function ProjectDetail() {
 
           <div className="descriptionArea">
             <p id="description" className="description"></p>
-            <button className="toMapButton" onClick={() => { alert("未作成"); }}>&gt;&gt;マップで場所を確認</button>
+            <button className="toMapButton" onClick={() => { alert("近日公開予定です"); }}>&gt;&gt;マップで場所を確認</button>
           </div>
           <br />
         </div>
