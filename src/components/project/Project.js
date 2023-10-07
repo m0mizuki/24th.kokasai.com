@@ -53,7 +53,7 @@ function Project() {
         planetGroupName[i].style.visibility = "visible";
         planetProjectName[i].style.visibility = "visible";
         planetImage[i].style.border = "double 8px #00FFFF";
-        //setColor(planetImage[i], grd);
+        setColor(planetImage[i], grd);
       }
     }, 600);
 
@@ -103,8 +103,8 @@ function Project() {
         //planetProjectName[i].classList.remove("invisible");
         planetGroupName[i].style.visibility = "visible";
         planetProjectName[i].style.visibility = "visible";
-        planetImage[i].style.border = "double 8px #00FFFF";
-        //setColor(planetImage[i], galNum);
+        planetImage[i].style.border = "double 8px #FFFFFF";
+        setColor(planetImage[i], galNum);
       }
     }, 800 + 600);
 
@@ -176,14 +176,32 @@ function Project() {
 
   //borderの色を設定
   function setColor(target, galNum) {
-    /*
-    const markColor = [
+    
+    /*const markColor = [
       "#0000ff",
       "#ffa500",
       "#ff0000",
       "#ffff00",
       "#008000"
+    ];*/
+    const markColor = [
+      "#FF00F7",
+      "#00CF0F",
+      "#F7A030",
+      "#D72070",
+      "#FFDF00"
     ];
+    /*
+        ピンクborder-color: rgb(255, 0, 247);
+        みどりborder-color: rgb(0, 207, 25);
+        おれんじborder-color: rgb(247, 160, 48);
+        きいろborder-color: rgb(255, 223, 0);
+        赤紫border-color: rgb(215, 32, 112);
+        */
+
+    target.style.borderColor = markColor[galNum%5];
+
+    /*
     if (1 <= galNum && galNum <= 5) {
       target.style.borderColor = markColor[galNum - 1]; //学科の色
     }
@@ -202,7 +220,7 @@ function Project() {
     else {
       target.style.borderColor = "#696969"; //灰色
     }*/
-    target.style.borderColor = "#3FFFFF";
+    //target.style.borderColor = "#3FFFFF";
   }
 
   //星の位置を設定
@@ -241,6 +259,7 @@ function Project() {
   var prePos = { x: 0, y: 0 };
   var addRad = 0; //角度(ラジアン)
   var isMouseDown = 0; //マウスが押されたか
+  var scrollBarLeft = 0; //スクロールバーの左からのピクセル数
 
   //置かれた指の位置を取得(指)
   function setPrePos(e) {
@@ -297,6 +316,24 @@ function Project() {
   }
 
 
+  function scrollSelectBar(e){
+    e.preventDefault();
+    const zoomRate = e.deltaY * -0.02;
+    scrollBarLeft+=zoomRate;
+    if(scrollBarLeft>0){
+      scrollBarLeft=0;
+    }
+    if(scrollBarLeft<-50){
+      scrollBarLeft=-50;
+    }
+
+    let projectSelectButtons = document.getElementsByClassName("projectSelectButton");
+    for(let projectSelectButton of projectSelectButtons){
+      projectSelectButton.style.left=scrollBarLeft+"rem";
+    }
+  }
+
+
   //パッシブでない関数を呼び出す
   const circleRef = useRef(null);
   useEffect(() => {
@@ -308,6 +345,13 @@ function Project() {
     });
   });
 
+  const circleRef_bar = useRef(null);
+  useEffect(() => {
+    circleRef_bar.current.addEventListener("wheel", scrollSelectBar, { passive: false });
+    return (() => {
+      circleRef_bar.current.removeEventListener("wheel", scrollSelectBar);
+    });
+  });
 
 
   return (
@@ -315,7 +359,7 @@ function Project() {
       <img src={`${process.env.PUBLIC_URL}/img/backGround/space.png`} className="backGroundImage responsiveWidth" />
 
       <div className="moitonArea responsiveWidth">
-        <div id="projectSelectBar" className="projectSelectBar"></div>
+        <div id="projectSelectBar" className="projectSelectBar" ref={circleRef_bar}></div>
         <div id="planetArea" className="planetArea" ref={circleRef} onMouseDown={setPrePos_mouse} onMouseMove={rotatePlanets_mouse} onMouseUp={setEndPos_mosue} onMouseLeave={setEndPos_mosue}></div>
       </div>
 
