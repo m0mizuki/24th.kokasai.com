@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP'); /*Noto Sans JP*/
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c'); /*M PLUS Rounded 1c*/
+
 .webBackGround{
   position: fixed;
   top: 0%;
@@ -35,7 +38,7 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
