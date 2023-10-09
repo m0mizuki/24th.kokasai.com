@@ -56,7 +56,7 @@ function Home() {
 
           <p className="heading3">開催場所</p>
           <p>群馬工業高等専門学校</p>
-          <p><a href="https://www.gunma-ct.ac.jp/" target="_blank" rel="noreferrer noopener">公式HPはこちら</a></p>
+          <p><a href="https://www.gunma-ct.ac.jp/" target="_blank" rel="noreferrer noopener">&gt;&gt;公式HPはこちら</a></p>
 
           <p className="heading3">注意事項</p>
           <p>酒類の持ち込みはご遠慮ください</p>
@@ -66,17 +66,17 @@ function Home() {
           <div className="portraitArea">
             <div className="portraitFrameTitleArea">
               <div className="portraitFrame">
-                <img className="portraitImage" src={`${process.env.PUBLIC_URL}/img/portrait/portrait_sakana.png`} />
+                <img className="portraitImage" src={`${process.env.PUBLIC_URL}/img/portrait/portrait_motojima.webp`} />
               </div>
               <div className="portraitTitle">
                 <p>工華祭実行委員長</p>
-                <p>日高 美希</p>
-                <p>第23回工華祭開催！</p>
+                <p>本島 琉矢</p>
+                <p className="heading4">OPEN SESAME!!</p>
               </div>
             </div>
             <div className="portraitTextArea">
               <div className="portraitText">
-                <p>まずは工華祭が無事開催できることに実行委員長としてほっとしています。今年はコロナ禍ということもあり思うように活動時間が確保できない中でしたが、開催に向けて精一杯準備を進めてまいりました。特にポスターやパンフレットなどのデザイン関係は、短時間で制作したとは思えない高クオリティなものに仕上げてもらいました。 他にも飲食企画・学科の特色を生かした体験企画・まるでライブのようなステージ企画など、ぜひ五感全てで工華祭を楽しんでください。 最後に、開催にあたり多大なるご支援ご協力をいただいた関係者の皆様に感謝申し上げます。</p>
+                <p>　今回の工華祭のサブタイトルは、”OPEN SESAME”です。このフレーズは「アラビアンナイト」の一篇、「アリババと40人の盗賊」に出てくる呪文で、ほとんどの人が聞いたことがあると思います。物語の中では”OPEN SESAME”と唱えることで、岩の扉が開き、盗賊が隠した財宝が出てきます。これをコロナ規制が明けた今回工華祭と例え、このサブタイトルを付けました。今回の工華祭では、高専の魅力を色々な人に知ってもらいたいというモットーで運営しています。高専の魅力を色々な人に知ってもらい、さらには学生全員が楽しめるような工華祭にしたいと思っています。</p>
               </div>
             </div>
           </div>
@@ -84,17 +84,17 @@ function Home() {
           <div className="portraitArea">
             <div className="portraitFrameTitleArea">
               <div className="portraitFrame">
-                <img className="portraitImage" src={`${process.env.PUBLIC_URL}/img/portrait/portrait_sakana.png`} />
+                <img className="portraitImage" src={`${process.env.PUBLIC_URL}/img/portrait/portrait_sakuraoka.webp`} />
               </div>
               <div className="portraitTitle">
-                <p>工華祭実行委員長</p>
-                <p>日高 美希</p>
-                <p>第23回工華祭開催！</p>
+                <p>学生主事</p>
+                <p>櫻岡 広</p>
+                <p className="heading4">第24回工華祭開催にあたって</p>
               </div>
             </div>
             <div className="portraitTextArea">
               <div className="portraitText">
-                <p>まずは工華祭が無事開催できることに実行委員長としてほっとしています。今年はコロナ禍ということもあり思うように活動時間が確保できない中でしたが、開催に向けて精一杯準備を進めてまいりました。特にポスターやパンフレットなどのデザイン関係は、短時間で制作したとは思えない高クオリティなものに仕上げてもらいました。 他にも飲食企画・学科の特色を生かした体験企画・まるでライブのようなステージ企画など、ぜひ五感全てで工華祭を楽しんでください。 最後に、開催にあたり多大なるご支援ご協力をいただいた関係者の皆様に感謝申し上げます。</p>
+                <p>　第24回工華祭の開催を心よりお祝い申し上げます。前回はコロナ禍の中、入場者の制限などいろいろと配慮を強いられる工華祭でしたが、やっと例年通りに開けること嬉しく思います。学生諸君はこの2日は勉強のことは少し忘れて大いに楽しんでください。ご来場の皆様方、本日は第24回工華祭にお越しいただき誠にありがとうございます。普段と違う学生の様子をご覧いただき、楽しんでいただければ幸いです。最後に、今年は地区文化発表会を本校で開催しました。その運営と兼務している工華祭実行委員も多数いることと思います。あと少しです。頑張ってください。</p>
               </div>
             </div>
           </div>
@@ -102,17 +102,21 @@ function Home() {
           <div className="portraitArea">
             <div className="portraitFrameTitleArea">
               <div className="portraitFrame">
-                <img className="portraitImage" src={`${process.env.PUBLIC_URL}/img/portrait/portrait_sakana.png`} />
+                <img className="portraitImage" src={`${process.env.PUBLIC_URL}/img/portrait/portrait_mitani.webp`} />
               </div>
               <div className="portraitTitle">
-                <p>工華祭実行委員長</p>
-                <p>日高 美希</p>
-                <p>第23回工華祭開催！</p>
+                <p>学校長</p>
+                <p>三谷 卓也</p>
+                <p className="heading4">第23回工華祭開催！</p>
               </div>
             </div>
             <div className="portraitTextArea">
               <div className="portraitText">
-                <p>まずは工華祭が無事開催できることに実行委員長としてほっとしています。今年はコロナ禍ということもあり思うように活動時間が確保できない中でしたが、開催に向けて精一杯準備を進めてまいりました。特にポスターやパンフレットなどのデザイン関係は、短時間で制作したとは思えない高クオリティなものに仕上げてもらいました。 他にも飲食企画・学科の特色を生かした体験企画・まるでライブのようなステージ企画など、ぜひ五感全てで工華祭を楽しんでください。 最後に、開催にあたり多大なるご支援ご協力をいただいた関係者の皆様に感謝申し上げます。</p>
+                <p>　「OPEN SESAME」と呪文を唱え、扉を開けたら、いよいよ待ちに待った、しかも久しぶりの制限のない工華祭の開幕です！<br />
+                　学生諸君に一言。<br />
+                　祭りなんてものは、「楽しんだ者勝ち」です。準備の大変さ、本番の忙しさやワクワク感、そして後片付けでの寂寥感…。それらすべてを楽しみ尽くしてください。<br />
+                　そして来校された皆様にも一言。<br />
+                　ぜひ、学生達と一緒になってこの２年に１度のお祭りを盛り上げ、思う存分楽しんでいただければ幸いです。</p>
               </div>
             </div>
           </div>
