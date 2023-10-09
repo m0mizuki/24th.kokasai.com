@@ -1,4 +1,3 @@
-import { Pages } from "../Pages";
 import { useEffect } from "react";
 import "./homeStyle.css";
 import "../../css/pageStyle.css";

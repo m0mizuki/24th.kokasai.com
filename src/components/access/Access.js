@@ -1,4 +1,3 @@
-import { Pages } from "../Pages";
 import { useEffect } from "react";
 import AccessContent from "./AccessContent";
 import "../../css/pageStyle.css";

@@ -1,4 +1,3 @@
-import { Pages } from "../Pages";
 import './accessStyle.css';
 
 function AccessContent({ children }) {

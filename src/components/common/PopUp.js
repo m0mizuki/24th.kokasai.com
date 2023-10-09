@@ -1,4 +1,3 @@
-import { Pages } from "../Pages";
 import './commonStyle.css';
 
 function PopUp({ children }) {

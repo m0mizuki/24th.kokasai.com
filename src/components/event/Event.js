@@ -1,4 +1,3 @@
-import { Pages } from "../Pages";
 import "../../css/pageStyle.css";
 
 function Event() {
