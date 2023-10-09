@@ -6,7 +6,6 @@ function Home() {
   //1度だけ実行
   useEffect(() => {
     const ref = document.referrer;
-    //console.log(ref);
 
     //このページへの遷移前のパスに"24th.kokasai.com"が含まれるとき
     if (ref.indexOf("24th.kokasai.com") != -1) {

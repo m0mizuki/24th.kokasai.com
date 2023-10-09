@@ -295,9 +295,6 @@ function ProjectDetail() {
     window.location.assign(path);
   }
 
-  //todo:チェックボックスの状態が確定するまで表示されないようにする->ok
-  //匿名だと,タブ切り替えるとID変わって何回でも投票できてしまう
-
   return (
     <>
       <img src={`${process.env.PUBLIC_URL}/img/backGround/space.jpg`} className="backGroundImage responsiveWidth" />
