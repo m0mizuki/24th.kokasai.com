@@ -19,7 +19,6 @@ function Map() {
 
   //1度だけ実行
   useEffect(() => {
-    //2回実行されないよう一時的にindex.jsの<React.StrictMode>を外している
 
     createMapObjects();
 

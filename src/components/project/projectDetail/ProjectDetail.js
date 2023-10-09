@@ -33,8 +33,6 @@ function ProjectDetail() {
   var clickNikeDate = Date.now();
   const cooltime=2000; //いいねのクールタイム[ms]
 
-
-  //useEffect外で大丈夫？
   //クエリを取得
   const quely = new URLSearchParams(useLocation().search);
   var grd = parseInt(quely.get("grd"));
@@ -48,7 +46,6 @@ function ProjectDetail() {
 
   //1度だけ実行
   useEffect(() => {
-    //2回実行されないよう一時的にindex.jsの<React.StrictMode>を外している
     const groupName = document.getElementById("groupName");
     groupName.innerHTML = projectData[grd][cls].groupName;
 
@@ -262,14 +259,6 @@ function ProjectDetail() {
         });
       }
     }
-
-    //console.log(outputText);
-    //let output = document.getElementById("voteInfo");
-    //output.innerText = "outputText";
-    /*if(outputText!=""){
-      output.innerText = outputText;
-    }
-    else alert("aaa");*/
 
   }
 

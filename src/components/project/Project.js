@@ -15,12 +15,9 @@ function Project() {
   var grd = parseInt(quely.get("grd")); //初期の星を指定
   if (grd == null) grd = 1;
   if (projectData[grd] == undefined) grd = 1;
-  //console.log(projectData[initGalNum]);
-  //if(projectData[initGalNum][1]==undefined)console.log("aaa");//initGalNum=1;
 
 
   //1度だけ実行
-  //2回実行されないよう一時的にindex.jsの<React.StrictMode>を外している
   useEffect(() => {
 
     let parent = document.getElementById("projectSelectBar");
@@ -58,7 +55,6 @@ function Project() {
 
   }, []);
 
-  //最終的にはcreateElementではなくひとまとまりの要素を追加できるようにしたい
 
   function changeGalaxy(galNum, preGalNum_local) {
     const planetArea = document.getElementById("planetArea");
@@ -136,7 +132,7 @@ function Project() {
       planetImageHref.href = path;
 
       let planetImage = document.createElement("img");
-      //projectDataのパスの最初のドットを削除する
+      //projectDataのパスの最初のドットを削除する<-パスの階層を同じにしたので不要
       //let pathOfData = projectData[galNum][i].imgPath;
       //let imgPath = pathOfData.substr(1);
       //planetImage.src = imgPath;
@@ -177,13 +173,6 @@ function Project() {
   //borderの色を設定
   function setColor(target, galNum) {
 
-    /*const markColor = [
-      "#0000ff",
-      "#ffa500",
-      "#ff0000",
-      "#ffff00",
-      "#008000"
-    ];*/
     const markColor = [
       "#FF00F7",
       "#00CF0F",
@@ -192,12 +181,12 @@ function Project() {
       "#FFDF00"
     ];
     /*
-        ピンクborder-color: rgb(255, 0, 247);
-        みどりborder-color: rgb(0, 207, 25);
-        おれんじborder-color: rgb(247, 160, 48);
-        きいろborder-color: rgb(255, 223, 0);
-        赤紫border-color: rgb(215, 32, 112);
-        */
+      ピンクborder-color: rgb(255, 0, 247);
+      みどりborder-color: rgb(0, 207, 25);
+      オレンジ-color: rgb(247, 160, 48);
+      きいろborder-color: rgb(255, 223, 0);
+      赤紫border-color: rgb(215, 32, 112);
+    */
 
     target.style.borderColor = markColor[galNum % 5];
 
@@ -228,7 +217,7 @@ function Project() {
     let planetBox = document.getElementsByClassName("planetBox");
 
     if (planetBox.length == 0) {
-      //console.log("ない");
+      //console.log("no contents");
     }
     else {
       for (let i = 0; i < planetBox.length; i++) {

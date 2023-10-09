@@ -1,6 +1,5 @@
 import "../homeStyle.css";
 import "../../../css/pageStyle.css";
-//import kokasaiPoster from "../../../img/poster/kokasaiPoster.jpg";
 
 function Apologize() {
   return (

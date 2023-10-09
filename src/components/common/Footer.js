@@ -1,8 +1,6 @@
 import { Pages } from "../Pages";
 import "./commonStyle.css";
 import "../../css/pageStyle.css";
-//import xIcon from "../../img/snsIcon/XIcon.png";
-//import instagramIcon from "../../img/snsIcon/instagramIcon.png";
 
 function Footer() {
 

@@ -1,18 +1,9 @@
 import { useEffect } from "react";
 import "./homeStyle.css";
 import "../../css/pageStyle.css";
-//import portrait_sakana from "../../img/portrait/portrait_sakana.png";
-
-//import kokasaiPoster from "../../img/poster/kokasaiPoster.jpg";
-//import kosenTitle from "../../img/poster/kosenTitle.png";
-//import mojamoja from "../../img/poster/mojamoja.png";
-//import mainTitle from "../../img/poster/mainTitle.png";
-//import subTitle from "../../img/poster/subTitle.png";
-//import text24th from "../../img/poster/text24th.png";
 
 function Home() {
   //1度だけ実行
-  //2回実行されないよう一時的にindex.jsの<React.StrictMode>を外している
   useEffect(() => {
     const ref = document.referrer;
     //console.log(ref);

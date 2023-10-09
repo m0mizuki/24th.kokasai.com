@@ -21,7 +21,6 @@ function Access() {
   });
 
   //1度だけ実行
-  //2回実行されないよう一時的にindex.jsの<React.StrictMode>を外している
   useEffect(() => {
     //さかなを生成
     const fishArea = document.getElementById("fishArea");

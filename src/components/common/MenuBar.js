@@ -1,7 +1,6 @@
 import { Pages } from "../Pages";
 
 import "./commonStyle.css";
-//import "../../../src/index.css"; //書かなくても親が持ってたら大丈夫？
 
 function MenuBar() {
 
