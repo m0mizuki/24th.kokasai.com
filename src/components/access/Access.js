@@ -48,7 +48,7 @@ function Access() {
   return (
     <>
 
-      <img src={`${process.env.PUBLIC_URL}/img/backGround/sea.png`} className="backGroundImage responsiveWidth" />
+      <img src={`${process.env.PUBLIC_URL}/img/backGround/sea.jpg`} className="backGroundImage responsiveWidth" />
       <div className="contents">
         <div className="contents_innerBlock">
           <br />

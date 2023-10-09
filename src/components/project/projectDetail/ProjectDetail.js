@@ -315,7 +315,7 @@ function ProjectDetail() {
 
   return (
     <>
-      <img src={`${process.env.PUBLIC_URL}/img/backGround/space.png`} className="backGroundImage responsiveWidth" />
+      <img src={`${process.env.PUBLIC_URL}/img/backGround/space.jpg`} className="backGroundImage responsiveWidth" />
 
 
       <div id="contents" className="contents contents_spaceSmoke">

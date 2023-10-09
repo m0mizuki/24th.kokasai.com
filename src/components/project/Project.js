@@ -1,5 +1,4 @@
 import { Pages } from "../Pages";
-import rope from "../../img/rope.png";
 import "../../css/pageStyle.css";
 import "./projectStyle.css";
 import projectData from "../../json/projectData.json";
@@ -357,7 +356,7 @@ function Project() {
 
   return (
     <>
-      <img src={`${process.env.PUBLIC_URL}/img/backGround/space.png`} className="backGroundImage responsiveWidth" />
+      <img src={`${process.env.PUBLIC_URL}/img/backGround/space.jpg`} className="backGroundImage responsiveWidth" />
 
       <div className="moitonArea responsiveWidth">
         <div id="projectSelectBar" className="projectSelectBar" ref={circleRef_bar}></div>

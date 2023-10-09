@@ -1,12 +1,9 @@
 import { Pages } from "../Pages";
 import "../../css/pageStyle.css";
 
-import Plant from "../common/transitionalMotion/Plant";
-
 function Event() {
   return (
     <>
-      <Plant />
       <p></p>
       <img src={`${process.env.PUBLIC_URL}/img/backGround/plant.jpg`} className="backGroundImage responsiveWidth" />
       <div className="contents">
