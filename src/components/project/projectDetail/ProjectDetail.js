@@ -31,7 +31,7 @@ function ProjectDetail() {
 
 
   var clickNikeDate = Date.now();
-  const cooltime=2000; //いいねのクールタイム[ms]
+  const cooltime=1000; //いいねのクールタイム[ms]
 
   //クエリを取得
   const quely = new URLSearchParams(useLocation().search);
