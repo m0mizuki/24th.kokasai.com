@@ -1,7 +1,6 @@
 import { Pages } from "../Pages";
 import { useEffect } from "react";
 import AccessContent from "./AccessContent";
-import fish1 from "../../img/fish1.png";
 import "../../css/pageStyle.css";
 import "./accessStyle.css"
 
@@ -30,7 +29,7 @@ function Access() {
     for (let i = 0; i < 5; i++) {
       for (let j = 0; j < 6; j++) {
         let fish = document.createElement("img");
-        fish.src = fish1;
+        fish.src = `${process.env.PUBLIC_URL}/img/utility/fish1.png`;
         fish.classList.add("fish");
         fish.style.animationDelay = i * 0.2 + Math.random() * 0.2 - 0.1 + "s";
         fish.style.animationName = "fishAnimation";

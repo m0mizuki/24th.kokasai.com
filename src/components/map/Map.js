@@ -2,8 +2,6 @@ import { Pages } from "../Pages";
 import "../../css/pageStyle.css";
 import "../common/commonStyle.css";
 import "./mapStyle.css";
-import campusMap_1 from "../../img/campusMap_1.png";
-import mapObjectIcon from "../../img/tipIcon.png";
 import projectData from "../../json/projectData.json";
 
 import { useEffect, useRef } from "react";
@@ -204,7 +202,7 @@ function Map() {
 
         let mapObjectImage = document.createElement("input");
         mapObjectImage.type = "image";
-        mapObjectImage.src = mapObjectIcon;
+        mapObjectImage.src = `${process.env.PUBLIC_URL}/img/map/tipIcon.png`;
         mapObjectImage.classList.add("mapObjectImage");
         mapObjectImage.onclick = toProjectDetail;
         mapObjectImage.id = i + "-" + j;
@@ -252,7 +250,7 @@ function Map() {
     <>
       <div id="mapCanvas" className="mapCanvas" ref={circleRef} onMouseDown={setPrePos_mouse} onMouseMove={scrollMap_mouse} onMouseUp={setEndPos_mosue} onMouseLeave={setEndPos_mosue}>
         <div id="mapMovingBox" className="mapMovingBox">
-          <img id="campusMap_1" className="campusMap_1" src={campusMap_1} />
+          <img id="campusMap_1" className="campusMap_1" src={`${process.env.PUBLIC_URL}/img/map/campusMap_1.png`} />
         </div>
       </div>
 

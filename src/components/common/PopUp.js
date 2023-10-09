@@ -1,6 +1,5 @@
 import { Pages } from "../Pages";
 import './commonStyle.css';
-import closeIcon from "../../img/close.png";
 
 function PopUp({ children }) {
     function closePopUp() {
@@ -13,7 +12,7 @@ function PopUp({ children }) {
 
     return (
         <div id="popUp" className="popUP responsiveWidth invisible">
-            <input type="image" src={closeIcon} id="closeIcon" className="closeIcon" onClick={()=>closePopUp()} />
+            <input type="image" src={`${process.env.PUBLIC_URL}/img/utility/close.png`} id="closeIcon" className="closeIcon" onClick={()=>closePopUp()} />
             {children}
         </div>
     )

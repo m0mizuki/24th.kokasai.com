@@ -2,10 +2,6 @@ import { Pages } from "../../Pages";
 import "../../../css/pageStyle.css";
 import "../projectStyle.css";
 import projectData from "../../../json/projectData.json";
-import heart1 from "../../../img/heart1.png";
-import heart2 from "../../../img/heart2.png";
-import leftArrow from "../../../img/leftArrow.png";
-import rightArrow from "../../../img/rightArrow.png";
 
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -186,7 +182,7 @@ function ProjectDetail() {
       console.log("send failed");
     }
 
-    changeHeart(heart2);
+    changeHeart(`${process.env.PUBLIC_URL}/img/utility/heart2.png`);
   }
 
   function unsetNice(word) {
@@ -197,7 +193,7 @@ function ProjectDetail() {
       console.error("Error removing document: ", error);
     });
 
-    changeHeart(heart1);
+    changeHeart(`${process.env.PUBLIC_URL}/img/utility/heart1.png`);
   }
 
   function changeHeart(heartImg) {
@@ -248,11 +244,11 @@ function ProjectDetail() {
             let niceImage = document.getElementById("niceImage");
             if (isChecked) {
               niceButton.checked = true;
-              niceImage.src = heart2;
+              niceImage.src = `${process.env.PUBLIC_URL}/img/utility/heart2.png`;
             }
             else {
               niceButton.checked = false;
-              niceImage.src = heart1;
+              niceImage.src = `${process.env.PUBLIC_URL}/img/utility/heart1.png`
             }
             niceButton.classList.remove("invisible");
             niceImage.style.opacity=50+"%";
@@ -330,8 +326,8 @@ function ProjectDetail() {
               <p id="projectName" className="projectNameText"></p>
             </div>
             <div className="imageArea">
-              <input type="image" className="leftButton" src={leftArrow} onClick={changeLeftPage} />
-              <input type="image" className="rightButton" src={rightArrow} onClick={changeRightPage} />
+              <input type="image" className="leftButton" src={`${process.env.PUBLIC_URL}/img/utility/leftArrow.png`} onClick={changeLeftPage} />
+              <input type="image" className="rightButton" src={`${process.env.PUBLIC_URL}/img/utility/rightArrow.png`} onClick={changeRightPage} />
               <img id="projectImage" className="projectImage" />
             </div>
           </div>
