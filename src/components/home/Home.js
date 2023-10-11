@@ -98,7 +98,7 @@ function Home() {
               <div className="portraitTitle">
                 <span>学校長<br />
                   三谷 卓也<br />
-                  <span className="heading4">第23回工華祭開催！</span>
+                  <span className="heading4">第24回工華祭開催！</span>
                 </span>
               </div>
             </div>
