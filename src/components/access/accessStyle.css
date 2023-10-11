@@ -55,8 +55,9 @@
 
 .fish{
     position: absolute;
-    width: 50%;
+    width: 45%;
     left: -50%;
+    transform: scale(-1,1) rotate(45deg);
 
     animation-duration: 1.6s;
     animation-fill-mode: forwards;

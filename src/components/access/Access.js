@@ -27,7 +27,9 @@ function Access() {
     for (let i = 0; i < 5; i++) {
       for (let j = 0; j < 6; j++) {
         let fish = document.createElement("img");
-        fish.src = `${process.env.PUBLIC_URL}/img/utility/fish1.png`;
+        let random = Math.round( Math.random()); //四捨五入して0か1に
+        if(random==0)fish.src = `${process.env.PUBLIC_URL}/img/utility/fish1.png`;
+        else fish.src = `${process.env.PUBLIC_URL}/img/utility/fish2.png`;
         fish.classList.add("fish");
         fish.style.animationDelay = i * 0.2 + Math.random() * 0.2 - 0.1 + "s";
         fish.style.animationName = "fishAnimation";
