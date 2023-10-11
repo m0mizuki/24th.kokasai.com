@@ -58,9 +58,10 @@ function Home() {
                 <img className="portraitImage" src={`${process.env.PUBLIC_URL}/img/portrait/portrait_motojima.webp`} />
               </div>
               <div className="portraitTitle">
-                <p>工華祭実行委員長</p>
-                <p>本島 琉矢</p>
-                <p className="heading4">OPEN SESAME!!</p>
+                <span>工華祭実行委員長<br />
+                  本島 琉矢<br />
+                  <span className="heading4">OPEN SESAME!!</span>
+                </span>
               </div>
             </div>
             <div className="portraitTextArea">
@@ -76,9 +77,10 @@ function Home() {
                 <img className="portraitImage" src={`${process.env.PUBLIC_URL}/img/portrait/portrait_sakuraoka.webp`} />
               </div>
               <div className="portraitTitle">
-                <p>学生主事</p>
-                <p>櫻岡 広</p>
-                <p className="heading4">第24回工華祭開催にあたって</p>
+                <span>学生主事<br />
+                  櫻岡 広<br />
+                  <span className="heading4">第24回工華祭開催にあたって</span>
+                </span>
               </div>
             </div>
             <div className="portraitTextArea">
@@ -94,18 +96,19 @@ function Home() {
                 <img className="portraitImage" src={`${process.env.PUBLIC_URL}/img/portrait/portrait_mitani.webp`} />
               </div>
               <div className="portraitTitle">
-                <p>学校長</p>
-                <p>三谷 卓也</p>
-                <p className="heading4">第23回工華祭開催！</p>
+                <span>学校長<br />
+                  三谷 卓也<br />
+                  <span className="heading4">第23回工華祭開催！</span>
+                </span>
               </div>
             </div>
             <div className="portraitTextArea">
               <div className="portraitText">
                 <p>　「OPEN SESAME」と呪文を唱え、扉を開けたら、いよいよ待ちに待った、しかも久しぶりの制限のない工華祭の開幕です！<br />
-                　学生諸君に一言。<br />
-                　祭りなんてものは、「楽しんだ者勝ち」です。準備の大変さ、本番の忙しさやワクワク感、そして後片付けでの寂寥感…。それらすべてを楽しみ尽くしてください。<br />
-                　そして来校された皆様にも一言。<br />
-                　ぜひ、学生達と一緒になってこの２年に１度のお祭りを盛り上げ、思う存分楽しんでいただければ幸いです。</p>
+                  学生諸君に一言。<br />
+                  祭りなんてものは、「楽しんだ者勝ち」です。準備の大変さ、本番の忙しさやワクワク感、そして後片付けでの寂寥感…。それらすべてを楽しみ尽くしてください。<br />
+                  そして来校された皆様にも一言。<br />
+                  ぜひ、学生達と一緒になってこの２年に１度のお祭りを盛り上げ、思う存分楽しんでいただければ幸いです。</p>
               </div>
             </div>
           </div>

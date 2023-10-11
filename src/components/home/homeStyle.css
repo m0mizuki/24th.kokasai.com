@@ -63,8 +63,8 @@
     left: 0%;
     background-color: rgb(239, 239, 239);
 
-    box-sizing: border-box; /*枠線もサイズに含む*/
-    border: 2px solid black;
+    /*box-sizing: border-box; /*枠線もサイズに含む*/
+    /*border: 2px solid black;*/
 }
 
 .portraitImage {
@@ -81,6 +81,7 @@
     top: 1rem;
     width: 55%;
     left: 45%;
+    line-height: 2rem;
     
     /*background-color: gainsboro;*/
     
