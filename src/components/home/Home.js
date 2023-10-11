@@ -40,8 +40,9 @@ function Home() {
           <br />
           <p className="heading2">詳細情報</p>
           <p className="heading3">開催日時</p>
-          <p>11月4日(土) 9:00～17:00<br />
-            11月5日(日) 9:00～17:00</p>
+          <p>一般公開</p>
+          <p>11月4日(土) 9:30～16:30<br />
+            11月5日(日) 9:30～16:30</p>
 
           <p className="heading3">開催場所</p>
           <p>群馬工業高等専門学校</p>
