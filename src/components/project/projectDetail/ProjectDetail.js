@@ -16,13 +16,13 @@ function ProjectDetail() {
 
   //初期設定
   const firebaseConfig = {
-    apiKey: "AIzaSyDtOvDLeIPRmBtRRVRTFxvkWS3sZjSlCuo",
-    authDomain: "kokasaivotetest-1.firebaseapp.com",
-    projectId: "kokasaivotetest-1",
-    storageBucket: "kokasaivotetest-1.appspot.com",
-    messagingSenderId: "740547025901",
-    appId: "1:740547025901:web:1f23829c617c04886c25e4"
-  }
+    apiKey: "AIzaSyDiWKcCM1KcvsjsaX_67fBIOgDz02CndQk",
+    authDomain: "thkokasaivote.firebaseapp.com",
+    projectId: "thkokasaivote",
+    storageBucket: "thkokasaivote.appspot.com",
+    messagingSenderId: "1028666790202",
+    appId: "1:1028666790202:web:9bbcd5742a9a1b59d28003"
+  };
   firebase.initializeApp(firebaseConfig);
   const db = firebase.firestore();
 
@@ -31,7 +31,7 @@ function ProjectDetail() {
 
 
   var clickNikeDate = Date.now();
-  const cooltime=1000; //いいねのクールタイム[ms]
+  const cooltime = 1000; //いいねのクールタイム[ms]
 
   //クエリを取得
   const quely = new URLSearchParams(useLocation().search);
@@ -198,12 +198,12 @@ function ProjectDetail() {
     niceImage.style.animationName = "niceOutAnimation";
     setTimeout(() => {
       niceImage.src = heartImg;
-      niceImage.style.opacity=50+"%";
+      niceImage.style.opacity = 50 + "%";
       niceImage.style.animationName = "niceInAnimation";
       recieveVoteData();
     }, 200);
     setTimeout(() => {
-      niceImage.style.opacity=100+"%";
+      niceImage.style.opacity = 100 + "%";
     }, cooltime);
   }
 
@@ -248,9 +248,9 @@ function ProjectDetail() {
               niceImage.src = `${process.env.PUBLIC_URL}/img/utility/heart1.png`
             }
             niceButton.classList.remove("invisible");
-            niceImage.style.opacity=50+"%";
+            niceImage.style.opacity = 50 + "%";
             setTimeout(() => {
-              niceImage.style.opacity=100+"%";
+              niceImage.style.opacity = 100 + "%";
             }, cooltime);
 
             let numberOfLikes = document.getElementById("numberOfLikes");
